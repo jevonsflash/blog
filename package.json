@@ -11,6 +11,9 @@
   "hexo": {
     "version": "4.2.0"
   },
+  "engines": {
+    "node": ">=8.10.0"
+  },
   "dependencies": {
     "@babel/compat-data": "^7.24.4",
     "acorn": ">=7.1.1",
