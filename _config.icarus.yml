@@ -335,7 +335,6 @@ widgets:
         # Feed claiming verification code
         verification_code: ''
 # Plugin configurations
-# https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/
 plugins:
     # Enable page startup animations
     animejs: true
