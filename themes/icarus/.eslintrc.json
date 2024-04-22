@@ -20,7 +20,8 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": "latest"
   },
   "plugins": [
     "react"
@@ -41,7 +42,8 @@
           "class",
           "onclick",
           "onload",
-          "onsubmit"
+          "onsubmit",
+          "crossorigin"
         ]
       }
     ],

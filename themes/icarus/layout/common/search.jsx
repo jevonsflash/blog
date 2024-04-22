@@ -1,5 +1,8 @@
-const logger = require('hexo-log')();
+const createLogger = require('hexo-log');
 const { Component } = require('inferno');
+const view = require('hexo-component-inferno/lib/core/view');
+
+const logger = createLogger.default();
 
 module.exports = class extends Component {
     render() {
@@ -10,7 +13,8 @@ module.exports = class extends Component {
         }
 
         try {
-            const Search = require('../search/' + search.type);
+            let Search = view.require('search/' + search.type);
+            Search = Search.Cacheable ? Search.Cacheable : Search;
             return <Search config={config} helper={helper} search={search} />;
         } catch (e) {
             logger.w(`Icarus cannot load search "${search.type}"`);

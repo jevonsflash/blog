@@ -1,16 +1,18 @@
 const moment = require('moment');
 const { Component, Fragment } = require('inferno');
+const { toMomentLocale } = require('hexo/dist/plugins/helper/date');
 const Share = require('./share');
 const Donates = require('./donates');
 const Comment = require('./comment');
-const crypto = require('crypto');
-const RecommendPosts = require('../widget/recommend_post');
-
+const ArticleLicensing = require('hexo-component-inferno/lib/view/misc/article_licensing');
 
 /**
  * Get the word count of text.
  */
 function getWordCount(content) {
+    if (typeof content === 'undefined') {
+        return 0;
+    }
     content = content.replace(/<\/?[a-z][^>]*>/gi, '');
     content = content.trim();
     return content ? (content.match(/[\u00ff-\uffff]|[a-zA-Z]+/g) || []).length : 0;
@@ -18,42 +20,48 @@ function getWordCount(content) {
 
 module.exports = class extends Component {
     render() {
+        const { config, helper, page, index } = this.props;
+        const { article, plugins } = config;
+        const { url_for, date, date_xml, __, _p } = helper;
 
-        const { config, helper, page, index, site } = this.props;
-        const { article, plugins,comment } = config;
-        const { has_thumbnail, get_thumbnail, url_for, date, date_xml, __, _p } = helper;
-        const language = page.lang || page.language || config.language || 'en';
-        const id = crypto.createHash('md5').update(helper.get_path_end_str(page.path,page.uniqueId,page.title)).digest('hex');
-        const myPermalink = config.url + config.root + page.path;
+        const defaultLanguage = Array.isArray(config.language) && config.language.length ? config.language[0] : config.language;
+
+        const indexLanguage = toMomentLocale(defaultLanguage || 'en');
+        const language = toMomentLocale(page.lang || page.language || defaultLanguage || 'en');
+        const cover = page.cover ? url_for(page.cover) : null;
+        const updateTime = article && article.update_time !== undefined ? article.update_time : true;
+        const isUpdated = page.updated && !moment(page.date).isSame(moment(page.updated));
+        const shouldShowUpdated = page.updated && ((updateTime === 'auto' && isUpdated) || updateTime === true);
 
         return <Fragment>
             {/* Main content */}
             <div class="card">
                 {/* Thumbnail */}
-                {has_thumbnail(page) ? <div class="card-image">
+                {cover ? <div class="card-image">
                     {index ? <a href={url_for(page.link || page.path)} class="image is-7by3">
-                        <img class="thumbnail" src={get_thumbnail(page)} alt={page.title || get_thumbnail(page)} />
+                        <img class="fill" src={cover} alt={page.title || cover} />
                     </a> : <span class="image is-7by3">
-                        <img class="thumbnail" src={get_thumbnail(page)} alt={page.title || get_thumbnail(page)} />
+                        <img class="fill" src={cover} alt={page.title || cover} />
                     </span>}
                 </div> : null}
-                {/* Metadata */}
                 <article class={`card-content article${'direction' in page ? ' ' + page.direction : ''}`} role="article">
-                    {page.layout !== 'page' ? <div class="article-meta size-small is-uppercase level is-mobile">
+                    {/* Metadata */}
+                    {page.layout !== 'page' ? <div class="article-meta is-size-7 is-uppercase level is-mobile">
                         <div class="level-left">
-                            {/*置顶图标*/}
-                            {page.top > 0 ?
-                            <div class="level-item tag is-danger" style="background-color: #3273dc;">已置顶</div>:null}
-                            {/* Date */}
-                            <time class="level-item" dateTime={date_xml(page.date)}>{date(page.date)}</time>
-
-                            {comment.type !== 'undefined' && comment.type == 'gitalk' ?
-                                <a class="commentCountImg" href={`${url_for(page.link || page.path)}#comment-container`}><span class="display-none-class">{id}</span><img class="not-gallery-item" src={`${helper.url_for('/img/chat.svg')}`}/>&nbsp;<span class="commentCount" id={id}>&nbsp;99+</span>&nbsp;&nbsp;&nbsp;&nbsp;</a> : null}
+                            {/* Creation Date */}
+                            {page.date && <span class="level-item" dangerouslySetInnerHTML={{
+                                __html: _p('article.created_at', `<time dateTime="${date_xml(page.date)}" title="${new Date(page.date).toLocaleString()}">${date(page.date)}</time>`)
+                            }}></span>}
+                            {/* Last Update Date */}
+                            {shouldShowUpdated && <span class="level-item" dangerouslySetInnerHTML={{
+                                __html: _p('article.updated_at', `<time dateTime="${date_xml(page.updated)}" title="${new Date(page.updated).toLocaleString()}">${date(page.updated)}</time>`)
+                            }}></span>}
+                            {/* author */}
+                            {page.author ? <span class="level-item"> {page.author} </span> : null}
                             {/* Categories */}
                             {page.categories && page.categories.length ? <span class="level-item">
                                 {(() => {
                                     const categories = [];
-                                    categories.push(<i class="fas fa-folder-open has-text-grey">&nbsp;</i>)
                                     page.categories.forEach((category, i) => {
                                         categories.push(<a class="link-muted" href={url_for(category.path)}>{category.name}</a>);
                                         if (i < page.categories.length - 1) {
@@ -68,75 +76,32 @@ module.exports = class extends Component {
                                 {(() => {
                                     const words = getWordCount(page._content);
                                     const time = moment.duration((words / 150.0) * 60, 'seconds');
-                                    return `${time.locale(language).humanize()} ${__('article.read')} (${__('article.about')} ${words} ${__('article.words')})`;
+                                    return `${_p('article.read_time', time.locale(index ? indexLanguage : language).humanize())} (${_p('article.word_count', words)})`;
                                 })()}
                             </span> : null}
                             {/* Visitor counter */}
                             {!index && plugins && plugins.busuanzi === true ? <span class="level-item" id="busuanzi_container_page_pv" dangerouslySetInnerHTML={{
-                                __html: '<i class="far fa-eye"></i>' + _p('plugin.visit', '&nbsp;&nbsp;<span id="busuanzi_value_page_pv">0</span>')
+                                __html: _p('plugin.visit_count', '<span id="busuanzi_value_page_pv">0</span>')
                             }}></span> : null}
                         </div>
                     </div> : null}
                     {/* Title */}
-                    <h1 class="title is-3 is-size-4-mobile">
-                        {index ? <a class="link-muted" href={url_for(page.link || page.path)}>{page.title}</a> : page.title}
-                    </h1>
+                    {page.title !== '' && index ? <p class="title is-3 is-size-4-mobile"><a class="link-muted" href={url_for(page.link || page.path)}>{page.title}</a></p> : null}
+                    {page.title !== '' && !index ? <h1 class="title is-3 is-size-4-mobile">{page.title}</h1> : null}
                     {/* Content/Excerpt */}
                     <div class="content" dangerouslySetInnerHTML={{ __html: index && page.excerpt ? page.excerpt : page.content }}></div>
+                    {/* Licensing block */}
+                    {!index && article && article.licenses && Object.keys(article.licenses)
+                        ? <ArticleLicensing.Cacheable page={page} config={config} helper={helper} /> : null}
                     {/* Tags */}
-                    {!index && page.tags && page.tags.length ? <div class="article-tags size-small is-uppercase mb-4">
-                        <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    {!index && page.tags && page.tags.length ? <div class="article-tags is-size-7 mb-4">
+                        <span class="mr-2">#</span>
                         {page.tags.map(tag => {
                             return <a class="link-muted mr-2" rel="tag" href={url_for(tag.path)}>{tag.name}</a>;
                         })}
-
-                        {page.updated && page.updated > page.date ?
-                            <p class="text-right font1_1">
-                                <time datetime={date_xml(page.updated)}>
-                                    <strong><em>&nbsp;本文最后修改于:&nbsp;{date(page.updated)}.</em></strong>
-                                </time>
-                            </p> : null
-                        }
                     </div> : null}
                     {/* "Read more" button */}
-                    {index && page.excerpt ?
-                        <div class="level is-mobile is-flex">
-                            {page.tags && page.tags.length ?
-                                <div class="level-start">
-                                    <div class="is-uppercase article-more button is-small size-small">
-                                        <i class="fas fa-tags has-text-grey"></i>&nbsp;
-                                        {page.tags.map(tag => {
-                                            return <a class="link-muted mr-2" rel="tag"
-                                                      href={url_for(tag.path)}>{tag.name}</a>;
-                                        })}
-                                    </div>
-                                </div> : null}
-                            {page.updated && page.updated > page.date ?
-                                <div class="level-start">
-                                    <div class="level-item has-text-grey is-size-7 is-hidden-mobile">
-                                        <time datetime={date_xml(page.updated)}><i
-                                            class="far fa-calendar-check">&nbsp;最后修改:&nbsp;</i>{date(page.updated)}
-                                        </time>
-                                    </div>
-                                </div> : null
-                            }
-                            <div class="level-start">
-                                <div class="level-item">
-                                    <a class="article-more button is-small size-small link-muted"
-                                       href={`${url_for(page.path)}#more`}><i class="fas fa-book-reader has-text-grey">&nbsp;</i>{__('article.more')}</a>
-                                </div>
-                            </div>
-                        </div> : null}
-                    {/*copyright*/}
-                    {!index && page.layout == 'post' ?
-                    <ul class="post-copyright">
-                        <li><strong>本文标题：</strong><a href={myPermalink}>{page.title}</a></li>
-                        <li><strong>本文作者：</strong><a href={url_for(config.url)}>{config.author}</a></li>
-                        <li><strong>本文链接：</strong><a href={myPermalink}>{myPermalink}</a></li>
-                        <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-                        </li>
-                    </ul>:null}
-                    {!index && page.layout == 'post' ? <RecommendPosts config={config} page={page} helper={helper} site={site}/>:null}
+                    {index && page.excerpt ? <a class="article-more button is-small is-size-7" href={`${url_for(page.link || page.path)}#more`}>{__('article.more')}</a> : null}
                     {/* Share button */}
                     {!index ? <Share config={config} page={page} helper={helper} /> : null}
                 </article>

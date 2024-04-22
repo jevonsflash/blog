@@ -1,5 +1,5 @@
 const { Component } = require('inferno');
-const { cacheComponent } = require('../util/cache');
+const { cacheComponent } = require('hexo-component-inferno/lib/util/cache');
 
 class Footer extends Component {
     render() {
@@ -11,41 +11,38 @@ class Footer extends Component {
             siteYear,
             author,
             links,
+            copyright,
             showVisitorCounter,
-            url_for
+            visitorCounterTitle
         } = this.props;
+
+        let footerLogo = '';
+        if (logo) {
+            if (logo.text) {
+                footerLogo = logo.text;
+            } else {
+                footerLogo = <img src={logoUrl} alt={siteTitle} height="28" />;
+            }
+        } else {
+            footerLogo = siteTitle;
+        }
 
         return <footer class="footer">
             <div class="container">
                 <div class="level">
                     <div class="level-start">
                         <a class="footer-logo is-block mb-2" href={siteUrl}>
-                            {logo && logo.text ? logo.text : <img src={logoUrl} alt={siteTitle} height="28" />}
+                            {footerLogo}
                         </a>
-                        <p class="size-small">
+                        <p class="is-size-7">
                             <span dangerouslySetInnerHTML={{ __html: `&copy; ${siteYear} ${author || siteTitle}` }}></span>
-                            <br />
-
-                            <script type="text/javascript" src={url_for('/js/statistics.js')}></script>
-                            <span>站长统计：</span>
-                            <br />
-                            <span id="statistic-times">网站运行时间统计加载中...</span>
-                            <br />
-                            {showVisitorCounter ?
-                                <div class="size-small">
-                                    <span id="busuanzi_container_site_uv">
-                                        独立访客数(UV): <span id="busuanzi_value_site_uv">99+</span>
-                                    </span>
-                                    <br />
-                                    页面浏览量(PV): <span id="busuanzi_value_site_pv">99+</span>
-
-                                </div> : null}
-                            <br />
-
-                            <span> Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
-                                href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a></span>
-                            <br />
+                            &nbsp;&nbsp;Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>&nbsp;&&nbsp;
+                            <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                            {showVisitorCounter ? <br /> : null}
+                            {showVisitorCounter ? <span id="busuanzi_container_site_uv"
+                                dangerouslySetInnerHTML={{ __html: visitorCounterTitle }}></span> : null}
                         </p>
+                        {copyright ? <p class="is-size-7" dangerouslySetInnerHTML={{ __html: copyright }}></p> : null}
                     </div>
                     <div class="level-end">
                         {Object.keys(links).length ? <div class="field has-addons">
@@ -82,7 +79,6 @@ module.exports = cacheComponent(Footer, 'common.footer', props => {
     }
 
     return {
-        url_for: url_for,
         logo,
         logoUrl: url_for(logo),
         siteUrl: url_for('/'),
@@ -90,7 +86,8 @@ module.exports = cacheComponent(Footer, 'common.footer', props => {
         siteYear: date(new Date(), 'YYYY'),
         author,
         links,
+        copyright: footer?.copyright ?? '',
         showVisitorCounter: plugins && plugins.busuanzi === true,
-        visitorCounterTitle: _p('plugin.visitor', '<span id="busuanzi_value_site_uv">0</span>')
+        visitorCounterTitle: _p('plugin.visitor_count', '<span id="busuanzi_value_site_uv">0</span>')
     };
 });

@@ -1,9 +1,9 @@
 const { Component } = require('inferno');
-const MetaTags = require('../misc/meta');
-const OpenGraph = require('../misc/open_graph');
-const StructuredData = require('../misc/structured_data');
+const MetaTags = require('hexo-component-inferno/lib/view/misc/meta');
+const WebApp = require('hexo-component-inferno/lib/view/misc/web_app');
+const OpenGraph = require('hexo-component-inferno/lib/view/misc/open_graph');
+const StructuredData = require('hexo-component-inferno/lib/view/misc/structured_data');
 const Plugins = require('./plugins');
-const {stripHTML} = require('hexo-util');
 
 function getPageTitle(page, siteTitle, helper) {
     let title = page.title;
@@ -30,25 +30,32 @@ function getPageTitle(page, siteTitle, helper) {
 
 module.exports = class extends Component {
     render() {
-        const { env, site, config, helper, page } = this.props;
-        const { url_for, cdn, iconcdn, fontcdn, is_post } = helper;
+        const { site, config, helper, page } = this.props;
+        const { url_for, cdn, fontcdn, iconcdn, is_post } = helper;
         const {
             url,
-            meta_generator = true,
             head = {},
             article,
-            highlight
+            highlight,
+            variant = 'default'
         } = config;
         const {
             meta = [],
+            manifest = {},
             open_graph = {},
             structured_data = {},
-            canonical_url,
+            canonical_url = page.permalink,
             rss,
             favicon
         } = head;
 
+        const noIndex = helper.is_archive() || helper.is_category() || helper.is_tag();
+
         const language = page.lang || page.language || config.language;
+        const fontCssUrl = {
+            default: fontcdn('Ubuntu:wght@400;600&family=Source+Code+Pro', 'css2'),
+            cyberpunk: fontcdn('Oxanium:wght@300;400;600&family=Roboto+Mono', 'css2')
+        };
 
         let hlTheme, images;
         if (highlight && highlight.enable === false) {
@@ -61,8 +68,10 @@ module.exports = class extends Component {
 
         if (typeof page.og_image === 'string') {
             images = [page.og_image];
-        } else if (helper.has_thumbnail(page)) {
-            images = [helper.get_thumbnail(page)];
+        } else if (typeof page.cover === 'string') {
+            images = [url_for(page.cover)];
+        } else if (typeof page.thumbnail === 'string') {
+            images = [url_for(page.thumbnail)];
         } else if (article && typeof article.og_image === 'string') {
             images = [article.og_image];
         } else if (page.content && page.content.includes('<img')) {
@@ -85,36 +94,53 @@ module.exports = class extends Component {
         }
 
         let openGraphImages = images;
-        if ((Array.isArray(open_graph.image) && open_graph.image.length > 0) || typeof open_graph.image === 'string') {
+        if ((typeof open_graph === 'object' && open_graph !== null)
+            && ((Array.isArray(open_graph.image) && open_graph.image.length > 0) || typeof open_graph.image === 'string')) {
             openGraphImages = open_graph.image;
         } else if ((Array.isArray(page.photos) && page.photos.length > 0) || typeof page.photos === 'string') {
             openGraphImages = page.photos;
         }
 
         let structuredImages = images;
-        if ((Array.isArray(structured_data.image) && structured_data.image.length > 0) || typeof structured_data.image === 'string') {
+        if ((typeof structured_data === 'object' && structured_data !== null)
+            && ((Array.isArray(structured_data.image) && structured_data.image.length > 0) || typeof structured_data.image === 'string')) {
             structuredImages = structured_data.image;
         } else if ((Array.isArray(page.photos) && page.photos.length > 0) || typeof page.photos === 'string') {
             structuredImages = page.photos;
         }
 
+        let followItVerificationCode = null;
+        if (Array.isArray(config.widgets)) {
+            const widget = config.widgets.find(widget => widget.type === 'followit');
+            if (widget) {
+                followItVerificationCode = widget.verification_code;
+            }
+        }
+
         return <head>
             <meta charset="utf-8" />
-            {meta_generator ? <meta name="generator" content={`Hexo ${env.version}`} /> : null}
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-            <MetaTags meta={meta} />
+            {noIndex ? <meta name="robots" content="noindex" /> : null}
+            {meta && meta.length ? <MetaTags meta={meta} /> : null}
 
             <title>{getPageTitle(page, config.title, helper)}</title>
 
-            {typeof open_graph === 'object' ? <OpenGraph
-                type={(is_post(page) ? 'article' : 'website') || open_graph.type}
-                title={page.title || open_graph.title || config.title}
+            <WebApp.Cacheable
+                helper={helper}
+                favicon={favicon}
+                icons={manifest.icons}
+                themeColor={manifest.theme_color}
+                name={manifest.name || config.title} />
+
+            {typeof open_graph === 'object' && open_graph !== null ? <OpenGraph
+                type={open_graph.type || (is_post(page) ? 'article' : 'website')}
+                title={open_graph.title || page.title || config.title}
                 date={page.date}
                 updated={page.updated}
                 author={open_graph.author || config.author}
-                description={page.description || stripHTML(page.excerpt) || open_graph.description || page.content || config.description}
-                keywords={page.keywords || (page.tags && page.tags.length ? page.tags : undefined) || config.keywords}
-                url={page.permalink || open_graph.url || url}
+                description={open_graph.description || page.description || page.excerpt || page.content || config.description}
+                keywords={(page.tags && page.tags.length ? page.tags : undefined) || config.keywords}
+                url={open_graph.url || page.permalink || url}
                 images={openGraphImages}
                 siteName={open_graph.site_name || config.title}
                 language={language}
@@ -125,27 +151,30 @@ module.exports = class extends Component {
                 facebookAdmins={open_graph.fb_admins}
                 facebookAppId={open_graph.fb_app_id} /> : null}
 
-            {typeof structured_data === 'object' ? <StructuredData
-                title={page.title || structured_data.title || config.title}
-                description={page.description || stripHTML(page.excerpt) || structured_data.description || page.content || config.description}
-                url={page.permalink || structured_data.url || url}
+            {typeof structured_data === 'object' && structured_data !== null ? <StructuredData
+                title={structured_data.title || page.title || config.title}
+                description={structured_data.description || page.description || page.excerpt || page.content || config.description}
+                url={structured_data.url || page.permalink || url}
                 author={structured_data.author || config.author}
+                publisher={structured_data.publisher || config.title}
+                publisherLogo={structured_data.publisher_logo || config.logo}
                 date={page.date}
                 updated={page.updated}
                 images={structuredImages} /> : null}
 
             {canonical_url ? <link rel="canonical" href={canonical_url} /> : null}
-            {rss ? <link rel="alternative" href={url_for(rss)} title={config.title} type="application/atom+xml" /> : null}
+            {rss ? <link rel="alternate" href={url_for(rss)} title={config.title} type="application/atom+xml" /> : null}
             {favicon ? <link rel="icon" href={url_for(favicon)} /> : null}
             <link rel="stylesheet" href={iconcdn()} />
-            <link rel="stylesheet" href={fontcdn('Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css')} />
-            {hlTheme ? <link rel="stylesheet" href={cdn('highlight.js', '9.12.0', 'styles/' + hlTheme + '.css')} /> : null}
+            {hlTheme ? <link rel="stylesheet" href={cdn('highlight.js', '11.7.0', 'styles/' + hlTheme + '.css')} /> : null}
+            <link rel="stylesheet" href={fontCssUrl[variant]} />
+            <link rel="stylesheet" href={url_for('/css/' + variant + '.css')} />
             <Plugins site={site} config={config} helper={helper} page={page} head={true} />
-            <link rel="stylesheet" href={helper.url_for('/css/style.css')} />
-            <script src={cdn('jquery', '3.3.1', 'dist/jquery.min.js')}></script>
-            <script src={helper.url_for('/js/globalUtils.js')}></script>
+
             {adsenseClientId ? <script data-ad-client={adsenseClientId}
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async={true}></script> : null}
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script> : null}
+
+            {followItVerificationCode ? <meta name="follow.it-verification-code" content={followItVerificationCode} /> : null}
         </head>;
     }
 };

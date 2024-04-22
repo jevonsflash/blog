@@ -1,9 +1,5 @@
 /* eslint-disable node/no-unsupported-features/node-builtins */
 (function($, moment, ClipboardJS, config) {
-    if (!$('.columns .column-right-shadow').children().length) {
-        $('.columns .column-right-shadow').append($('.columns .column-right').children().clone());
-    }
-
     $('.article img:not(".not-gallery-item")').each(function() {
         // wrap images with link and add caption if possible
         if ($(this).parent('a').length === 0) {
@@ -13,6 +9,16 @@
             }
         }
     });
+
+    if (typeof $.fn.lightGallery === 'function') {
+        $('.article').lightGallery({ selector: '.gallery-item' });
+    }
+    if (typeof $.fn.justifiedGallery === 'function') {
+        if ($('.justified-gallery > p > .gallery-item').length) {
+            $('.justified-gallery > p > .gallery-item').unwrap();
+        }
+        $('.justified-gallery').justifiedGallery();
+    }
 
     if (typeof moment === 'function') {
         $('.article-meta time').each(function() {
@@ -56,9 +62,9 @@
         $('figure.highlight').addClass('hljs');
         $('figure.highlight .code .line span').each(function() {
             const classes = $(this).attr('class').split(/\s+/);
-            if (classes.length === 1) {
-                $(this).addClass('hljs-' + classes[0]);
-                $(this).removeClass(classes[0]);
+            for (const cls of classes) {
+                $(this).addClass('hljs-' + cls);
+                $(this).removeClass(cls);
             }
         });
 
@@ -92,6 +98,8 @@
 
         if (fold) {
             $('figure.highlight').each(function() {
+                $(this).addClass('foldable'); // add 'foldable' class as long as fold is enabled
+
                 if ($(this).find('figcaption').find('span').length > 0) {
                     const span = $(this).find('figcaption').find('span');
                     if (span[0].innerText.indexOf('>folded') > -1) {
@@ -105,7 +113,7 @@
                 toggleFold(this, fold === 'folded');
             });
 
-            $('figure.highlight figcaption .fold').click(function() {
+            $('figure.highlight figcaption .level-left').click(function() {
                 const $code = $(this).closest('figure.highlight');
                 toggleFold($code.eq(0), !$code.hasClass('folded'));
             });
@@ -128,79 +136,4 @@
         $mask.on('click', toggleToc);
         $('.navbar-main .catalogue').on('click', toggleToc);
     }
-
-    // hexo-util/lib/is_external_link.js
-    function isExternalLink(input, sitehost, exclude) {
-        try {
-            sitehost = new URL(sitehost).hostname;
-        } catch (e) { }
-
-        if (!sitehost) return false;
-
-        // handle relative url
-        var data;
-        try {
-            data = new URL(input, 'http://' + sitehost);
-        } catch (e) {
-            return false;
-        }
-
-        // handle mailto: javascript: vbscript: and so on
-        if (data.origin === 'null') return false;
-
-        const host = data.hostname;
-
-        if (exclude) {
-            exclude = Array.isArray(exclude) ? exclude : [exclude];
-
-            if (exclude && exclude.length) {
-                for (const i of exclude) {
-                    if (host === i) return false;
-                }
-            }
-        }
-
-        if (host !== sitehost) return true;
-
-        return false;
-    }
-
-    if (typeof config !== 'undefined'
-        && typeof config.site.url !== 'undefined'
-        && typeof config.site.external_link !== 'undefined'
-        && config.site.external_link.enable) {
-        $('.article .content a').filter((i, link) => {
-            return link.href
-                && !$(link).attr('href').startsWith('#')
-                && link.classList.length === 0
-                && isExternalLink(link.href,
-                    config.site.url,
-                    config.site.external_link.exclude);
-        }).each((i, link) => {
-            link.relList.add('noopener');
-            link.target = '_blank';
-        });
-    }
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
-
-$(document).ready(function () {
-    /* 添加背景色 */
-    var navbar = $(".is-fixed-top");
-    var navbar1 = $(".justify-content-start");
-    if (navbar.offset().top > 12) {
-        navbar.addClass("navbar-highlight");
-        navbar1.addClass("navbar-highlight");
-    } else {
-        navbar.removeClass("navbar-highlight");
-        navbar1.removeClass("navbar-highlight");
-    }
-    $(window).scroll(function () {
-        if (navbar.offset().top > 12) {
-            navbar.addClass("navbar-highlight");
-            navbar1.addClass("navbar-highlight");
-        } else {
-            navbar.removeClass("navbar-highlight");
-            navbar1.removeClass("navbar-highlight");
-        }
-    });
-});

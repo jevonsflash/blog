@@ -1,8 +1,10 @@
 /* eslint no-process-exit: "off" */
 const semver = require('semver');
-const logger = require('hexo-log')();
+const createLogger = require('hexo-log');
 const packageInfo = require('../package.json');
 const { yellow, red, green } = require('./util/console');
+
+const logger = createLogger.default();
 
 module.exports = hexo => {
     function checkDependency(name, reqVer) {
@@ -21,11 +23,14 @@ module.exports = hexo => {
     }
 
     logger.info('=== Checking package dependencies ===');
-    const missingDeps = Object.keys(packageInfo.peerDependencies)
-        .filter(name => !checkDependency(name, packageInfo.peerDependencies[name]));
+    const dependencies = Object.assign({}, packageInfo.dependencies);
+    const missingDeps = Object.keys(dependencies)
+        .filter(name => !checkDependency(name, dependencies[name]));
     if (missingDeps && missingDeps.length) {
         logger.error('Please install the missing dependencies your Hexo site root directory:');
-        logger.error(green('npm install --save ' + missingDeps.map(name => `${name}@${packageInfo.peerDependencies[name]}`).join(' ')));
+        logger.error(green('npm install --save ' + missingDeps.map(name => `${name}@${dependencies[name]}`).join(' ')));
+        logger.error('or:');
+        logger.error(green('yarn add ' + missingDeps.map(name => `${name}@${dependencies[name]}`).join(' ')));
         process.exit(-1);
     }
 };

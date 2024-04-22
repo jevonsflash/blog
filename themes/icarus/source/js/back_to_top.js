@@ -13,8 +13,7 @@ $(document).ready(() => {
             classname: 'card has-text-centered',
             left: '',
             width: 64,
-            bottom: bottomMargin,
-            'border-radius': 4
+            bottom: bottomMargin
         }
     };
     state['desktop-hidden'] = Object.assign({}, state.base, {
@@ -24,9 +23,8 @@ $(document).ready(() => {
         classname: state['desktop-hidden'].classname + ' fade-in'
     });
     state['desktop-dock'] = Object.assign({}, state['desktop-visible'], {
-        classname: state['desktop-visible'].classname + ' fade-in',
-        width: 40,
-        'border-radius': '50%'
+        classname: state['desktop-visible'].classname + ' fade-in is-rounded',
+        width: 40
     });
     state['mobile-hidden'] = Object.assign({}, state.base, {
         classname: state.base.classname + ' fade-in',
@@ -145,6 +143,10 @@ $(document).ready(() => {
     $(window).scroll(update);
 
     $('#back-to-top').on('click', () => {
-        $('body, html').animate({ scrollTop: 0 }, 400);
+        if (CSS && CSS.supports && CSS.supports('(scroll-behavior: smooth)')) {
+            window.scroll({ top: 0, behavior: 'smooth' });
+        } else {
+            $('body, html').animate({ scrollTop: 0 }, 400);
+        }
     });
 });

@@ -1,6 +1,6 @@
 const { Component, Fragment } = require('inferno');
-const { cacheComponent } = require('../util/cache');
-const classname = require('../util/classname');
+const { cacheComponent } = require('hexo-component-inferno/lib/util/cache');
+const classname = require('hexo-component-inferno/lib/util/classname');
 
 function isSameLink(a, b) {
     function santize(url) {
@@ -28,11 +28,22 @@ class Navbar extends Component {
             searchTitle
         } = this.props;
 
-        return <nav class="navbar navbar-main is-fixed-top">
-            <div class="container">
+        let navbarLogo = '';
+        if (logo) {
+            if (logo.text) {
+                navbarLogo = logo.text;
+            } else {
+                navbarLogo = <img src={logoUrl} alt={siteTitle} height="28" />;
+            }
+        } else {
+            navbarLogo = siteTitle;
+        }
+
+        return <nav class="navbar navbar-main">
+            <div class="container navbar-container">
                 <div class="navbar-brand justify-content-center">
                     <a class="navbar-item navbar-logo" href={siteUrl}>
-                        {logo && logo.text ? logo.text : <img src={logoUrl} alt={siteTitle} height="28" />}
+                        {navbarLogo}
                     </a>
                 </div>
                 <div class="navbar-menu">
@@ -57,9 +68,6 @@ class Navbar extends Component {
                         {showSearch ? <a class="navbar-item search" title={searchTitle} href="javascript:;">
                             <i class="fas fa-search"></i>
                         </a> : null}
-                        <a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;">
-                            <i class="fas fa-moon" id="night-icon"></i>
-                        </a>
                     </div>
                 </div>
             </div>

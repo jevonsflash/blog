@@ -10,10 +10,8 @@
             "default": "/img/favicon.svg",
             "nullable": true
         },
-        "canonical_url": {
-            "type": "string",
-            "description": "Canonical URL of the current page",
-            "nullable": true
+        "manifest": {
+            "$ref": "/misc/manifest.json"
         },
         "open_graph": {
             "$ref": "/misc/open_graph.json"

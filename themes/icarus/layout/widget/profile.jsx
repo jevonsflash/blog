@@ -1,15 +1,15 @@
 const { Component } = require('inferno');
 const gravatrHelper = require('hexo-util').gravatar;
-const { cacheComponent } = require('../util/cache');
+const { cacheComponent } = require('hexo-component-inferno/lib/util/cache');
 
 class Profile extends Component {
     renderSocialLinks(links) {
         if (!links.length) {
             return null;
         }
-        return <div class="level is-mobile">
+        return <div class="level is-mobile is-multiline">
             {links.filter(link => typeof link === 'object').map(link => {
-                return <a class="level-item button is-transparent is-white is-marginless"
+                return <a class="level-item button is-transparent is-marginless"
                     target="_blank" rel="noopener" title={link.name} href={link.url}>
                     {'icon' in link ? <i class={link.icon}></i> : link.name}
                 </a>;
@@ -27,19 +27,17 @@ class Profile extends Component {
             counter,
             followLink,
             followTitle,
-            socialLinks,
+            socialLinks
         } = this.props;
-
-
-        return <div class="card widget">
+        return <div class="card widget" data-type="profile">
             <div class="card-content">
                 <nav class="level">
                     <div class="level-item has-text-centered flex-shrink-1">
                         <div>
                             <figure class="image is-128x128 mx-auto mb-2">
-                                <img class={avatarRounded ? 'is-rounded' : ''} src={avatar} alt={author} />
+                                <img class={'avatar' + (avatarRounded ? ' is-rounded' : '')} src={avatar} alt={author} />
                             </figure>
-                            {author ? <p class="title is-size-4 is-block line-height-inherit">{author}</p> : null}
+                            {author ? <p class="title is-size-4 is-block" style={{'line-height': 'inherit'}}>{author}</p> : null}
                             {authorTitle ? <p class="is-size-6 is-block">{authorTitle}</p> : null}
                             {location ? <p class="is-size-6 is-flex justify-content-center">
                                 <i class="fas fa-map-marker-alt mr-1"></i>
@@ -77,14 +75,13 @@ class Profile extends Component {
                 {followLink ? <div class="level">
                     <a class="level-item button is-primary is-rounded" href={followLink} target="_blank" rel="noopener">{followTitle}</a>
                 </div> : null}
-                {this.renderSocialLinks(socialLinks)}
-            
+                {socialLinks ? this.renderSocialLinks(socialLinks) : null}
             </div>
         </div>;
     }
 }
 
-module.exports = cacheComponent(Profile, 'widget.profile', props => {
+Profile.Cacheable = cacheComponent(Profile, 'widget.profile', props => {
     const { site, helper, widget } = props;
     const {
         avatar,
@@ -94,7 +91,7 @@ module.exports = cacheComponent(Profile, 'widget.profile', props => {
         author_title,
         location,
         follow_link,
-        social_links,
+        social_links
     } = widget;
     const { url_for, _p, __ } = helper;
 
@@ -112,7 +109,7 @@ module.exports = cacheComponent(Profile, 'widget.profile', props => {
     const categoryCount = site.categories.filter(category => category.length).length;
     const tagCount = site.tags.filter(tag => tag.length).length;
 
-    const socialLinks = Object.keys(social_links).map(name => {
+    const socialLinks = social_links ? Object.keys(social_links).map(name => {
         const link = social_links[name];
         if (typeof link === 'string') {
             return {
@@ -125,7 +122,7 @@ module.exports = cacheComponent(Profile, 'widget.profile', props => {
             url: url_for(link.url),
             icon: link.icon
         };
-    });
+    }) : null;
 
     return {
         avatar: getAvatar(),
@@ -150,8 +147,10 @@ module.exports = cacheComponent(Profile, 'widget.profile', props => {
                 url: url_for('/tags')
             }
         },
-        followLink: url_for(follow_link),
+        followLink: follow_link ? url_for(follow_link) : undefined,
         followTitle: __('widget.follow'),
-        socialLinks,
+        socialLinks
     };
 });
+
+module.exports = Profile;
