@@ -1,22 +1,23 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/de6b6307f78e44d6a17846885943c94b.png
 title: '[MAUI 项目实战] 手势控制音乐播放器（一）： 概述与架构'
-excerpt:
-description:
-date: 2023-04-09 18:13:00
+excerpt: >-
+  这是一篇系列博文。请关注我，学习更多.NET
+  MAUI开发知识！在之前的博文中提到这个项目，它是为音乐播放器专门开发的基于手势控制的UI界面。此UI界面可以让用户在不看屏幕的情况下，通过手势来控制音乐播放器的各种操作，如播放、暂停、下一首、上一首。手势来控制的交互方式适合不方便看手机屏幕时简单的音乐播放需求，在驾车、运动等场景下有较好的用户体验。
 tags:
   - Xamarin
   - MAUI
   - XAML
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-09 18:13:00/[MAUI 项目实战] 手势控制音乐播放器（一）： 概述与架构.html
+uniqueId: '2023-04-09 18:13:00/[MAUI 项目实战] 手势控制音乐播放器（一）： 概述与架构.html'
+abbrlink: 69c0e7c
+date: 2023-04-09 18:13:00
+cover:
+description:
 ---
 这是一篇系列博文。请关注我，学习更多.NET MAUI开发知识！
 

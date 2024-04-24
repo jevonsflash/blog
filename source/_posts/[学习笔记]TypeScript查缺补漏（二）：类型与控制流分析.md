@@ -1,20 +1,19 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/8f715d6c34d246c5b0937cd8681627a8.png
 title: '[学习笔记]TypeScript查缺补漏（二）：类型与控制流分析'
-excerpt:
-description:
-date: 2023-11-01 18:53:00
+excerpt: / 验证是否是number类型// 验证是否是string类型。
 tags:
   - TypeScript
-
 categories:
   - JavaScript
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-11-01 18:53:00/[学习笔记]TypeScript查缺补漏（二）：类型与控制流分析.html
+uniqueId: '2023-11-01 18:53:00/[学习笔记]TypeScript查缺补漏（二）：类型与控制流分析.html'
+abbrlink: e224b296
+date: 2023-11-01 18:53:00
+cover:
+description:
 ---
 <!-- toc -->
 # 类型约束

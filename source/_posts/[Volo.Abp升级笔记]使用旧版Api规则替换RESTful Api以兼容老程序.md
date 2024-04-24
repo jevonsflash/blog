@@ -1,22 +1,24 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/ec2d87487742439aa71ee9149bde6613.png
 title: '[Volo.Abp升级笔记]使用旧版Api规则替换RESTful Api以兼容老程序'
-excerpt:
-description:
-date: 2023-03-29 11:22:00
+excerpt: >-
+  Volo.Abp 配置应用层自动生成Controller，增删查改服务（CrudAppService）将会以RESTful
+  Api的方式生成对应的接口)，这与旧版本的Abp区别很大。RESTful固然好，虽然项目里新的Api会逐步使用RESTful
+  Api代替旧的，但在前后端分离的项目中已经定好的接口，往往需要兼容之前的方式。
 tags:
   - asp.net core
   - 微服务
   - RESTful API
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-03-29 11:22:00/[Volo.Abp升级笔记]使用旧版Api规则替换RESTful Api以兼容老程序.html
+uniqueId: '2023-03-29 11:22:00/[Volo.Abp升级笔记]使用旧版Api规则替换RESTful Api以兼容老程序.html'
+abbrlink: f1a2cf73
+date: 2023-03-29 11:22:00
+cover:
+description:
 ---
 <!-- toc -->
 Volo.Abp 配置应用层自动生成Controller，增删查改服务（CrudAppService）将会以RESTful Api的方式生成对应的接口

@@ -1,24 +1,25 @@
-﻿---
-thumbnail:
-cover:
-title: '开源好用的所见即所得(WYSIWYG)编辑器：Editor.js'
-excerpt:
-description:
-date: 2024-03-11 18:42:00
+---
+thumbnail: images/96e2b23ab5954f0fa1a40269a01239e7.png
+title: 开源好用的所见即所得(WYSIWYG)编辑器：Editor.js
+excerpt: >-
+  varaiables.css中包含了大部分的样式变量，更改这些变量可以实现自定义样式。如通过重写 .root样式选择器可以实现自定义的背景色,
+  重写.ce-popover 改变弹出框样式等。:root {– 完 –
 tags:
   - Html
   - JavaScript
   - 所见即所得
   - 编辑器
-
 categories:
   - JavaScript
   - Web
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2024-03-11 18:42:00/开源好用的所见即所得(WYSIWYG)编辑器：Editor.js.html
+uniqueId: '2024-03-11 18:42:00/开源好用的所见即所得(WYSIWYG)编辑器：Editor.js.html'
+abbrlink: d2c2fe0c
+date: 2024-03-11 18:42:00
+cover:
+description:
 ---
 <!-- toc -->
 今天介绍一个开源好用的Web所见即所得(WYSIWYG)编辑器：[Editor.js](https://editorjs.io/)

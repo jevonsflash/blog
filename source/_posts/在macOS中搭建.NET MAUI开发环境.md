@@ -1,22 +1,25 @@
-﻿---
-thumbnail:
-cover:
-title: '在macOS中搭建.NET MAUI开发环境'
-excerpt:
-description:
-date: 2023-12-31 00:21:00
+---
+thumbnail: images/6bd220fee56746c990c15b9b100767c5.png
+title: 在macOS中搭建.NET MAUI开发环境
+excerpt: >-
+  在 Visual Studio Code 中，按 F5 键或单击“运行”>“启动调试”以调试 .NET MAUI 应用。在 macOS 上，建议的
+  Android SDK 目录值为 $HOME/Library/Android/sdk。此时已可以真机调试 Android
+  应用，如果真机调试不方便，我们需要安装 Android 模拟器。另外可以通过切换调试目标中的菜单，查看可用的镜像，选择一个镜像，或创建一个新的镜像。在
+  Visual Studio Code 的资源管理器中，打开项目sln文件，
 tags:
   - Xamarin
   - .net
   - MAUI
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-12-31 00:21:00/在macOS中搭建.NET MAUI开发环境.html
+uniqueId: '2023-12-31 00:21:00/在macOS中搭建.NET MAUI开发环境.html'
+abbrlink: ddf3f205
+date: 2023-12-31 00:21:00
+cover:
+description:
 ---
 <!-- toc -->
 # 准备

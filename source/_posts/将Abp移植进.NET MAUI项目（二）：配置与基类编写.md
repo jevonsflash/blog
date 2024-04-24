@@ -1,24 +1,25 @@
-﻿---
-thumbnail:
-cover:
-title: '将Abp移植进.NET MAUI项目（二）：配置与基类编写'
-excerpt:
-description:
-date: 2022-05-25 18:44:00
+---
+thumbnail: images/ced3f0d676a447679ebe50cb07bbb914.png
+title: 将Abp移植进.NET MAUI项目（二）：配置与基类编写
+excerpt: >-
+  因为我们要做一个数据持久化型的小应用，所以在完成Abp功能的集成后，我们需要做数据库相关的配置工作配置数据库在MauiBoilerplate.Core项目中，添加两个实体类：我们简单的写一个歌曲（song）的实体类其中包含了歌曲标题（MusicTitle），艺术家（Artist），专辑（Album），时长（Duration）以及发售日期（ReleaseDate）   
+  public class Song : FullAuditedEntity<long>    {  .
 tags:
   - Xamarin
   - .net
   - MAUI
   - Abp
-
 categories:
   - .NET
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-05-25 18:44:00/将Abp移植进.NET MAUI项目（二）：配置与基类编写.html
+uniqueId: '2022-05-25 18:44:00/将Abp移植进.NET MAUI项目（二）：配置与基类编写.html'
+abbrlink: a3b1360d
+date: 2022-05-25 18:44:00
+cover:
+description:
 ---
 <span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span>
 <p><span id="cke_bm_732S">&nbsp;因为我们要做一个数据持久化型的小应用，所以在完成Abp功能的集成后，我们需要做数据库相关的配置工作</span></p>

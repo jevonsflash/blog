@@ -1,23 +1,26 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: >-
+  images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5p6X5pmTbHg=,size_20,color_FFFFFF,t_70,g_se,x_16
 title: '[MAUI] 在.NET MAUI中结合Vue实现混合开发'
-excerpt:
-description:
-date: 2022-01-15 10:17:00
+excerpt: >-
+  在MAUI微软的官方方案是使用Blazor开发，但是当前市场大多数的Web项目使用Vue，React等技术构建，如果我们没法绕过已经积累的技术，用Blazor重写整个项目并不现实。Vue是当前流行的web框架，
+  简单来说是一套模板引擎，利用“模板”和“绑定”两大特性实现web页面mvvm模式开发。利用.NET
+  MAUI框架可以将Vue应用嵌入到Web容器中。可以实现跨平台的混合开发。例如我在某医疗行业项目中，已经用这个混合开发的方式生成应用，Vue代码不需要做什么改动，就能跨平台运行：如果你
 tags:
   - Xamarin
   - .net
   - MAUI
   - XAML
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-01-15 10:17:00/[MAUI] 在.NET MAUI中结合Vue实现混合开发.html
+uniqueId: '2022-01-15 10:17:00/[MAUI] 在.NET MAUI中结合Vue实现混合开发.html'
+abbrlink: edab1881
+date: 2022-01-15 10:17:00
+cover:
+description:
 ---
 <p><span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span></p>
 <p><span id="cke_bm_3172S">&nbsp;在MAUI微软的官方方案是使用Blazor开发，但是当前市场大多数的Web项目使用Vue，React等技术构建，如果我们没法绕过已经积累的技术，用Blazor重写整个项目并不现实。</span></p>

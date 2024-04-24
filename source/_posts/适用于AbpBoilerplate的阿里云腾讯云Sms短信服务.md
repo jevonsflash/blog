@@ -1,21 +1,20 @@
-﻿---
-thumbnail:
-cover:
-title: '适用于AbpBoilerplate的阿里云腾讯云Sms短信服务'
-excerpt:
-description:
-date: 2022-10-24 18:54:00
+---
+thumbnail: images/6fbfa933a7d44551ae49386aa6019dea.jpeg
+title: 适用于AbpBoilerplate的阿里云腾讯云Sms短信服务
+excerpt: '适用于AbpBoilerplate的阿里云短信服务(https://www.aliyun.com/product/sms)'
 tags:
   - .net
   - sms
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-10-24 18:54:00/适用于AbpBoilerplate的阿里云腾讯云Sms短信服务.html
+uniqueId: '2022-10-24 18:54:00/适用于AbpBoilerplate的阿里云腾讯云Sms短信服务.html'
+abbrlink: ed1ef6e
+date: 2022-10-24 18:54:00
+cover:
+description:
 ---
 # Sms
 

@@ -1,22 +1,25 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/34025b7a6a2e4bc6bd3e6503df461bc3.png
 title: '[Python]语音识别媒体中的音频到文本'
-excerpt:
-description:
-date: 2023-03-17 19:30:00
+excerpt: >-
+  Azure提供了快捷转换语音到文本的工具
+  https://speech.microsoft.com/portal。这里需要注意的是，需要上传的音频格式为16kHz 或 8kHz、16 位和单声道
+  PCM。编写代码，将视频文件test.mp4中的音频提取到test2.wav。文件以16kHz 采样率和单声道 PCM
+  编码方式，保存至。中的音频识别，并转换成文本写入。上传完成后将自动转换成文本。编写代码，将视频文件。
 tags:
   - Python
   - 语音识别
   - Azure
-
 categories:
   - Python
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-03-17 19:30:00/[Python]语音识别媒体中的音频到文本.html
+uniqueId: '2023-03-17 19:30:00/[Python]语音识别媒体中的音频到文本.html'
+abbrlink: ccca819f
+date: 2023-03-17 19:30:00
+cover:
+description:
 ---
 <!-- toc -->
 ## 准备工作

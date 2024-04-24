@@ -1,22 +1,22 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/71f3c48189bc46028c104672dcb7bf01.png
 title: '[MAUI 项目实战] 手势控制音乐播放器（二）： 手势交互'
-excerpt:
-description:
-date: 2023-04-08 18:00:00
+excerpt: >-
+  pit很简单，是一个包含了名称属性的控件，这个名称属性是用来标识pit的。定义一个拖拽物，和它拖拽的目标，拖拽物可以理解为一个平底锅（pan），拖拽目标是一个坑（pit），当拖拽物进入坑时，拖拽物就会被吸附在坑里。这里用Grid作为pit控件基类型，因为Grid可以包含子控件，我们可以在pit控件中添加子控件，比如一个图片，一个文字，这样就可以让pit控件更加丰富。，这个AbsoluteLayout类型的容器控件，内包含一系列控件作为pit，这些pit集合将作为平移手势容器的判断依据。
 tags:
   - Xamarin
   - MAUI
   - 产品设计
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-08 18:00:00/[MAUI 项目实战] 手势控制音乐播放器（二）： 手势交互.html
+uniqueId: '2023-04-08 18:00:00/[MAUI 项目实战] 手势控制音乐播放器（二）： 手势交互.html'
+abbrlink: c03d3532
+date: 2023-04-08 18:00:00
+cover:
+description:
 ---
 <!-- toc -->
 ## 原理

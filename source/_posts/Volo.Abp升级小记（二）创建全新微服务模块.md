@@ -1,24 +1,23 @@
-﻿---
-thumbnail:
-cover:
-title: 'Volo.Abp升级小记（二）创建全新微服务模块'
-excerpt:
-description:
-date: 2023-06-09 14:45:00
+---
+thumbnail: images/ae77529472a74099824e060b4b6028ec.png
+title: Volo.Abp升级小记（二）创建全新微服务模块
+excerpt: 假设有一个按照搭建的微服务项目，并安装好了abp-cli。需要创建一个名为GDMK.CAH.Common的模块，并在模块中创建标签管理功能。
 tags:
   - .net
   - asp.net core
   - 微服务
   - Abp
-
 categories:
   - .NET
   - 架构
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-06-09 14:45:00/Volo.Abp升级小记（二）创建全新微服务模块.html
+uniqueId: '2023-06-09 14:45:00/Volo.Abp升级小记（二）创建全新微服务模块.html'
+abbrlink: 4a19a765
+date: 2023-06-09 14:45:00
+cover:
+description:
 ---
 <!-- toc -->
 假设有一个按照[官方sample](https://docs.abp.io/zh-Hans/abp/latest/Samples/Microservice-Demo)搭建的微服务项目，并安装好了abp-cli。

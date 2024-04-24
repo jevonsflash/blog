@@ -1,22 +1,22 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/7d9a1b3a27974b139628dd3e1ba1ffe9.png
 title: '[学习笔记]Linux + Nginx环境下部署 Web 站点'
-excerpt:
-description:
-date: 2022-07-21 19:58:00
+excerpt: >-
+  首先更改server区域内容，root为你的站点根目录，注意不要指定任何index入口，因为这是目录。出现“blockedbyCORSpolicy”，未将网站域名添加至允许跨域访问设置。拷贝dist.zip到目标服务器的文件夹下，这里以~/下载为目标。若出现无法访问，网站报403或者404，请查看nginx日志。等待打包结束，成功后将在根目录下生成dist文件夹。部分错误可参照Troubleshooting解决。将站点文件移动至/var/www/{站点名称}/.........
 tags:
   - Linux
   - Nginx
-
 categories:
   - Linux
   - Web
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-07-21 19:58:00/[学习笔记]Linux + Nginx环境下部署 Web 站点.html
+uniqueId: '2022-07-21 19:58:00/[学习笔记]Linux + Nginx环境下部署 Web 站点.html'
+abbrlink: e233c37c
+date: 2022-07-21 19:58:00
+cover:
+description:
 ---
 <span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span><span id="cke_bm_259S">部署后端程序，请阅读：</span>
 <p><span class="cke_widget_wrapper cke_widget_inline cke_widget_csdnlink cke_widget_selected" data-cke-display-name="a" data-cke-filter="off" data-cke-widget-id="14" data-cke-widget-wrapper="1"><a href="https://www.cnblogs.com/jevonsflash/p/15879010.html">[学习笔记]Linux环境下部署 .Net5 程序 - 林晓lx - 博客园 (cnblogs.com)</a><a class="cke_widget_editable cke_widget_element" title="[学习笔记]Linux环境下部署 .Net5 程序_林晓lx的博客" href="https://blog.csdn.net/jevonsflash/article/details/122827930" data-cke-enter-mode="2" data-cke-saved-href="https://blog.csdn.net/jevonsflash/article/details/122827930" data-cke-widget-data="%7B%22url%22%3A%22https%3A%2F%2Fblog.csdn.net%2Fjevonsflash%2Farticle%2Fdetails%2F122827930%22%2C%22text%22%3A%22%5B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5DLinux%E7%8E%AF%E5%A2%83%E4%B8%8B%E9%83%A8%E7%BD%B2%20.Net5%20%E7%A8%8B%E5%BA%8F_%E6%9E%97%E6%99%93lx%E7%9A%84%E5%8D%9A%E5%AE%A2%22%2C%22desc%22%3A%22%22%2C%22icon%22%3A%22https%3A%2F%2Fcsdnimg.cn%2Frelease%2Fblog_editor_html%2Frelease2.1.7%2Fckeditor%2Fplugins%2FCsdnLink%2Ficons%2Ficon-default.png%3Ft%3DM666%22%2C%22isCard%22%3Afalse%2C%22hasResquest%22%3Atrue%2C%22iconDefault%22%3A%22https%3A%2F%2Fcsdnimg.cn%2Frelease%2Fblog_editor_html%2Frelease2.1.7%2Fckeditor%2Fplugins%2FCsdnLink%2Ficons%2Ficon-default.png%3Ft%3DM666%22%2C%22id%22%3A%22ghgvyl-1658404533667%22%2C%22classes%22%3Anull%7D" data-cke-widget-editable="text" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-link-icon="https://csdnimg.cn/release/blog_editor_html/release2.1.7/ckeditor/plugins/CsdnLink/icons/icon-default.png?t=M666" data-link-title="[学习笔记]Linux环境下部署 .Net5 程序_林晓lx的博客" data-widget="csdnlink"><br /></a></span></p>

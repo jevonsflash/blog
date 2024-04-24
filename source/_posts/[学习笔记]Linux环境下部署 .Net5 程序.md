@@ -1,22 +1,21 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/5e64d80c074d4b48a39322fe27ba5107.png
 title: '[学习笔记]Linux环境下部署 .Net5 程序'
-excerpt:
-description:
-date: 2022-02-10 14:36:00
+excerpt: 公司的项目需要部署到一台公网的linux服务器，以便同事们测试小程序。记录了步骤和一些坑
 tags:
   - Linux
   - .net
   - Nginx
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-02-10 14:36:00/[学习笔记]Linux环境下部署 .Net5 程序.html
+uniqueId: '2022-02-10 14:36:00/[学习笔记]Linux环境下部署 .Net5 程序.html'
+abbrlink: ca121a80
+date: 2022-02-10 14:36:00
+cover:
+description:
 ---
 <p><span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span><span id="cke_bm_409S">公司的项目需要部署到一台公网的linux服务器，以便同事们测试小程序。</span></p>
 <p>目标服务器是新搭建的CentOS 8虚拟机，以非docker的方式部署。现记录过程便于日后部署至项目甲方的服务器上，因为甲方的服务器可能未联网，或者网络资源有限（公司按流量算钱的WiFi棒）&nbsp;宗旨是尽量用U盘拷贝二进制文件以离线的方式安装</p>

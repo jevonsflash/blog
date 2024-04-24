@@ -1,22 +1,22 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/4f06f8f6208c43ceb45023a4036f95ee.png
 title: '[MAUI]弧形进度条与弧形滑块的交互实现'
-excerpt:
-description:
-date: 2023-06-18 15:03:00
+excerpt: >-
+  Maxiumum：最大值Minimum：最小值Progress：当前进度AnimationLength：动画时长BorderWidth：描边宽度LabelContent：标签内容ContainerColor：容器颜色，即进度条的背景色ProgressColor：进度条颜色set;set;set;set;set;set;set;set;以及ValueChange事件，此事件用于在进度值改变时触发。
 tags:
   - 控件
   - Xamarin
   - MAUI
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-06-18 15:03:00/[MAUI]弧形进度条与弧形滑块的交互实现.html
+uniqueId: '2023-06-18 15:03:00/[MAUI]弧形进度条与弧形滑块的交互实现.html'
+abbrlink: 8bc3857e
+date: 2023-06-18 15:03:00
+cover:
+description:
 ---
 <!-- toc -->
 进度条（ProgressBar）用于展示任务的进度，告知用户当前状态和预期；

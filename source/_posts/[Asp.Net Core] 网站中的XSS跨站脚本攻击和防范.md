@@ -1,23 +1,24 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/1e9e82b7a58741b5b389484043583110.png
 title: '[Asp.Net Core] 网站中的XSS跨站脚本攻击和防范'
-excerpt:
-description:
-date: 2023-04-14 18:40:00
+excerpt: >-
+  跨站脚本攻击(Cross Site Scripting)，为了不和层叠样式表(Cascading Style Sheets,
+  CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS。恶意攻击者往Web页面里插入恶意Web脚本代码（html、javascript、css等），当用户浏览该页面时，嵌入其中的Web脚本代码会被执行，从而达到恶意攻击用户的特殊目的。源代码出自：https://www.cnblogs.com/OleRookie/p/5970167.html。重新访问，成功触发了XSS弹窗。
 tags:
   - asp.net core
   - 网络安全
   - xss
-
 categories:
   - .NET
   - Web
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-14 18:40:00/[Asp.Net Core] 网站中的XSS跨站脚本攻击和防范.html
+uniqueId: '2023-04-14 18:40:00/[Asp.Net Core] 网站中的XSS跨站脚本攻击和防范.html'
+abbrlink: 7c1d583
+date: 2023-04-14 18:40:00
+cover:
+description:
 ---
 漏洞说明：
 跨站脚本攻击(Cross Site Scripting)，为了不和层叠样式表(Cascading Style Sheets, CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS。恶意攻击者往Web页面里插入恶意Web脚本代码（html、javascript、css等），当用户浏览该页面时，嵌入其中的Web脚本代码会被执行，从而达到恶意攻击用户的特殊目的。

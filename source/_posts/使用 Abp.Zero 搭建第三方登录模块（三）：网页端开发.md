@@ -1,25 +1,25 @@
-﻿---
-thumbnail:
-cover:
-title: '使用 Abp.Zero 搭建第三方登录模块（三）：网页端开发'
-excerpt:
-description:
-date: 2022-07-19 17:08:00
+---
+thumbnail: images/93bc6239f51c44b8a55cb83702b342e9.png
+title: 使用 Abp.Zero 搭建第三方登录模块（三）：网页端开发
+excerpt: >-
+  在此之前我们需写一个参数传递对象，为了保留一定的扩展能力，data中我们定义loginExternalForms，已经实现的微信小程序登录，则对应的authProvider值为“WeChatAuthProvider”，providerAccessCode则为生成的Token值。上一章，我们介绍了服务端的开发，这次我们需要调用GetACode，GetToken，分别获取小程序码，和获取当前状态。afterLoginSuccess函数用于登录成功后的逻辑，停止计时器，并跳转页面，本实例仅做弹窗提示。......
 tags:
   - Vue
   - Html
   - 小程序
   - 微信公众号
-
 categories:
   - JavaScript
   - Web
   - 小程序/公众号
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-07-19 17:08:00/使用 Abp.Zero 搭建第三方登录模块（三）：网页端开发.html
+uniqueId: '2022-07-19 17:08:00/使用 Abp.Zero 搭建第三方登录模块（三）：网页端开发.html'
+abbrlink: 571d661
+date: 2022-07-19 17:08:00
+cover:
+description:
 ---
 <span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span>简短回顾一下网页端的流程，总的来说网页端的职责有三：<ol>
 <li>生成一个随机字符作为鉴权会话的临时Token，</li>

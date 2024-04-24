@@ -1,24 +1,26 @@
-﻿---
-thumbnail:
-cover:
-title: '用Abp实现两步验证（Two-Factor Authentication，2FA）登录（一）：认证模块'
-excerpt:
-description:
-date: 2023-04-07 22:02:00
+---
+thumbnail: images/bf3ffc6c46054191b11352e44a5fe86b.png
+title: 用Abp实现两步验证（Two-Factor Authentication，2FA）登录（一）：认证模块
+excerpt: >-
+  创建方法IsTwoFactorAuthRequiredAsync，返回登录用户是否需要双因素认证，若未开启TwoFactorLogin.IsEnabled、用户未开启双因素认证，或没有添加验证提供者，则跳过双因素认证。双因素认证（Two-Factor
+  Authentication，简称
+  2FA）是使用两个或多个因素的任意组合来验证用户身份，例如用户提供密码后，还要提供短消息发送的验证码，以证明用户确实拥有该手机。至此，双因素认证的后端逻辑已经完成，接下来我们将补充“记住”功能，实现一段时间内免验证。
 tags:
   - asp.net core
   - Abp
   - 阿里云
   - 腾讯云
   - 网络安全
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-07 22:02:00/用Abp实现两步验证（Two-Factor Authentication，2FA）登录（一）：认证模块.html
+uniqueId: '2023-04-07 22:02:00/用Abp实现两步验证（Two-Factor Authentication，2FA）登录（一）：认证模块.html'
+abbrlink: 24d63406
+date: 2023-04-07 22:02:00
+cover:
+description:
 ---
 <!-- toc -->
 在之前的博文 [用Abp实现短信验证码免密登录（一）：短信校验模块](https://www.cnblogs.com/jevonsflash/p/16848698.html) 一文中，我们实现了用户验证码校验模块，今天来拓展这个模块，使Abp用户系统支持双因素认证（Two-Factor Authentication）功能。

@@ -1,23 +1,25 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/352fc9cfd47649a1b0b82a5bd38d2fa8.png
 title: '[MAUI]模仿哔哩哔哩的一键三连'
-excerpt:
-description:
-date: 2024-03-25 19:43:00
+excerpt: >-
+  的CodeBehind中，创建OnCanvasViewPaintSurface，通过给定起始角度为正上方，扫描角度为360对于100%进度，通过插值计算出当前进度对应的扫描角度，绘制出进度条。“三连按钮”是一组按钮，轻击时当做普通状态按钮使用，当长按
+  2
+  秒钟后，转为三连模式，可以控制并显示进度，并在进度完成时弹出一些泡泡。在本项目中，需要监听长按动作，当“三连按钮”长按2秒后，转为三连模式，此时需要监听手指释放情况，当时长不足时取消三连。当按钮被点击时此Timer会开。这些按钮用svg格式在html中。
 tags:
   - Xamarin
   - .net
   - MAUI
   - XAML
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2024-03-25 19:43:00/[MAUI]模仿哔哩哔哩的一键三连.html
+uniqueId: '2024-03-25 19:43:00/[MAUI]模仿哔哩哔哩的一键三连.html'
+abbrlink: a6dfa37
+date: 2024-03-25 19:43:00
+cover:
+description:
 ---
 <!-- toc -->
 [哔哩哔哩(Bilibili)](https://www.bilibili.com/)中用户可以通过长按点赞键同时完成点赞、投币、收藏对UP主表示支持，后UP主多用“一键三连”向视频浏览者请求对其作品同时进行点赞、投币、收藏。

@@ -1,24 +1,24 @@
-﻿---
-thumbnail:
-cover:
-title: '在EF Core中为数据表按列加密存储'
-excerpt:
-description:
-date: 2023-04-05 08:30:00
+---
+thumbnail: images/a9edb9793cc841ff91391ec7d4d298d7.png
+title: 在EF Core中为数据表按列加密存储
+excerpt: >-
+  转换器将实体中属性类型，通过AES加密算法，转换为Base64编码字符串类型，存储到数据库中。当从数据库中读取数据时，再通过AES解密算法，将Base64编码字符串类型转换为实体中属性类型。在转换器中，将这些参数设置为静态属性，方便在使用时，进行修改。，则不需要转换为Base64编码字符串类型，直接对二进制数据进行加密和解密。其中有身份证号码IdentificationNumber列，需要加密存储，该如何实现？方法，为User表的IdentificationNumber列，添加值转换器。
 tags:
   - EFCore
   - 数据库
   - asp.net core
   - sqlserver
-
 categories:
   - .NET
   - Database
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-05 08:30:00/在EF Core中为数据表按列加密存储.html
+uniqueId: '2023-04-05 08:30:00/在EF Core中为数据表按列加密存储.html'
+abbrlink: 7926cf99
+date: 2023-04-05 08:30:00
+cover:
+description:
 ---
 假设有User表
 ```csharp

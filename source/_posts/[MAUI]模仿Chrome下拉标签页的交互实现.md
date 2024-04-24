@@ -1,8 +1,8 @@
 ﻿---
-thumbnail:
+thumbnail: 'images/2fd307f3ec154811bc32548b546d2100.png'
 cover:
 title: '[MAUI]模仿Chrome下拉标签页的交互实现'
-excerpt:
+excerpt: '今天来说说怎样在.NET MAUI 中制作一个灵动的类标签页控件，这类控件常用于页面中多个子页面的导航功能。比如在手机版的Chrome中，当用户在网页中下拉时将出现“新建标签页”，“刷新”，“关闭标签页”三个选项，通过不间断的横向手势滑动，可以在这三个选项之间切换。浏览网页常用选项融入到了原“下拉刷新”交互中，对比传统交互方式它更显便捷和流畅，根据Steve Krug之《Don't Make Me Think》的核心思想，用户无需思考点击次序，只需要使用基础动作就能完成交互。'
 description:
 date: 2023-05-28 18:00:00
 tags:

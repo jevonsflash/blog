@@ -1,22 +1,23 @@
-﻿---
-thumbnail:
-cover:
-title: '适用于AbpBoilerplate的RocketChat Api库'
-excerpt:
-description:
-date: 2023-02-12 00:12:00
+---
+thumbnail: images/93e06287a819459e9c473b2d59a3c367.png
+title: 适用于AbpBoilerplate的RocketChat Api库
+excerpt: >-
+  适用于AbpBoilerplate的RocketChat Api库Rocket.Chat
+  是一个免费、开源、可扩展、高度可定制且安全的平台,可让您与团队进行交流和协作、共享文件和实时聊天(https://www.rocket.chat/)Rocket.Chat服务的安装请阅读。
 tags:
   - .net
   - rocket.chat
   - 即时通讯
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-02-12 00:12:00/适用于AbpBoilerplate的RocketChat Api库.html
+uniqueId: '2023-02-12 00:12:00/适用于AbpBoilerplate的RocketChat Api库.html'
+abbrlink: 51515f74
+date: 2023-02-12 00:12:00
+cover:
+description:
 ---
 # RocketChat
 

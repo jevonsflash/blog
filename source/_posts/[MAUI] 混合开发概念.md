@@ -1,23 +1,23 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/b6ee43c2e343cfc78508ccef68c9d5d3.png
 title: '[MAUI] 混合开发概念'
-excerpt:
-description:
-date: 2022-01-15 10:15:00
+excerpt: >-
+  混合开发的概念是相对与原生开发来说的：App不直接运行原生程序，而是在原生程序中运行一个Web程序，原生程序中包含Web运行时，用于承载Web页面。暂且将原生应用称之为Web容器，Web容器应该能让JavaScript代码与原生平台的代码交互，互相调用，同时为上层提供交互逻辑，例如导航，事件，Cookie，刷新等内容。之前使用Xamarin可以利用WebView控件做混合开发，但是到目前为止WebView功能还是比较孱弱。用WebView实现混合开发主要是通过重写各个平台的自定义呈现器（Renderer
 tags:
   - Xamarin
   - .net
   - MAUI
   - XAML
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-01-15 10:15:00/[MAUI] 混合开发概念.html
+uniqueId: '2022-01-15 10:15:00/[MAUI] 混合开发概念.html'
+abbrlink: f9023f4a
+date: 2022-01-15 10:15:00
+cover:
+description:
 ---
 <p><span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span></p>
 <p>混合开发的概念是相对与原生开发来说的：App不直接运行原生程序，而是在原生程序中运行一个Web程序，原生程序中包含Web运行时，用于承载Web页面。暂且将原生应用称之为Web容器，Web容器应该能让JavaScript代码与原生平台的代码交互，互相调用，同时为上层提供交互逻辑，例如导航，事件，Cookie，刷新等内容。</p>

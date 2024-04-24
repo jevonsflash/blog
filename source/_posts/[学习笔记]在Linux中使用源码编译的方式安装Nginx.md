@@ -1,22 +1,24 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: >-
+  images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5p6X5pmTbHg=,size_20,color_FFFFFF,t_70,g_se,x_16
 title: '[学习笔记]在Linux中使用源码编译的方式安装Nginx'
-excerpt:
-description:
-date: 2022-03-17 20:28:00
+excerpt: >-
+  使用源码的方式安装nginx，可以加深对linux目录的理解，今天就来放弃yum.. rpm.. dnf..
+  这些在linux下较为“傻瓜”的操作方式，实战源码编译的方式安装nginx！
 tags:
   - Linux
   - Nginx
-
 categories:
   - .NET
   - DevOps
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-03-17 20:28:00/[学习笔记]在Linux中使用源码编译的方式安装Nginx.html
+uniqueId: '2022-03-17 20:28:00/[学习笔记]在Linux中使用源码编译的方式安装Nginx.html'
+abbrlink: e4f943fa
+date: 2022-03-17 20:28:00
+cover:
+description:
 ---
 <h2><span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span>准备工作</h2>
 <p><strong>准备nginx源码包：</strong></p>

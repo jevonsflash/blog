@@ -1,24 +1,26 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/b0191a73e3fd45c1a5dc60b86fab02ca.png
 title: '[MAUI]在.NET MAUI中实现可拖拽排序列表'
-excerpt:
-description:
-date: 2023-08-15 14:33:00
+excerpt: >-
+  NET MAUI
+  中提供了拖放(drag-drop)手势识别器，允许用户通过拖动手势来移动控件。在这篇文章中，我们将学习如何使用拖放手势识别器来实现可拖拽排序列表。在本例中，列表中显示不同大小的磁贴（Tile）并且可以拖拽排序。使用.NET
+  MAU实现跨平台支持，本项目可运行于Android、iOS平台。
 tags:
   - Xamarin
   - .net
   - MAUI
   - XAML
-
 categories:
   - .NET MAUI
   - 产品设计
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-08-15 14:33:00/[MAUI]在.NET MAUI中实现可拖拽排序列表.html
+uniqueId: '2023-08-15 14:33:00/[MAUI]在.NET MAUI中实现可拖拽排序列表.html'
+abbrlink: 71753ba5
+date: 2023-08-15 14:33:00
+cover:
+description:
 ---
 [toc]
 

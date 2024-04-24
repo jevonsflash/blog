@@ -1,21 +1,22 @@
-﻿---
-thumbnail:
-cover:
-title: '利用Abp过滤器实现业务数据“回收站”功能'
-excerpt:
-description:
-date: 2023-07-20 08:58:00
+---
+thumbnail: images/09db2dbe59514a7dad8260f966752bb2.png
+title: 利用Abp过滤器实现业务数据“回收站”功能
+excerpt: >-
+  利用这个原理，可以将“软删除”行为认为是放入了“回收站”，而将“恢复”行为认为是从“回收站”中取出。将记录硬删除的行为认为是“永久删除”，
+  将全部已“软删除”的记录硬删除，则是“清空回收站”在DbContext中，重写CreateFilterExpression方法，当启用了“仅查看软删除”过滤器时，自动过滤软删除的实体。在删除记录时，通过调用仓储的Delete()方法，将记录放入“回收站”中。回收站是当用户删除一条记录时，不是直接从数据库中删除，而是将其放入“回收站”，以便用户可以在需要时恢复数据。
 tags:
   - asp.net core
   - Abp
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-07-20 08:58:00/利用Abp过滤器实现业务数据“回收站”功能.html
+uniqueId: '2023-07-20 08:58:00/利用Abp过滤器实现业务数据“回收站”功能.html'
+abbrlink: e151a176
+date: 2023-07-20 08:58:00
+cover:
+description:
 ---
 <!-- toc -->
 ## 原理

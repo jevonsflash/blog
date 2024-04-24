@@ -1,24 +1,23 @@
-﻿---
-thumbnail:
-cover:
-title: '将Abp移植进.NET MAUI项目（三）：构建UI层'
-excerpt:
-description:
-date: 2022-05-25 18:46:00
+---
+thumbnail: images/a0a15ef5cc98481cb58307e2866c7904.png
+title: 将Abp移植进.NET MAUI项目（三）：构建UI层
+excerpt: "很开心，终于到了创建页面的时候了！我们需要两个页面MainPage 主页面\tMusicItemPage 条目编辑页面编写主页面新建一个MainPageViewModel.cs，作为MainPage的ViewModel层    public class MainPageViewModel : ViewModelBase    {        private readonly IRepository<Song, long> songRepository;      ."
 tags:
   - Xamarin
   - .net
   - MAUI
   - Abp
-
 categories:
   - .NET
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-05-25 18:46:00/将Abp移植进.NET MAUI项目（三）：构建UI层.html
+uniqueId: '2022-05-25 18:46:00/将Abp移植进.NET MAUI项目（三）：构建UI层.html'
+abbrlink: ab7a5062
+date: 2022-05-25 18:46:00
+cover:
+description:
 ---
 <span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span>
 <p><span id="cke_bm_1048S">&nbsp;很开心，终于到了创建页面的时候了！</span></p>

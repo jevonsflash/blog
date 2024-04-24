@@ -1,22 +1,22 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/760285b4c2d043bc81056b7e95215070.png
 title: '[MAUI]模仿微信“按住-说话”的交互实现'
-excerpt:
-description:
-date: 2023-04-15 20:31:00
+excerpt: >-
+  在进入功能区域时，TalkBox的颜色，偏移量和宽度都会发生变化，创建一个复合动画TalkBoxAnimations，用于触发TalkBox的动画效果。此时应该是可以拖动，并且在拖拽开始，进入pit，离开pit，释放时，分别触发Start，In，Out，Over四个状态。Codebeind代码中，配置Active和DeActive方法，用于激活和取消激活功能区域按钮的样式。创建一个用于显示功能区域和TalkBox的渐变动画，用于在拖拽开始和结束时，显示和隐藏这两个控件。是一个带有按住说话的按钮。
 tags:
   - Xamarin
   - MAUI
   - XAML
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-15 20:31:00/[MAUI]模仿微信“按住-说话”的交互实现.html
+uniqueId: '2023-04-15 20:31:00/[MAUI]模仿微信“按住-说话”的交互实现.html'
+abbrlink: 1fc3e706
+date: 2023-04-15 20:31:00
+cover:
+description:
 ---
 <!-- toc -->
  [.NET MAUI ](https://learn.microsoft.com/zh-cn/dotnet/maui/fundamentals/gestures/pan?view=net-maui-7.0)跨平台框架包含了识别平移手势的功能，在之前的博文[[MAUI 项目实战] 手势控制音乐播放器（二）： 手势交互](https://www.cnblogs.com/jevonsflash/p/17298935.html)中利用此功能实现了pan-pit拖拽系统。

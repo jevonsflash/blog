@@ -1,22 +1,22 @@
-﻿---
-thumbnail:
-cover:
-title: '解决Abp设置DefaultLanguage默认语言不生效的问题'
-excerpt:
-description:
-date: 2023-04-04 20:57:00
+---
+thumbnail: images/95de1bba563e47e7a7db20290af169b3.png
+title: 解决Abp设置DefaultLanguage默认语言不生效的问题
+excerpt: >-
+  默认地，Abp的语言提供程序将返回的CultureInfo为En，在一些默认实现的接口（比如/api/TokenAuth/Authenticate）返回的错误信息是英文。当请求到来时，会按照顺序依次调用这些语言提供程序，直到有语言提供程序的规则命中并返回了CultureInfo，这个CultureInfo就会被用于当前请求的语言设置。因此我们需要把AbpSettings中获取默认语言设置的优先级提高，即将AbpDefaultRequestCultureProvider排在默认的提供程序之前。
 tags:
   - asp.net core
   - Abp
   - C#
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-04 20:57:00/解决Abp设置DefaultLanguage默认语言不生效的问题.html
+uniqueId: '2023-04-04 20:57:00/解决Abp设置DefaultLanguage默认语言不生效的问题.html'
+abbrlink: 7ec9df9
+date: 2023-04-04 20:57:00
+cover:
+description:
 ---
 <!-- toc -->
 ## 现象

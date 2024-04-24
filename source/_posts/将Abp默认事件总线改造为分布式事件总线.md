@@ -1,21 +1,21 @@
-﻿---
-thumbnail:
-cover:
-title: '将Abp默认事件总线改造为分布式事件总线'
-excerpt:
-description:
-date: 2023-12-20 17:14:00
+---
+thumbnail: images/3329da6845684af7a322331cb35c6005.png
+title: 将Abp默认事件总线改造为分布式事件总线
+excerpt: >-
+  定义NotificationEventData，用于传递自定义事件。set;set;set;set;在消费者端，定义一个事件处理器，用于处理自定义事件。在生产者端，触发自定义事件。运行程序，可以看到消费者端打印出了自定义事件。
 tags:
   - Abp
-
 categories:
   - .NET
   - 架构
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-12-20 17:14:00/将Abp默认事件总线改造为分布式事件总线.html
+uniqueId: '2023-12-20 17:14:00/将Abp默认事件总线改造为分布式事件总线.html'
+abbrlink: 30f4df2
+date: 2023-12-20 17:14:00
+cover:
+description:
 ---
 
 <!-- toc -->

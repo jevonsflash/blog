@@ -1,16 +1,18 @@
-﻿---
-thumbnail:
-cover:
-title: '用PyInstaller打包PyQt程序'
-excerpt:
-description:
-date: 2021-01-15 17:22:00
-tags:
-categories: 
+---
+thumbnail: >-
+  images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pldm9uc2ZsYXNo,size_16,color_FFFFFF,t_70
+title: 用PyInstaller打包PyQt程序
+excerpt: "在工程根目录下新建一个打包脚本 pyinstall-singlefile.py\t在工程根目录下创建icon图标，mainIcon.ico打开pyinstall-singlefile.py"
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2021-01-15 17:22:00/用PyInstaller打包PyQt程序.html
+uniqueId: '2021-01-15 17:22:00/用PyInstaller打包PyQt程序.html'
+abbrlink: e6fdd14c
+date: 2021-01-15 17:22:00
+cover:
+description:
+tags:
+categories:
 ---
 <p>在开发Python应用时需要交付客户，可以使用pyinstaller库来打包成exe文件，在用winzip等自解压格式包装成安装文件交付客户，这次记录一下步骤</p>
 <ul>

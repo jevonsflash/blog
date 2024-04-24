@@ -1,23 +1,24 @@
-﻿---
-thumbnail:
-cover:
-title: 'Abp框架Web站点的安全性提升'
-excerpt:
-description:
-date: 2023-04-18 13:48:00
+---
+thumbnail: images/66580681f877496180ace8f55beb5f13.png
+title: Abp框架Web站点的安全性提升
+excerpt: >-
+  本文将从GB/T 28448-2019《信息安全技术
+  网络安全等级保护测评要求》规定的安全计算环境中解读、摘要若干安全要求，结合Abp框架，对站点进行安全升级。
 tags:
   - Abp
   - 网络安全
   - 鉴权
-
 categories:
   - .NET
   - DevOps
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-18 13:48:00/Abp框架Web站点的安全性提升.html
+uniqueId: '2023-04-18 13:48:00/Abp框架Web站点的安全性提升.html'
+abbrlink: '5e3878'
+date: 2023-04-18 13:48:00
+cover:
+description:
 ---
 
 本文将从GB/T 22239《信息安全技术 网络安全等级保护基本要求》规定的安全计算环境中解读、摘要若干安全要求，结合Abp框架，对站点进行安全升级。

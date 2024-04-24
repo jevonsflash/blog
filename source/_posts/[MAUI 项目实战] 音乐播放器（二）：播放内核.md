@@ -1,23 +1,23 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/13e6e450796f4300b51159cf0ba79854.png
 title: '[MAUI 项目实战] 音乐播放器（二）：播放内核'
-excerpt:
-description:
-date: 2023-02-12 00:27:00
+excerpt: >-
+  曲目排序，原理是通过交换位置实现的，iOS和Android平台都有自己的可排序列表控件，在对选中的条目进行排序（往往是提起条目-拖拽-释放）的过程中，触发事件往往提供当前条目。在传统播放器随机播放时，如果下一曲不是我想听的，我仍然想听上一曲，由于上一曲按钮是随机触发的时机，你可能找不到它了，不得不再音乐列表再搜索它。播放控制类，用于当前平台播放器对象的操作，对当前所播放曲目的暂停/播放，下一首/上一首，快进快退（寻迹），随机、单曲模式等功能的控制。同样，用到了排序逻辑，再将他的排序（
 tags:
   - Xamarin
   - .net
   - MAUI
-
 categories:
   - .NET
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-02-12 00:27:00/[MAUI 项目实战] 音乐播放器（二）：播放内核.html
+uniqueId: '2023-02-12 00:27:00/[MAUI 项目实战] 音乐播放器（二）：播放内核.html'
+abbrlink: 9f432214
+date: 2023-02-12 00:27:00
+cover:
+description:
 ---
 ## 播放控制服务
 IMusicControlService:

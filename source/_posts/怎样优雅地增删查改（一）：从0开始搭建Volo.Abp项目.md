@@ -1,24 +1,27 @@
-﻿---
-thumbnail:
-cover:
-title: '怎样优雅地增删查改（一）：从0开始搭建Volo.Abp项目'
-excerpt:
-description:
-date: 2023-07-07 19:04:00
+---
+thumbnail: images/8665e43911e9403893c62344144fd103.png
+title: 怎样优雅地增删查改（一）：从0开始搭建Volo.Abp项目
+excerpt: >-
+  软件系统中数据库或者持久层的基本操作功能可以用Curd描述，Curd即
+  增加（Create）、更新（Update）、读取查询（Retrieve）和删除（Delete），
+  这4个单词的首字母。在常见的业务系统中，对数据的大部分操作都是Curd，在实践的过程中对数据的筛选、排序、分页、关联查询等功能抽象和封装。本系列博文将从0开始，逐步搭建一个基于Volo.Abp
+  + Vue 的前后端分离的，具有Curd通用查询功能的项目。项目介绍本项目是基于一个简单的用户健康数据管理系统，我们将对业务常用的查询功能进
 tags:
   - asp.net core
   - 微服务
   - Abp
   - Volo.Abp
-
 categories:
   - .NET
   - 架构
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-07-07 19:04:00/怎样优雅地增删查改（一）：从0开始搭建Volo.Abp项目.html
+uniqueId: '2023-07-07 19:04:00/怎样优雅地增删查改（一）：从0开始搭建Volo.Abp项目.html'
+abbrlink: e7ad084e
+date: 2023-07-07 19:04:00
+cover:
+description:
 ---
 <!-- toc -->
 软件系统中数据库或者持久层的基本操作功能可以用Curd描述，Curd即 增加（Create）、更新（Update）、读取查询（Retrieve）和删除（Delete）， 这4个单词的首字母。

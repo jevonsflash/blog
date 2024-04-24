@@ -1,24 +1,23 @@
-﻿---
-thumbnail:
-cover:
-title: '将Abp移植进.NET MAUI项目（一）：搭建项目'
-excerpt:
-description:
-date: 2022-05-25 18:43:00
+---
+thumbnail: images/ab61d90ef77048739aa93b47c52b23a7.png
+title: 将Abp移植进.NET MAUI项目（一）：搭建项目
+excerpt: "去年12月份做了MAUI混合开发框架的调研，想起来文章里给自己挖了个坑，要教大家如何把Abp移植进Maui项目，今天来填坑。熟悉Abp的同学都知道，Abp 是一套强大的应用程序设计时框架（俗称脚手架），新版本的Abp vNext为微服务和网络优化的更多，然而本地开发经典Abp已经够用，而且官方没有停止维护，因此使用这个框架MAUI则是跨平台的应用程序抽象层，强大的运行时框架 + 强大的设计时框架 ， 我说这是宇宙最强大跨平台开发框架，不为过吧？\U0001F601搭建MAUI项目请注意：本文发布时，MAUI处"
 tags:
   - Xamarin
   - .net
   - MAUI
   - Abp
-
 categories:
   - .NET
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-05-25 18:43:00/将Abp移植进.NET MAUI项目（一）：搭建项目.html
+uniqueId: '2022-05-25 18:43:00/将Abp移植进.NET MAUI项目（一）：搭建项目.html'
+abbrlink: '78409197'
+date: 2022-05-25 18:43:00
+cover:
+description:
 ---
 <span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span>
 <h2><span id="cke_bm_379S">前言</span></h2>

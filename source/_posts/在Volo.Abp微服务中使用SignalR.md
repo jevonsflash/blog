@@ -1,22 +1,21 @@
-﻿---
-thumbnail:
-cover:
-title: '在Volo.Abp微服务中使用SignalR'
-excerpt:
-description:
-date: 2023-08-03 17:48:00
+---
+thumbnail: images/ba307bfc276b4de8a250727d9d4dd512.png
+title: 在Volo.Abp微服务中使用SignalR
+excerpt: 假设需要通过Signalr发送消息通知，并在前端接收消息通知的功能。
 tags:
   - asp.net core
   - Volo.Abp
   - SignalR
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-08-03 17:48:00/在Volo.Abp微服务中使用SignalR.html
+uniqueId: '2023-08-03 17:48:00/在Volo.Abp微服务中使用SignalR.html'
+abbrlink: 6a33f4ba
+date: 2023-08-03 17:48:00
+cover:
+description:
 ---
 
 假设需要通过SignalR发送消息通知，并在前端接收消息通知的功能

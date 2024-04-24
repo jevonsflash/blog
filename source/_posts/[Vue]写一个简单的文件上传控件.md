@@ -1,21 +1,23 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/95937c7177a349b091fa81d3a0df8376.png
 title: '[Vue]写一个简单的文件上传控件'
-excerpt:
-description:
-date: 2022-04-20 15:10:00
+excerpt: >-
+  这篇将介绍如何写一个简单的基于Vue+Element的文件上传控件。控件将具有1. 上传队列的列表，显示文件名称，大小等信息，可以显示上传进度实时刷新2.
+  取消上传使用Element的uploader控件，上传文件的行为和样式不用自己全部实现，使代码简化。且有足够的扩展性，文件传输请求的代码可以基于axios完全自己重写。我们只用关心核心代码。搭建项目框架首先建立一个空白的项目，引入Element控件库，具体的操作和使用Element控件库请看官方文档：组件
+  | ..
 tags:
   - Vue
   - ElementUI
-
 categories:
   - Web
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-04-20 15:10:00/[Vue]写一个简单的文件上传控件.html
+uniqueId: '2022-04-20 15:10:00/[Vue]写一个简单的文件上传控件.html'
+abbrlink: 4f544a9a
+date: 2022-04-20 15:10:00
+cover:
+description:
 ---
 <span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span><span id="cke_bm_382S">这篇将介绍如何写一个简单的基于Vue+Element的文件上传控件。</span>
 <p>控件将具有</p>

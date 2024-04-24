@@ -1,23 +1,22 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/0e22b2cfa75f47c98d65d23b8a58f6e0.png
 title: '[MAUI 项目实战] 手势控制音乐播放器（三）： 动画'
-excerpt:
-description:
-date: 2023-04-09 00:19:00
+excerpt: 我们需要一个拉扯回弹的效果，可以通过自定义缓动函数实现。我用python拟合了一个适合拖拽物回弹的曲线。模拟一种弹性拉扯的效果。
 tags:
   - Xamarin
   - MAUI
   - XAML
   - 产品设计
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-09 00:19:00/[MAUI 项目实战] 手势控制音乐播放器（三）： 动画.html
+uniqueId: '2023-04-09 00:19:00/[MAUI 项目实战] 手势控制音乐播放器（三）： 动画.html'
+abbrlink: bb5e68ea
+date: 2023-04-09 00:19:00
+cover:
+description:
 ---
 <!-- toc -->
 上一章节我们创建了手势容器控件PanContainer，它对拖拽物进行包装并响应了平移手势和点击手势。

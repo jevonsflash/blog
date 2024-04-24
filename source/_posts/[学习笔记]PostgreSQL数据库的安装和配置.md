@@ -1,22 +1,21 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/a9b44db8d4c546fd91ae6d9437beca51.png
 title: '[学习笔记]PostgreSQL数据库的安装和配置'
-excerpt:
-description:
-date: 2023-02-12 00:15:00
+excerpt: 本文简单介绍了Postgres数据库在Linux系统下的安装和配置
 tags:
   - Linux
   - 数据库
-
 categories:
   - Database
   - Linux
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-02-12 00:15:00/[学习笔记]PostgreSQL数据库的安装和配置.html
+uniqueId: '2023-02-12 00:15:00/[学习笔记]PostgreSQL数据库的安装和配置.html'
+abbrlink: 248cc486
+date: 2023-02-12 00:15:00
+cover:
+description:
 ---
 ## 安装
 

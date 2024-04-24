@@ -1,24 +1,28 @@
-﻿---
-thumbnail:
-cover:
-title: '用Abp实现两步验证（Two-Factor Authentication，2FA）登录（二）：Vue网页端开发'
-excerpt:
-description:
-date: 2023-04-12 13:55:00
+---
+thumbnail: images/01474eb83c2249bfbeaf23c73f3420d7.png
+title: 用Abp实现两步验证（Two-Factor Authentication，2FA）登录（二）：Vue网页端开发
+excerpt: >-
+  前端代码的框架采用vue.js + elementUI
+  这套较为简单的方式实现，以及typescript语法更方便阅读。首先添加全局对象：loginForm: 登录表单对象twoFactorData:
+  两步验证数据，showTwoFactorSuccess: 是否显示两步验证成功提示。
 tags:
   - Vue
   - Html
   - sms
   - 网络安全
-
 categories:
   - JavaScript
   - Web
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-12 13:55:00/用Abp实现两步验证（Two-Factor Authentication，2FA）登录（二）：Vue网页端开发.html
+uniqueId: >-
+  2023-04-12 13:55:00/用Abp实现两步验证（Two-Factor
+  Authentication，2FA）登录（二）：Vue网页端开发.html
+abbrlink: cc2e17cd
+date: 2023-04-12 13:55:00
+cover:
+description:
 ---
 <!-- toc -->
 前端代码的框架采用vue.js + elementUI 这套较为简单的方式实现，以及typescript语法更方便阅读。

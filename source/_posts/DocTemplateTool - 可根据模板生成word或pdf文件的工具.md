@@ -1,21 +1,21 @@
-﻿---
-thumbnail:
-cover:
-title: 'DocTemplateTool - 可根据模板生成word或pdf文件的工具'
-excerpt:
-description:
-date: 2023-11-07 19:06:00
+---
+thumbnail: images/d2eac2824e0d4924a5a77be90a8c89b8.png
+title: DocTemplateTool - 可根据模板生成word或pdf文件的工具
+excerpt: >-
+  你是否经常遇到这样的场景：产品运营有着大量的报告需求，或者给客户领导展现每周的运营报告？这些文档类的任务可以交给运营同事，他们负责文档排版和样式，你作为开发人员你只需要提供数据源，和一个映射表，告诉制作文档的人哪些字段可供使用。这样一来分工明确，减少了很多不必要的沟通成本。
 tags:
   - 小工具
   - npoi
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-11-07 19:06:00/DocTemplateTool - 可根据模板生成word或pdf文件的工具.html
+uniqueId: '2023-11-07 19:06:00/DocTemplateTool - 可根据模板生成word或pdf文件的工具.html'
+abbrlink: c9421006
+date: 2023-11-07 19:06:00
+cover:
+description:
 ---
 你是否经常遇到这样的场景：产品运营有着大量的报告需求，或者给客户领导展现每周的运营报告？这些文档类的任务可以交给运营同事，他们负责文档排版和样式，你作为开发人员你只需要提供数据源，和一个映射表，告诉制作文档的人哪些字段可供使用。这样一来分工明确，减少了很多不必要的沟通成本。
 # Document Template Tool

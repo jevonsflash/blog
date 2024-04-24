@@ -1,22 +1,24 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/892d510f35db4e6c90d5d75a5aa5d5a1.png
 title: '[MAUI]用纯C#代码写两个漂亮的时钟'
-excerpt:
-description:
-date: 2023-07-01 19:35:00
+excerpt: >-
+  谷歌在2021年5月份推出的Android 12给我们带来了新的UI设计规范Material You，你是否已经体验到了Material
+  You设计的魅力了呢？在原生主屏幕启动器中，有一个时钟小部件。这个小部件可以选择表盘风格。图：Android
+  12的时钟小部件今天挑战在中实现这个Material You风格时钟。
 tags:
   - Xamarin
   - MAUI
-
 categories:
   - .NET MAUI
   - 产品设计
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-07-01 19:35:00/[MAUI]用纯C#代码写两个漂亮的时钟.html
+uniqueId: '2023-07-01 19:35:00/[MAUI]用纯C#代码写两个漂亮的时钟.html'
+abbrlink: bd48cb78
+date: 2023-07-01 19:35:00
+cover:
+description:
 ---
 <!-- toc -->
 谷歌在2021年5月份推出的Android 12给我们带来了新的UI设计规范Material You，你是否已经体验到了Material You设计的魅力了呢？

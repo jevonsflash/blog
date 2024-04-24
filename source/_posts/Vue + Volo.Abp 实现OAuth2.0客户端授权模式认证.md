@@ -1,26 +1,26 @@
-﻿---
-thumbnail:
-cover:
-title: 'Vue + Volo.Abp 实现OAuth2.0客户端授权模式认证'
-excerpt:
-description:
-date: 2023-07-07 11:32:00
+---
+thumbnail: images/8167f5c894a14f5ea2fc77305c6bc3c5.png
+title: Vue + Volo.Abp 实现OAuth2.0客户端授权模式认证
+excerpt: >-
+  只需要清除vuex或Cookies中的token即可，可以调用vue-oidc-client的signOut，但只是跳转到配置的登出地址，不会清除token（前提是redirectAfterSignout为true，并设置了post_logout_redirect_uri）创建continue/index.vue，简单的显示登录成功的提示，常用的提示有“登录成功，正在为您继续”，“登录成功，正在为您跳转”等友好提示。（D）客户端收到授权码，附上早先的"重定向URI"，向认证服务器申请令牌。
 tags:
   - .net
   - TypeScript
   - Vue
   - asp.net core
   - 网络安全
-
 categories:
   - .NET
   - JavaScript
   - Web
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-07-07 11:32:00/Vue + Volo.Abp 实现OAuth2.0客户端授权模式认证.html
+uniqueId: '2023-07-07 11:32:00/Vue + Volo.Abp 实现OAuth2.0客户端授权模式认证.html'
+abbrlink: a1a42
+date: 2023-07-07 11:32:00
+cover:
+description:
 ---
 <!-- toc -->
 Volo.Abp的[身份服务器模块](https://docs.abp.io/zh-Hans/abp/latest/Modules/IdentityServer)默认使用 [IdentityServer4](https://identityserver4.readthedocs.io/en/latest/)实现身份认证。

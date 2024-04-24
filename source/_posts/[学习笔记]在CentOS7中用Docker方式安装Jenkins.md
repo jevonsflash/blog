@@ -1,16 +1,21 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/e376e0a49cff4f76a61cdfe272ba4fde.png
 title: '[学习笔记]在CentOS7中用Docker方式安装Jenkins'
-excerpt:
-description:
-date: 2023-12-12 17:12:00
-tags:
-categories: 
+excerpt: >-
+  Docker in Docker （以下简称 DinD）可以在 Container 中直接运行一个 Docker Daemon ，然后使用
+  Container 中的 Docker CLI 工具操作容器。容器内的Docker
+  Daemon对外提供服务，每个运行中的容器，都是一个进程，这个进程都托管在Docker
+  Daemon中，镜像和容器都在一个隔离的环境。Jenkins在构建时，需要一个独立的Docker环境用于打包镜像。网桥允许连接到同一网桥网络的容器进行通信，创建一个名为jenkins的网桥网络。
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-12-12 17:12:00/[学习笔记]在CentOS7中用Docker方式安装Jenkins.html
+uniqueId: '2023-12-12 17:12:00/[学习笔记]在CentOS7中用Docker方式安装Jenkins.html'
+abbrlink: 8c5640b0
+date: 2023-12-12 17:12:00
+cover:
+description:
+tags:
+categories:
 ---
 <!-- toc -->
 ## 原理：

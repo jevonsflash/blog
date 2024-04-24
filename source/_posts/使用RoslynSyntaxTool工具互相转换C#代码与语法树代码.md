@@ -1,22 +1,21 @@
-﻿---
-thumbnail:
-cover:
-title: '使用RoslynSyntaxTool工具互相转换C#代码与语法树代码'
-excerpt:
-description:
-date: 2022-05-16 14:49:00
+---
+thumbnail: images/3feb72db6b94424abf6ff5e5a469c1c0.png
+title: 使用RoslynSyntaxTool工具互相转换C#代码与语法树代码
+excerpt: 此工具能将C#代码，转换成使用语法工厂构造器（SyntaxFactory）生成等效语法树代码
 tags:
   - 小工具
   - .net
   - Roslyn
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-05-16 14:49:00/使用RoslynSyntaxTool工具互相转换C#代码与语法树代码.html
+uniqueId: '2022-05-16 14:49:00/使用RoslynSyntaxTool工具互相转换C#代码与语法树代码.html'
+abbrlink: cd1fec19
+date: 2022-05-16 14:49:00
+cover:
+description:
 ---
 <h1><span data-cke-copybin-start="1"><span data-cke-copybin-start="1">RoslynSyntaxTool</span></span></h1>
 <h2>项目地址</h2>

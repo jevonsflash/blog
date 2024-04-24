@@ -1,23 +1,26 @@
-﻿---
-thumbnail:
-cover:
-title: '使用 Abp.Zero 搭建第三方登录模块（一）：原理篇'
-excerpt:
-description:
-date: 2022-06-24 11:07:00
+---
+thumbnail: images/0d66ca2a6fab450fb77a26a791d75c0a.png
+title: 使用 Abp.Zero 搭建第三方登录模块（一）：原理篇
+excerpt: >-
+  第三方登录是基于用户在第三方平台上（如微信，QQ，
+  百度）已有的账号来快速完成系统的登录、注册-登录等功能。以微信的鉴权为例：假如你的网站有一个扫码登录的功能，会弹出一个由微信提供的二维码页面，你需要用手机上的微信扫码，操作一下，就可以完成登录。如这个链接：微信登录
+  (qq.com) 
+  嗯。从研发和使用上来说这是最快捷，也是目前大部分站点用的扫码登录方式。但这个是依赖于微信开放平台的功能，微信作为鉴权服务的提供方，有义务监管第三方的网站（你的网站相对于微信就是第三方），因此你需要有企业或组织的营业执照，经过
 tags:
   - 小程序
   - 微信公众号
-
 categories:
   - .NET
   - Web
   - 小程序/公众号
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-06-24 11:07:00/使用 Abp.Zero 搭建第三方登录模块（一）：原理篇.html
+uniqueId: '2022-06-24 11:07:00/使用 Abp.Zero 搭建第三方登录模块（一）：原理篇.html'
+abbrlink: d8ce29b2
+date: 2022-06-24 11:07:00
+cover:
+description:
 ---
 <p><span data-cke-copybin-start="1"><span data-cke-copybin-start="1">这是一篇系列博文，我将从原理分析、设计到代码编写，搭建一套基于微信小程序登录的网站第三方登录模块：</span></span></p>
 <p><span data-cke-copybin-start="1"><span data-cke-copybin-start="1"><a href="https://www.cnblogs.com/jevonsflash/p/16408081.html">使用 Abp.Zero 搭建第三方登录模块（一）：原理篇 - 林晓lx - 博客园 (cnblogs.com)</a></span></span></p>

@@ -1,23 +1,24 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/a9b44db8d4c546fd91ae6d9437beca51.png
 title: '[MAUI 项目实战] 音乐播放器（一）：概述与架构'
-excerpt:
-description:
-date: 2023-02-12 00:25:00
+excerpt: >-
+  为什么想起来这个项目了呢？这是一个Windows Phone
+  8的老项目，2014年用作为兴趣写了个叫“番茄播放器”的App，顺便提高编程技能。这个项目的架构历经多次迁移，从WP8到UWP再到Xamarin.Forms。去年底随着MAUI的正式发布，又尝试把它迁移到MAUI上来。
 tags:
   - Xamarin
   - .net
   - MAUI
-
 categories:
   - .NET
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-02-12 00:25:00/[MAUI 项目实战] 音乐播放器（一）：概述与架构.html
+uniqueId: '2023-02-12 00:25:00/[MAUI 项目实战] 音乐播放器（一）：概述与架构.html'
+abbrlink: 3c1600e
+date: 2023-02-12 00:25:00
+cover:
+description:
 ---
 
 系列文章将分步解读音乐播放器核心业务及代码：

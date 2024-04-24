@@ -1,24 +1,25 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/dfe745e8dd82437ebd4ea9ca1579eb0e.png
 title: '[MAUI]集成富文本编辑器Editor.js至.NET MAUI Blazor项目'
-excerpt:
-description:
-date: 2024-04-13 23:52:00
+excerpt: >-
+  其它的工具插件可以单独获取。在OnAfterRenderAsync中调用初始化函数，并订阅OnSubmitting和OnInited事件，以便在提交事件触发时保存，以及文本状态变更时重新渲染。在wwwroot创建editorjs_index.html文件，并在body中引入editorjs.umd.js和各插件js文件。我们先要获取web应用的资源文件（js，css等），以便MAUI的视图呈现标准的Web
+  UI。在script代码段中，创建LoadContent函数，用于加载EditorJs的初始内容。
 tags:
   - Xamarin
   - .net
   - MAUI
   - .net blazor
-
 categories:
   - .NET
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2024-04-13 23:52:00/[MAUI]集成富文本编辑器Editor.js至.NET MAUI Blazor项目.html
+uniqueId: '2024-04-13 23:52:00/[MAUI]集成富文本编辑器Editor.js至.NET MAUI Blazor项目.html'
+abbrlink: '33414209'
+date: 2024-04-13 23:52:00
+cover:
+description:
 ---
 <!-- toc -->
 [Editor.js](https://github.com/codex-team/editor.js) 是一个基于 Web 的所见即所得富文本编辑器，它由CodeX团队开发。之前写过一篇博文专门介绍过这个编辑器，可以回看：[开源好用的所见即所得(WYSIWYG)编辑器：Editor.js](https://www.cnblogs.com/jevonsflash/p/18066803)。

@@ -1,23 +1,25 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/54f3d640d956488c96ee5cf3cf87a6e8.png
 title: '[MAUI]写一个跨平台富文本编辑器'
-excerpt:
-description:
-date: 2023-06-11 23:15:00
+excerpt: >-
+  富文本编辑器是一种所见即所得(what you see is what you get 简称
+  WYSIWYG)文本样式编辑器，用户在编辑器中输入内容和所做的样式修改，都会直接反映在编辑器中。在Web端常见的有Quill、TinyMCE这些开源免费的富文本编辑器，而目前.NET
+  MAUI方面没有类似的富文本编辑器可以免费使用。使用.NET MAUI实现一个富文本编辑器并不难，今天就来写一个
 tags:
   - Xamarin
   - MAUI
   - XAML
   - 跨平台
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-06-11 23:15:00/[MAUI]写一个跨平台富文本编辑器.html
+uniqueId: '2023-06-11 23:15:00/[MAUI]写一个跨平台富文本编辑器.html'
+abbrlink: dff64bbe
+date: 2023-06-11 23:15:00
+cover:
+description:
 ---
 <!-- toc -->
 富文本编辑器是一种所见即所得(what you see is what you get 简称 WYSIWYG)文本编辑器，用户在编辑器中输入内容和所做的样式修改，都会直接反映在编辑器中。

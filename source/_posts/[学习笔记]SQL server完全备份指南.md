@@ -1,22 +1,21 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/732df9e294474bd2ac23ff3ecbb51ece.png
 title: '[学习笔记]SQL server完全备份指南'
-excerpt:
-description:
-date: 2023-02-21 17:21:00
+excerpt: 本文将介绍如何在日常项目中，对SQL server数据库做备份和还原工作
 tags:
   - 数据库
   - sqlserver
-
 categories:
   - Database
   - Linux
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-02-21 17:21:00/[学习笔记]SQL server完全备份指南.html
+uniqueId: '2023-02-21 17:21:00/[学习笔记]SQL server完全备份指南.html'
+abbrlink: 6df3552f
+date: 2023-02-21 17:21:00
+cover:
+description:
 ---
 <!-- toc -->
 本文将介绍如何在日常项目中，对SQL server数据库做备份和还原工作，SQL server的备份/还原机制，详情参见官方文档：[备份和还原 Linux 上的 SQL Server 数据库](https://learn.microsoft.com/zh-cn/SQL/linux/sql-server-linux-backup-and-restore-database?view=sql-server-2017)

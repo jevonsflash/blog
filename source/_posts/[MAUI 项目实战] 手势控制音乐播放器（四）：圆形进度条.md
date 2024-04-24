@@ -1,22 +1,21 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/c22a9fd74f0c40d8b163e29a694918c9.png
 title: '[MAUI 项目实战] 手势控制音乐播放器（四）：圆形进度条'
-excerpt:
-description:
-date: 2023-04-09 10:33:00
+excerpt: 在项目中添加SkiaSharp绘制功能的引用以及。
 tags:
   - Xamarin
   - MAUI
   - XAML
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-09 10:33:00/[MAUI 项目实战] 手势控制音乐播放器（四）：圆形进度条.html
+uniqueId: '2023-04-09 10:33:00/[MAUI 项目实战] 手势控制音乐播放器（四）：圆形进度条.html'
+abbrlink: c15beae9
+date: 2023-04-09 10:33:00
+cover:
+description:
 ---
 <!-- toc -->
 我们将绘制一个圆形的音乐播放控件，它包含一个圆形的进度条、专辑页面和播放按钮。

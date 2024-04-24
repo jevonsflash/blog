@@ -1,16 +1,18 @@
-﻿---
-thumbnail:
-cover:
-title: '集成RocketChat至现有的.Net项目中，为ChatGPT铺路'
-excerpt:
-description:
-date: 2023-03-01 16:53:00
-tags:
-categories: 
+---
+thumbnail: images/1d9f6a70ba6f4ae5855fbed95b3f59c4.gif#pic_center
+title: 集成RocketChat至现有的.Net项目中，为ChatGPT铺路
+excerpt: >-
+  今天我们来聊一聊一个Paas的方案，如何集成到一个既有的项目中。以其中一个需求为例子：在产品项目中，加入IM（即时通信）功能，开始徒手撸代码，会发现工作量很大，去github找开源项目，结果也可能事与愿违：功能不够强大，或者用不同的语言编写的，编译出来程序集无法集成到项目中。可能当下最好的方案是利用独立的聊天功能组件，作为项目的中间件（Paas方案）。组件是独立部署，独立运行的，功能的稳定性，搭建速度快，作为基础设施服务，可以用在其他项目中，并且项目中的对接作为抽象层，可随时替换现有组件。
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-03-01 16:53:00/集成RocketChat至现有的.Net项目中，为ChatGPT铺路.html
+uniqueId: '2023-03-01 16:53:00/集成RocketChat至现有的.Net项目中，为ChatGPT铺路.html'
+abbrlink: 29c35e63
+date: 2023-03-01 16:53:00
+cover:
+description:
+tags:
+categories:
 ---
 <!-- toc -->
 ## 前言

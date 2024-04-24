@@ -1,22 +1,22 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/02e7beeeb99c4afa8610f2e83f2a3476.png
 title: '[MAUI程序设计] 用Handler实现自定义跨平台控件'
-excerpt:
-description:
-date: 2023-06-04 18:37:00
+excerpt: >-
+  定义可以监听的手势类别，分别是按下、移动、抬起、取消、进入、退出Entered,Pressed,Moved,Released,Exited,Cancelled添加手势监听器TouchRecognizer，它将提供一个事件OnTouchActionInvoked，用触发手势动作。EventArg类TouchActionEventArgs，用于传递手势动作的参数get;get;get;get;
 tags:
   - Xamarin
   - MAUI
   - XAML
-
 categories:
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-06-04 18:37:00/[MAUI程序设计] 用Handler实现自定义跨平台控件.html
+uniqueId: '2023-06-04 18:37:00/[MAUI程序设计] 用Handler实现自定义跨平台控件.html'
+abbrlink: '68204685'
+date: 2023-06-04 18:37:00
+cover:
+description:
 ---
 <!-- toc -->
 今天来谈一谈MAUI跨平台技术的核心概念——跨平台控件。

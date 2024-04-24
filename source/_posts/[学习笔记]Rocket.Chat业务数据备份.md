@@ -1,24 +1,25 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/732df9e294474bd2ac23ff3ecbb51ece.png
 title: '[学习笔记]Rocket.Chat业务数据备份'
-excerpt:
-description:
-date: 2023-02-21 17:23:00
+excerpt: >-
+  Rocket.Chat
+  的业务数据主要存储于mongodb数据库的rocketchat库中，聊天中通过发送文件功能产生的文件储存于中（文件方式设置为），因此在对Rocket.Chat做数据移动或备份主要分为两步，数据库备份和文件备份。
 tags:
   - 数据库
   - rocket.chat
   - 即时通讯
   - mongodb
-
 categories:
   - DevOps
   - Linux
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-02-21 17:23:00/[学习笔记]Rocket.Chat业务数据备份.html
+uniqueId: '2023-02-21 17:23:00/[学习笔记]Rocket.Chat业务数据备份.html'
+abbrlink: '52443691'
+date: 2023-02-21 17:23:00
+cover:
+description:
 ---
 Rocket.Chat 的业务数据主要存储于mongodb数据库的`rocketchat`库中，聊天中通过发送文件功能产生的文件储存于`/app/uploads`中（文件方式设置为`"FileSystem"`），因此在对Rocket.Chat做数据移动或备份主要分为两步，数据库备份和文件备份。
 

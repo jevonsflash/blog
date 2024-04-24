@@ -1,24 +1,24 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/732df9e294474bd2ac23ff3ecbb51ece.png
 title: '[MAUI 项目实战] 音乐播放器（三）：界面交互'
-excerpt:
-description:
-date: 2023-02-27 17:18:00
+excerpt: >-
+  UI设计的本质是对于产品的理解在界面中多种形式的映射，当需求和定位不同时，对相同的功能表达出了不同的界面和交互方式。作为播放器，界面可以是千差万别的。《番茄播放器》的iOS平台上我开发了传统版本，和基于手势播放的版本。它们界面不同，但用的同一个播放内核。作为播放内核项目，在MatoMusic.Core的工作已经结束。本系列博文重点还是在播放器思路的解读，关于MAUI动画交互，我打算有时间另外写博客（这里给自己挖个坑）。
 tags:
   - wpf
   - Xamarin
   - MAUI
   - XAML
-
 categories:
   - .NET
   - .NET MAUI
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-02-27 17:18:00/[MAUI 项目实战] 音乐播放器（三）：界面交互.html
+uniqueId: '2023-02-27 17:18:00/[MAUI 项目实战] 音乐播放器（三）：界面交互.html'
+abbrlink: c69f637a
+date: 2023-02-27 17:18:00
+cover:
+description:
 ---
 UI设计的本质是对于产品的理解在界面中多种形式的映射，当需求和定位不同时，对相同的功能表达出了不同的界面和交互方式。
 

@@ -1,25 +1,25 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/88084bb09553467da758febbae209ed2.png
 title: '[MAUI]模仿网易云音乐黑胶唱片的交互实现'
-excerpt:
-description:
-date: 2023-04-25 08:55:00
+excerpt: >-
+  由此可以无限的拨动唱盘实现连续切歌的效果。用当前唱盘的“瞬移”，看起来像唱盘被影子唱盘替换掉了，但是在屏幕中心活动的拖拽物，一直是真正的那个控件。结合上一小节写的三个PitGrid，此时拖拽唱盘，并且在拖拽开始，进入pit，离开pit，释放时，分别触发Start，In，Out，Over四个状态事件。此时已经实现了拖拽唱盘的基本功能，但是在释放唱盘时，影子唱盘并没有如预期那样移动到MiddlePit的中心点。注意，当音乐暂停后，停止旋转动画，当音乐恢复播放时，转盘应从之前停止的角度开始启动旋转动画。
 tags:
   - Xamarin
   - MAUI
   - 产品设计
   - Android
   - 跨平台
-
 categories:
   - .NET MAUI
   - 产品设计
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-25 08:55:00/[MAUI]模仿网易云音乐黑胶唱片的交互实现.html
+uniqueId: '2023-04-25 08:55:00/[MAUI]模仿网易云音乐黑胶唱片的交互实现.html'
+abbrlink: 85e1cfd6
+date: 2023-04-25 08:55:00
+cover:
+description:
 ---
 <!-- toc -->
 用过网易云音乐App的同学应该都比较熟悉它播放界面。

@@ -1,20 +1,22 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/a7b426f027554ddcbce196b962043da2.png
 title: '[学习笔记]TypeScript查缺补漏（一）：类'
-excerpt:
-description:
-date: 2023-10-31 21:34:00
+excerpt: >-
+  private在编译后JavaScript中没有影响，仅对TypeScript编译器有影响，而使用#符号声明的私有属性在JavaScript中会被编译为常规的私有属性。Getter/Setter可以在不改变属性的访问权限的情况下，对属性的值进行更精细的控制。装饰器是使用
+  @
+  符号来标识的特殊类型的函数，可以用来扩展类或方法的行为。尽管箭头函数是在对象的方法中定义的，但是它不会捕获到调用该方法的对象作为自己的this上下文。在箭头函数中，this不指向调用该函数的对象，而是指向定义该箭头函数时的上下文。
 tags:
   - TypeScript
-
 categories:
   - JavaScript
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-10-31 21:34:00/[学习笔记]TypeScript查缺补漏（一）：类.html
+uniqueId: '2023-10-31 21:34:00/[学习笔记]TypeScript查缺补漏（一）：类.html'
+abbrlink: a61f9927
+date: 2023-10-31 21:34:00
+cover:
+description:
 ---
 <!-- toc -->
 # 基础知识

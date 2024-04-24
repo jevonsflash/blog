@@ -1,22 +1,21 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/93e06287a819459e9c473b2d59a3c367.png
 title: '[学习笔记] CentOS + .Net后端常用的中间件工具安装'
-excerpt:
-description:
-date: 2023-02-12 00:08:00
+excerpt: 常用后端中间件，备忘记录
 tags:
   - 数据库
   - centos
   - 中间件
-
 categories:
   - Linux
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-02-12 00:08:00/[学习笔记] CentOS + .Net后端常用的中间件工具安装.html
+uniqueId: '2023-02-12 00:08:00/[学习笔记] CentOS + .Net后端常用的中间件工具安装.html'
+abbrlink: f902a15e
+date: 2023-02-12 00:08:00
+cover:
+description:
 ---
 ## Redis 5.0+
 官方文档：https://redis.io/download/#redis-downloads

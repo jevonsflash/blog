@@ -1,25 +1,26 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/f61a73c6332249e5bbacafce341792c9.png
 title: '[MAUI]模仿iOS多任务切换卡片滑动的交互实现'
-excerpt:
-description:
-date: 2023-05-02 21:48:00
+excerpt: >-
+  App之间的多任务切换相信你们都很熟悉。苹果设备从iOS9开始使用水平排列的叠层卡片来展现多任务，这个设计利用屏幕深度（z方向）和水平空间（x轴方向）的平顺结合，在有限的屏幕空间内，展现了更多的卡片，滑动屏幕时，每一个卡片在屏幕中央的时候也能得到大面积的展示。今天我们在.NET
+  MAUI 中实现这个优秀交互效果。
 tags:
   - Xamarin
   - MAUI
   - 产品设计
   - Android
   - 跨平台
-
 categories:
   - .NET MAUI
   - 产品设计
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-05-02 21:48:00/[MAUI]模仿iOS多任务切换卡片滑动的交互实现.html
+uniqueId: '2023-05-02 21:48:00/[MAUI]模仿iOS多任务切换卡片滑动的交互实现.html'
+abbrlink: 8b1226dc
+date: 2023-05-02 21:48:00
+cover:
+description:
 ---
 <!-- toc -->
 看了上一篇博文的评论，大家对MAUI还是比较感兴趣的，非常感谢大家的关注，这个专栏我争取周更。

@@ -1,24 +1,26 @@
-﻿---
-thumbnail:
-cover:
-title: '用Abp实现两步验证（Two-Factor Authentication，2FA）登录（三）：免登录验证'
-excerpt:
-description:
-date: 2023-04-12 21:25:00
+---
+thumbnail: images/e1815a0851ab43e0973312dd705a4751.png
+title: 用Abp实现两步验证（Two-Factor Authentication，2FA）登录（三）：免登录验证
+excerpt: >-
+  常用的实现方式是在用户登录成功后，生成一个随机的字符串Token，将此Token保存在用户浏览器的 cookie
+  中，同时将这个字符串保存在用户的数据库中。当用户再次访问时，如果 cookie
+  中的字符串和数据库中的字符串相同，则免登录验证通过。rememberClientToken是存储于cookie中的，当用户登出时不需要清空cookie中的rememberClientToken，以便下次登录跳过两步验证。为了安全，Token采用对称加密传输存储，同时参与校验的还有用户Id，以进一步验证数据一致性。
 tags:
   - .net
   - Vue
   - asp.net core
   - 网络安全
-
 categories:
   - .NET
   - Web
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-04-12 21:25:00/用Abp实现两步验证（Two-Factor Authentication，2FA）登录（三）：免登录验证.html
+uniqueId: '2023-04-12 21:25:00/用Abp实现两步验证（Two-Factor Authentication，2FA）登录（三）：免登录验证.html'
+abbrlink: a0ee7b99
+date: 2023-04-12 21:25:00
+cover:
+description:
 ---
 
 

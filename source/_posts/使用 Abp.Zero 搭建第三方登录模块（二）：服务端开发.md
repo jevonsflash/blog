@@ -1,23 +1,26 @@
-﻿---
-thumbnail:
-cover:
-title: '使用 Abp.Zero 搭建第三方登录模块（二）：服务端开发'
-excerpt:
-description:
-date: 2022-06-24 11:05:00
+---
+thumbnail: images/2273b862634947839deea77b229cf24e.png
+title: 使用 Abp.Zero 搭建第三方登录模块（二）：服务端开发
+excerpt: >-
+  微信SDK库是针对微信相关 API 进行封装的模块 ，目前开源社区中微信SDK库数量真是太多了，我选了一个比较好用的EasyAbp
+  WeChat库。EasyAbp/Abp.WeChat: Abp 微信 SDK 模块，包含对微信小程序、公众号、企业微信、开放平台、第三方平台等相关接口封装。
+  (github.com)当然这个库是ABP vNext 框架的，需要稍微改写一下。封装好后我们需要以下几个接口小程序码生成接口：
+  获取用户OpenId与SessionKey的接口我们先来回顾一下第三方登录在Ab
 tags:
   - 小程序
   - 微信公众号
-
 categories:
   - .NET
   - Web
   - 小程序/公众号
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-06-24 11:05:00/使用 Abp.Zero 搭建第三方登录模块（二）：服务端开发.html
+uniqueId: '2022-06-24 11:05:00/使用 Abp.Zero 搭建第三方登录模块（二）：服务端开发.html'
+abbrlink: eab1cbaf
+date: 2022-06-24 11:05:00
+cover:
+description:
 ---
 <span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span>
 <h2><span id="cke_bm_296S">微信SDK库的集成</span></h2>

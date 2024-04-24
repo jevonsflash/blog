@@ -1,25 +1,25 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/19c5371d9cc54100a30683dc869f1a6a.png
 title: '[MAUI程序设计]界面多态与实现'
-excerpt:
-description:
-date: 2023-05-14 17:47:00
+excerpt: >-
+  首先用控件模板定义博客条目的外观，“博客条目”是包含博客标题，内容，以及发布时间等信息的卡片，视觉上呈现圆角矩形的白色不透明卡片效果。博客条目控件是一个基于ContentView控件在页面的资源中，添加如下两个ControlTemplate模板，分别用于手机设备和桌面设备。BlogCardViewPhone用于博客条目在手机设备中的呈现，条目菜单侧滑栏方式展开，我们配置SwipeView控件，作为卡片，用一个Frame框架包裹其内容。
 tags:
   - Xamarin
   - MAUI
   - XAML
   - 产品设计
   - App
-
 categories:
   - .NET MAUI
   - 产品设计
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-05-14 17:47:00/[MAUI程序设计]界面多态与实现.html
+uniqueId: '2023-05-14 17:47:00/[MAUI程序设计]界面多态与实现.html'
+abbrlink: bc3927eb
+date: 2023-05-14 17:47:00
+cover:
+description:
 ---
 [toc]
 .NET MAUI 实现界面多态有很多种方式，今天主要来说说在日常开发中常见的需求该如何应对。

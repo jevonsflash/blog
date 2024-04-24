@@ -1,23 +1,23 @@
-﻿---
-thumbnail:
-cover:
-title: '使用 Abp.Zero 搭建第三方登录模块（四）：微信小程序开发'
-excerpt:
-description:
-date: 2022-07-19 17:12:00
+---
+thumbnail: images/794d8ece53b7469eb90e14b48c5b2a78.png
+title: 使用 Abp.Zero 搭建第三方登录模块（四）：微信小程序开发
+excerpt: >-
+  微信小程序主要为用户授权行为提供交互功能，用户在扫码之后，提供一个交互UI，如下在中介绍了服务端已经搭建的接口，这次我们将调用Access和Authenticate，分别调用来完成已扫码和已授权状态的更新。......
 tags:
   - TypeScript
   - 小程序
   - 微信公众号
-
 categories:
   - JavaScript
   - 小程序/公众号
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-07-19 17:12:00/使用 Abp.Zero 搭建第三方登录模块（四）：微信小程序开发.html
+uniqueId: '2022-07-19 17:12:00/使用 Abp.Zero 搭建第三方登录模块（四）：微信小程序开发.html'
+abbrlink: 74407f40
+date: 2022-07-19 17:12:00
+cover:
+description:
 ---
 <p><span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span>简短回顾一下微信小程序端的流程：</p>
 <ol>

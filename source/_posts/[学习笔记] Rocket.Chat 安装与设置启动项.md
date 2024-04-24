@@ -1,24 +1,27 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/5cfb4ffcfa12468fa45f8d0a3c8bde42.png
 title: '[学习笔记] Rocket.Chat 安装与设置启动项'
-excerpt:
-description:
-date: 2022-02-15 09:43:00
+excerpt: >-
+  安装Rocket.Chat下载对应的Release版本，这里以2.4.14为例https://codeload.github.com/RocketChat/Rocket.Chat/tar.gz/refs/tags/2.4.14根据文档安装和配置Linux
+  - Rocket.Chat
+  Developer配置Service在/etc/systemd/system/目录下新建名称为rocketchat.service的文件，填写如下内容[Unit]Description=The
+  .
 tags:
   - Linux
   - ubuntu
   - centos
   - rocket.chat
-
 categories:
   - DevOps
   - Linux
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-02-15 09:43:00/[学习笔记] Rocket.Chat 安装与设置启动项.html
+uniqueId: '2022-02-15 09:43:00/[学习笔记] Rocket.Chat 安装与设置启动项.html'
+abbrlink: 8f84dc99
+date: 2022-02-15 09:43:00
+cover:
+description:
 ---
 <p>这篇文章主要介绍手动安装的方式来安装Rocket.Chat，在Rocket.Chat官方有三种安装方式，</p>
 <ol>

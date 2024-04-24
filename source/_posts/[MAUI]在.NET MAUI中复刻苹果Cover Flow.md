@@ -1,24 +1,26 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/40523b0964ee445a8931eb72a98982b4.png
 title: '[MAUI]在.NET MAUI中复刻苹果Cover Flow'
-excerpt:
-description:
-date: 2023-05-21 23:24:00
+excerpt: >-
+  Cover Flow是iTunes和Finder中的一个视图选项，允许用户使用水平滚动的图像查看他们的音乐库或文件。Cover
+  Flow的交互设计非常优秀：通过指尖滑动从堆叠的专辑库中翻动和挑选一张专辑的交互方式不仅有趣，而且在有限的屏幕空间内，展现了更多的专辑封面。那个是乔布斯时代的苹果——使事情变得简单和有趣。最近我很怀念这个功能，但由于我手头上已经没有任何一台设备能访问这个功能了。于是在.NET
+  MAUI中复刻了Cover flow
 tags:
   - MAUI
   - XAML
   - 产品设计
   - 跨平台
-
 categories:
   - .NET MAUI
   - 产品设计
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-05-21 23:24:00/[MAUI]在.NET MAUI中复刻苹果Cover Flow.html
+uniqueId: '2023-05-21 23:24:00/[MAUI]在.NET MAUI中复刻苹果Cover Flow.html'
+abbrlink: 4a97feb4
+date: 2023-05-21 23:24:00
+cover:
+description:
 ---
 <!-- toc -->
 Cover Flow是iTunes和Finder中的一个视图选项，允许用户使用水平滚动的图像查看他们的音乐库或文件。

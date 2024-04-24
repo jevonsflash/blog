@@ -1,24 +1,28 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/7af1b2a3309048d6bd5ad3dd50dd0102.png
 title: '[学习笔记]使用Docker+Jenkin自动化流水线发布.Net应用'
-excerpt:
-description:
-date: 2022-06-08 18:38:00
+excerpt: >-
+  使用Docker容器方案可以快速安全地将项目部署到客户的服务器上，作为公司项目，需要解决两个问题：1.
+  需要搭建一个私有的Docker仓库，以便安全的存储镜像2.
+  需要一套自动化发布方案，实现代码到应用部署的自动化流程大致流程如下在java世界中有很多文章介绍了Docker+Jenkin的自动化部署方式，这次来看看如何用这一套工具实现.Net
+  应用的发布。以Soa项目为例MatoApps/Soa: 一个轻量级的微服务库，基于.Net 6 + Abp框架
+  可快速地将现有项目改造成为面向服务体系结构，实现模块间
 tags:
   - .net
   - docker
   - jenkins
   - devops
-
 categories:
   - DevOps
   - Linux
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-06-08 18:38:00/[学习笔记]使用Docker+Jenkin自动化流水线发布.Net应用.html
+uniqueId: '2022-06-08 18:38:00/[学习笔记]使用Docker+Jenkin自动化流水线发布.Net应用.html'
+abbrlink: 8deee35b
+date: 2022-06-08 18:38:00
+cover:
+description:
 ---
 <p><span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span><span id="cke_bm_545S">使用Docker容器方案可以快速安全地将项目部署到客户的服务器上，作为公司项目，需要解决两个问题：</span></p>
 <p>1. 需要搭建一个私有的Docker仓库，以便安全的存储镜像</p>

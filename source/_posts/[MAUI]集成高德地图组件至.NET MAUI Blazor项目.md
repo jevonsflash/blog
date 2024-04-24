@@ -1,24 +1,27 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/cb1edf0579c84ca88fbc2bbbe63e10d8.png
 title: '[MAUI]集成高德地图组件至.NET MAUI Blazor项目'
-excerpt:
-description:
-date: 2024-03-23 21:58:00
+excerpt: >-
+  地图组件在手机App中常用地理相关业务，如查看线下门店，设置导航，或选取地址等。是一个较为常见的组件。在.NET MAUI
+  中，有两种方案可以集成高德地图，一种是使用原生库绑定。但这种方案需要大量平台原生开发的知识，而且需要对每一个平台进行适配。在这里我介绍第二种方案：.NET
+  MAUI Blazor + 高德地图JS API 2.0 库的实现。JS API 2.0
+  是高德开放平台基于WebGL的地图组件，可以将高德地图模块集成到.NET MAUI Blazor中的BlazorWebView控件。
 tags:
   - Xamarin
   - .net
   - MAUI
   - C#
-
 categories:
   - .NET MAUI
   - 移动开发
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2024-03-23 21:58:00/[MAUI]集成高德地图组件至.NET MAUI Blazor项目.html
+uniqueId: '2024-03-23 21:58:00/[MAUI]集成高德地图组件至.NET MAUI Blazor项目.html'
+abbrlink: e6d51e9d
+date: 2024-03-23 21:58:00
+cover:
+description:
 ---
 <!-- toc -->
 地图组件在手机App中常用地理相关业务，如查看线下门店，设置导航，或选取地址等。是一个较为常见的组件。

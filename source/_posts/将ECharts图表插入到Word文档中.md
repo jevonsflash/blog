@@ -1,22 +1,23 @@
-﻿---
-thumbnail:
-cover:
-title: '将ECharts图表插入到Word文档中'
-excerpt:
-description:
-date: 2023-11-15 11:26:00
+---
+thumbnail: images/769817b62b62492bbc97045fe1f21527.png
+title: 将ECharts图表插入到Word文档中
+excerpt: >-
+  首先指定一个option，在官方示例 https://echarts.apache.org/examples/zh/index.html
+  中，随意找一个柱状图的sample，复制option对象内容到新创建的option.json文件中。echarts-convert在github上有众多版本，echarts-convert的代码来源于这里：https://github.com/wadezhan/billfeller.github.io/issues/85。将下载好的可执行文件解压放置在项目根目录下的。
 tags:
   - .net
   - npoi
   - JavaScript
-
 categories:
   - .NET
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-11-15 11:26:00/将ECharts图表插入到Word文档中.html
+uniqueId: '2023-11-15 11:26:00/将ECharts图表插入到Word文档中.html'
+abbrlink: b91a8003
+date: 2023-11-15 11:26:00
+cover:
+description:
 ---
 <!-- toc -->
 如何通过ECharts在后台生成图片，然后插入到Word文档中？

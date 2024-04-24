@@ -1,22 +1,21 @@
-﻿---
-thumbnail:
-cover:
-title: '用Vue编写一个简单的仿Explorer文件管理器'
-excerpt:
-description:
-date: 2022-03-11 23:12:00
+---
+thumbnail: images/6c22b4ef067344f0839b5aa7c76c4ff2.gif
+title: 用Vue编写一个简单的仿Explorer文件管理器
+excerpt: "大家一定很熟悉你桌面左上角那个小电脑吧，学名Windows资源管理器，几乎所有的工作都从这里开始，文件云端化是一种趋势。怎样用浏览器实现一个Web版本的Windows资源管理器呢？今天来用Vue好好盘一盘它。一、导航原理首先操作和仔细观察导航栏，我们有几个操作途径：点击“向上”按钮回到上一个目录，点击地址栏的文件夹名称返回任意一个目录\t双击文件夹进入新目录\t点击“前进”，“后退”按钮操作导航其中前进，后退操作，可以点击小三角查看一个列表，点击进入文件夹，列表会记录导航历史，哪怕反复进入同一"
 tags:
   - TypeScript
   - Vue
   - Html
-
 categories:
   - JavaScript
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-03-11 23:12:00/用Vue编写一个简单的仿Explorer文件管理器.html
+uniqueId: '2022-03-11 23:12:00/用Vue编写一个简单的仿Explorer文件管理器.html'
+abbrlink: ab1b5118
+date: 2022-03-11 23:12:00
+cover:
+description:
 ---
 <p><span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span><span id="cke_bm_374S">大家一定很熟悉你桌面左上角那个小电脑吧，学名Windows资源管理器，几乎所有的工作都从这里开始，文件云端化是一种趋势。怎样用浏览器实现一个Web版本的Windows资源管理器呢？今天来用Vue好好盘一盘它。</span></p>
 <h3>一、导航原理</h3>

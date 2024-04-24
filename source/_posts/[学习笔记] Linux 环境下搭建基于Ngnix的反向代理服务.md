@@ -1,23 +1,27 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: >-
+  images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5p6XIOWwjw==,size_20,color_FFFFFF,t_70,g_se,x_16
 title: '[学习笔记] Linux 环境下搭建基于Ngnix的反向代理服务'
-excerpt:
-description:
-date: 2022-02-10 20:59:00
+excerpt: >-
+  数字证书管理服务/SSL 证书之前为了方便同事测试微信小程序，搭建了基于CentOS的预发布环境，.Net5
+  程序也已经部署好在上面，在公网上可以通过http协议的临时域名(jevonsflash.xxx.net)访问到后台Api。然而小程序的正式线上版本，只可以跟指定的域名进行网络通信，且域名只支持
+  https，wss通信协议，因此需要配置预发布环境的域名解析，Ngnix，以及证书。首先公司的域名已经备案（例如:
+  www.matoapp.net），目标是通过这个备案的域名用https方式访问后台
 tags:
   - Linux
   - .net
   - Nginx
-
 categories:
   - DevOps
   - Linux
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-02-10 20:59:00/[学习笔记] Linux 环境下搭建基于Ngnix的反向代理服务.html
+uniqueId: '2022-02-10 20:59:00/[学习笔记] Linux 环境下搭建基于Ngnix的反向代理服务.html'
+abbrlink: 299ae8ca
+date: 2022-02-10 20:59:00
+cover:
+description:
 ---
 <p><span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span><span id="cke_bm_282S">之前为了方便同事测试微信小程序，搭建了基于CentOS的预发布环境，.Net5 程序也已经部署好在上面，在公网上可以通过http协议的临时域名(jevonsflash.xxx.net)访问到后台Api。</span></p>
 <p>然而小程序的正式线上版本，只可以跟指定的域名进行网络通信，且域名只支持 https，wss通信协议，因此需要配置预发布环境的反向代理服务。</p>

@@ -1,25 +1,25 @@
-﻿---
-thumbnail:
-cover:
+---
+thumbnail: images/33f05fd0973645679fb354020c369e59.png
 title: '[MAUI]深入了解.NET MAUI Blazor与Vue的混合开发'
-excerpt:
-description:
-date: 2023-10-18 17:15:00
+excerpt: >-
+  每个BlazorWebView控件包含根组件（RootComponent）定义，ComponentType是在应用程序启动时加载页面时的类型，该类型需要继承自Microsoft.AspNetCore.Components.IComponent，由于我们的导航是由MAUI处理的，因此我们不需要使用Blazor路由，直接使用Razor组件。开发应用需要一个独立的host项目。中引入，还有一种是使用并置的js文件，这种方式是所谓的"CodeBehind"，因为更利于组织代码，这里我们使用并置的js文件。
 tags:
   - Xamarin
   - .net
   - MAUI
   - Vue
-
 categories:
   - .NET
   - .NET MAUI
   - 移动开发
- 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2023-10-18 17:15:00/[MAUI]深入了解.NET MAUI Blazor与Vue的混合开发.html
+uniqueId: '2023-10-18 17:15:00/[MAUI]深入了解.NET MAUI Blazor与Vue的混合开发.html'
+abbrlink: 6d63c941
+date: 2023-10-18 17:15:00
+cover:
+description:
 ---
 <!-- toc -->
 .NET MAUI结合Vue的混合开发可以使用更加熟悉的Vue的语法代替Blazor语法，你现有项目不必重写。之前写过一篇[[MAUI] 在.NET MAUI中结合Vue实现混合开发](https://www.cnblogs.com/jevonsflash/p/15806237.html) ，其中介绍了如何创建一个vue应用并将其打包至MAUI项目，这种方式依赖vue-cli创建和打包静态站点，好处是可以使用Node.js 的构建但MAUI仅仅作为容器。开发应用需要一个独立的host项目
