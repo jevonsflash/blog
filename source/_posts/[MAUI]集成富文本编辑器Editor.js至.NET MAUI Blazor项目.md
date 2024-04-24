@@ -1,26 +1,29 @@
----
+﻿---
+thumbnail:
+cover:
 title: '[MAUI]集成富文本编辑器Editor.js至.NET MAUI Blazor项目'
+excerpt:
+description:
+date: 2024-04-13 23:52:00
 tags:
   - Xamarin
   - .net
   - MAUI
   - .net blazor
+
 categories:
-  - [.NET]
-  - [.NET MAUI]
+  - .NET
+  - .NET MAUI
+ 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: '2024-04-13 23:52:00/[MAUI]集成富文本编辑器Editor.js至.NET MAUI Blazor项目.html'
-abbrlink: '33414209'
-date: 2024-04-13 23:52:00
-thumbnail:
+uniqueId: 2024-04-13 23:52:00/[MAUI]集成富文本编辑器Editor.js至.NET MAUI Blazor项目.html
 ---
 <!-- toc -->
 [Editor.js](https://github.com/codex-team/editor.js) 是一个基于 Web 的所见即所得富文本编辑器，它由CodeX团队开发。之前写过一篇博文专门介绍过这个编辑器，可以回看：[开源好用的所见即所得(WYSIWYG)编辑器：Editor.js](https://www.cnblogs.com/jevonsflash/p/18066803)。
 
 .NET MAUI Blazor允许使用 Web UI 生成跨平台本机应用。 组件在 .NET 进程中以本机方式运行，并使用本地互操作通道将 Web UI 呈现到嵌入式 Web 视图控件（BlazorWebView）。
-<!-- more -->
 
 这次我们将Editor.js集成到.NET MAUI应用中。并实现只读切换，明/暗主题切换等功能。
 

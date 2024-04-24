@@ -1,0 +1,216 @@
+﻿---
+thumbnail:
+cover:
+title: '将Abp移植进.NET MAUI项目（一）：搭建项目'
+excerpt:
+description:
+date: 2022-05-25 18:43:00
+tags:
+  - Xamarin
+  - .net
+  - MAUI
+  - Abp
+
+categories:
+  - .NET
+  - .NET MAUI
+ 
+toc: true
+recommend: 1
+keywords: categories-java
+uniqueId: 2022-05-25 18:43:00/将Abp移植进.NET MAUI项目（一）：搭建项目.html
+---
+<span data-cke-copybin-start="1"><span data-cke-copybin-start="1">​</span></span>
+<h2><span id="cke_bm_379S">前言</span></h2>
+<p><span>写在.NET MAUI官宣正式发布之际，<strong>热烈庆祝MAUI正式发布！</strong></span></p>
+<p>去年12月份做了MAUI混合开发框架的调研，想起来文章里给自己挖了个坑，要教大家如何把Abp移植进Maui项目，由于篇幅限制，将分为三个章节。</p>
+<p><a href="https://www.cnblogs.com/jevonsflash/p/16310387.html">将Abp移植进.NET MAUI项目（一）：搭建项目 - 林晓lx - 博客园 (cnblogs.com)</a></p>
+<p><a href="https://www.cnblogs.com/jevonsflash/p/16310391.html">将Abp移植进.NET MAUI项目（二）：配置与基类编写 - 林晓lx - 博客园 (cnblogs.com)</a></p>
+<p><a href="https://www.cnblogs.com/jevonsflash/p/16310399.html">将Abp移植进.NET MAUI项目（三）：构建UI层 - 林晓lx - 博客园 (cnblogs.com)</a></p>
+<p>熟悉Abp的同学都知道，Abp 是一套强大的应用程序设计时框架（俗称脚手架），新版本的Abp vNext为微服务和网络优化的更多，然而本地开发经典Abp已经够用，而且官方没有停止维护，因此使用这个框架</p>
+<p>MAUI则是跨平台的应用程序抽象层，强大的运行时框架 + 强大的设计时框架 ， 我说这是宇宙最强大跨平台开发框架，不为过吧？</p>
+<p>计划：</p>
+<ul>
+<li>整个程序我们还是利用Mvvm设计模式，但是将利用Abp的Ioc容器，而不使用mvvmlight或者xamarinToolkit这些库，自行编写一个ViewModelBase</li>
+<li>使用Abp.EntityFrameworkCore库中的EF相关功能，使用sqlite作为数据持久化方案。</li>
+</ul>
+<p><span id="cke_bm_335S">目标：编写一个歌单App，对歌曲信息进行增、删、查、改。</span></p>
+<p><span class="cke_widget_wrapper cke_widget_inline cke_widget_image cke_image_nocaption cke_widget_selected" data-cke-display-name="图像" data-cke-filter="off" data-cke-widget-id="15" data-cke-widget-wrapper="1"><img src="https://img-blog.csdnimg.cn/73f57e7a9caf4fabb355944807bc55be.png" alt="" width="437" height="378" class="cke_widget_element" data-cke-saved-src="https://img-blog.csdnimg.cn/73f57e7a9caf4fabb355944807bc55be.png" data-cke-widget-data="%7B%22hasCaption%22%3Afalse%2C%22src%22%3A%22https%3A%2F%2Fimg-blog.csdnimg.cn%2F73f57e7a9caf4fabb355944807bc55be.png%22%2C%22alt%22%3A%22%22%2C%22width%22%3A%22437%22%2C%22height%22%3A%22378%22%2C%22lock%22%3Atrue%2C%22align%22%3A%22none%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="image" /><span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220528231449718-1191689704.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /><span class="cke_image_resizer" title="点击并拖拽以改变尺寸">​</span></span></span></p>
+<p>下面来看看如何搭建</p>
+<h2>搭建MAUI项目</h2>
+<p><span style="text-decoration: line-through;">请注意：本文发布时，MAUI处于RC3版本，仍没有正式发布，需要安装Visual Studio 2022 17.3 (Preview)</span></p>
+<p>首先按照官方教程搭建一个MAUI项目， 命名为MauiBoilerplate<span class="cke_widget_wrapper cke_widget_inline cke_widget_csdnlink cke_widget_selected" data-cke-display-name="a" data-cke-filter="off" data-cke-widget-id="14" data-cke-widget-wrapper="1"><a class="cke_widget_editable cke_widget_element" title="Build your first .NET MAUI app - .NET MAUI | Microsoft Docs" href="https://docs.microsoft.com/en-us/dotnet/maui/get-started/first-app" data-cke-enter-mode="2" data-cke-saved-href="https://docs.microsoft.com/en-us/dotnet/maui/get-started/first-app" data-cke-widget-data="%7B%22url%22%3A%22https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fmaui%2Fget-started%2Ffirst-app%22%2C%22text%22%3A%22Build%20your%20first%20.NET%20MAUI%20app%20-%20.NET%20MAUI%20%7C%20Microsoft%20Docs%22%2C%22desc%22%3A%22Learn%20how%20to%20create%20and%20run%20your%20first%20.NET%20MAUI%20app%20in%20Visual%20Studio%202022%20on%20Windows.%22%2C%22icon%22%3A%22https%3A%2F%2Fcsdnimg.cn%2Frelease%2Fblog_editor_html%2Frelease2.1.3%2Fckeditor%2Fplugins%2FCsdnLink%2Ficons%2Ficon-default.png%3Ft%3DM4AD%22%2C%22isCard%22%3Afalse%2C%22hasResquest%22%3Atrue%2C%22iconDefault%22%3A%22https%3A%2F%2Fcsdnimg.cn%2Frelease%2Fblog_editor_html%2Frelease2.1.3%2Fckeditor%2Fplugins%2FCsdnLink%2Ficons%2Ficon-default.png%3Ft%3DM4AD%22%2C%22id%22%3A%225fcOXZ-1653475132401%22%2C%22classes%22%3Anull%7D" data-cke-widget-editable="text" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-link-desc="Learn how to create and run your first .NET MAUI app in Visual Studio 2022 on Windows." data-link-icon="https://csdnimg.cn/release/blog_editor_html/release2.1.3/ckeditor/plugins/CsdnLink/icons/icon-default.png?t=M4AD" data-link-title="Build your first .NET MAUI app - .NET MAUI | Microsoft Docs" data-widget="csdnlink">Build your first .NET MAUI app - .NET MAUI | Microsoft Docs</a></span></p>
+<p>再前往Abp官网生成一个项目&nbsp;<br />
+<span class="cke_widget_wrapper cke_widget_inline cke_widget_csdnlink cke_widget_selected" data-cke-display-name="a" data-cke-filter="off" data-cke-widget-id="13" data-cke-widget-wrapper="1"><a class="cke_widget_editable cke_widget_element" title="Startup Templates - Create a Demo | AspNet Boilerplate" href="https://aspnetboilerplate.com/Templates" data-cke-enter-mode="2" data-cke-saved-href="https://aspnetboilerplate.com/Templates" data-cke-widget-data="%7B%22url%22%3A%22https%3A%2F%2Faspnetboilerplate.com%2FTemplates%22%2C%22text%22%3A%22Startup%20Templates%20-%20Create%20a%20Demo%20%7C%20AspNet%20Boilerplate%22%2C%22desc%22%3A%22%22%2C%22icon%22%3A%22https%3A%2F%2Fcsdnimg.cn%2Frelease%2Fblog_editor_html%2Frelease2.1.3%2Fckeditor%2Fplugins%2FCsdnLink%2Ficons%2Ficon-default.png%3Ft%3DM4AD%22%2C%22isCard%22%3Afalse%2C%22hasResquest%22%3Atrue%2C%22iconDefault%22%3A%22https%3A%2F%2Fcsdnimg.cn%2Frelease%2Fblog_editor_html%2Frelease2.1.3%2Fckeditor%2Fplugins%2FCsdnLink%2Ficons%2Ficon-default.png%3Ft%3DM4AD%22%2C%22id%22%3A%22kMChQm-1653475132400%22%2C%22classes%22%3Anull%7D" data-cke-widget-editable="text" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-link-icon="https://csdnimg.cn/release/blog_editor_html/release2.1.3/ckeditor/plugins/CsdnLink/icons/icon-default.png?t=M4AD" data-link-title="Startup Templates - Create a Demo | AspNet Boilerplate" data-widget="csdnlink">Startup Templates - Create a Demo | AspNet Boilerplate</a></span></p>
+<ul>
+<li>选择最新版本 v7.x 和.Net 6版本</li>
+<li>取消勾选&ldquo;Include login, register, user, role and tenant management pages&rdquo;</li>
+<li>项目名称中填入MauiBoilerplate与Maui项目保持一致</li>
+
+
+
+
+
+
+
+
+
+</ul>
+<p><span class="cke_widget_wrapper cke_widget_inline cke_widget_image cke_image_nocaption cke_widget_selected" data-cke-display-name="图像" data-cke-filter="off" data-cke-widget-id="12" data-cke-widget-wrapper="1"><img src="https://img-blog.csdnimg.cn/b3370549e7ea4bd3b1869536b1b45490.png" alt="" width="1200" height="620" class="cke_widget_element" data-cke-saved-src="https://img-blog.csdnimg.cn/b3370549e7ea4bd3b1869536b1b45490.png" data-cke-widget-data="%7B%22hasCaption%22%3Afalse%2C%22src%22%3A%22https%3A%2F%2Fimg-blog.csdnimg.cn%2Fb3370549e7ea4bd3b1869536b1b45490.png%22%2C%22alt%22%3A%22%22%2C%22width%22%3A%221200%22%2C%22height%22%3A%22620%22%2C%22lock%22%3Atrue%2C%22align%22%3A%22none%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="image" /><span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220525184242097-1492628253.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /><span class="cke_image_resizer" title="点击并拖拽以改变尺寸">​<span class="cke_widget_edit_container" title="编辑图片"><br /></span></span></span></span></p>
+<p>点击&ldquo;Create My Project&rdquo;生成abp项目文件，等待下载完成</p>
+<p>下载，解压好后，打开src目录可以发现4个项目目录，我们仅需要Core和EntityFrameworkCore项目，将这两个目录移至项目根目录，并且添加至解决方案。</p>
+<p><span class="cke_widget_wrapper cke_widget_inline cke_widget_image cke_image_nocaption cke_widget_selected" data-cke-display-name="图像" data-cke-filter="off" data-cke-widget-id="11" data-cke-widget-wrapper="1"><img src="https://img-blog.csdnimg.cn/4fe495b14ccb4e3ea95084a7ed900a26.png" alt="" width="390" height="174" class="cke_widget_element" data-cke-saved-src="https://img-blog.csdnimg.cn/4fe495b14ccb4e3ea95084a7ed900a26.png" data-cke-widget-data="%7B%22hasCaption%22%3Afalse%2C%22src%22%3A%22https%3A%2F%2Fimg-blog.csdnimg.cn%2F4fe495b14ccb4e3ea95084a7ed900a26.png%22%2C%22alt%22%3A%22%22%2C%22width%22%3A%22390%22%2C%22height%22%3A%22174%22%2C%22lock%22%3Atrue%2C%22align%22%3A%22none%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="image" /><span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220525184242097-1492628253.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /><span class="cke_image_resizer" title="点击并拖拽以改变尺寸">​<span class="cke_widget_edit_container" title="编辑图片"><br /></span></span></span></span></p>
+<p>&nbsp;</p>
+<h2>配置应用入口点</h2>
+<p>在MauiBoilerplate.Core项目中</p>
+<p>改写默认配置文件</p>
+<div class="cke_widget_wrapper cke_widget_block cke_widget_codeSnippet cke_widget_selected" data-cke-display-name="代码段" data-cke-filter="off" data-cke-widget-id="10" data-cke-widget-wrapper="1">
+<pre class="cke_widget_element" data-cke-widget-data="%7B%22lang%22%3A%22javascript%22%2C%22code%22%3A%22%7B%5Cn%20%20%5C%22ConnectionStrings%5C%22%3A%20%7B%5Cn%20%20%20%20%5C%22Default%5C%22%3A%20%5C%22Data%20Source%3Dfile%3A%7B0%7D%3B%5C%22%5Cn%20%20%7D%2C%5Cn%20%20%5C%22Logging%5C%22%3A%20%7B%5Cn%20%20%20%20%5C%22IncludeScopes%5C%22%3A%20false%2C%5Cn%20%20%20%20%5C%22LogLevel%5C%22%3A%20%7B%5Cn%20%20%20%20%20%20%5C%22Default%5C%22%3A%20%5C%22Debug%5C%22%2C%5Cn%20%20%20%20%20%20%5C%22System%5C%22%3A%20%5C%22Information%5C%22%2C%5Cn%20%20%20%20%20%20%5C%22Microsoft%5C%22%3A%20%5C%22Information%5C%22%5Cn%20%20%20%20%7D%5Cn%20%20%7D%5Cn%7D%5Cn%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="codeSnippet"><code class="language-javascript hljs">{
+  <span class="hljs-string">"ConnectionStrings": {
+    <span class="hljs-string">"Default": <span class="hljs-string">"Data Source=file:{0};"
+  },
+  <span class="hljs-string">"Logging": {
+    <span class="hljs-string">"IncludeScopes": <span class="hljs-literal">false,
+    <span class="hljs-string">"LogLevel": {
+      <span class="hljs-string">"Default": <span class="hljs-string">"Debug",
+      <span class="hljs-string">"System": <span class="hljs-string">"Information",
+      <span class="hljs-string">"Microsoft": <span class="hljs-string">"Information"
+    }
+  }
+}
+</span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220525184242097-1492628253.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /></span></div>
+<p>在MauiBoilerplate.Core.csproj中的ItemGroup节点下添加</p>
+<div class="cke_widget_wrapper cke_widget_block cke_widget_codeSnippet cke_widget_selected" data-cke-display-name="代码段" data-cke-filter="off" data-cke-widget-id="9" data-cke-widget-wrapper="1">
+<pre class="cke_widget_element" data-cke-widget-data="%7B%22lang%22%3A%22XML%22%2C%22code%22%3A%22%5Ct%20%20%3CEmbeddedResource%20Include%3D%5C%22appsettings.json%5C%22%3E%5Cn%5Ct%20%20%20%20%3CCopyToOutputDirectory%3EAlways%3C%2FCopyToOutputDirectory%3E%5Cn%5Ct%20%20%3C%2FEmbeddedResource%3E%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="codeSnippet"><code class="language-XML hljs">	  <span class="hljs-tag">&lt;<span class="hljs-name">EmbeddedResource <span class="hljs-attr">Include=<span class="hljs-string">"appsettings.json"&gt;
+	    <span class="hljs-tag">&lt;<span class="hljs-name">CopyToOutputDirectory&gt;Always<span class="hljs-tag">&lt;/<span class="hljs-name">CopyToOutputDirectory&gt;
+	  <span class="hljs-tag">&lt;/<span class="hljs-name">EmbeddedResource&gt;</span></span></span></span></span></span></span></span></span></span></code></pre>
+<span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220525184242097-1492628253.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /></span></div>
+<p>&nbsp;</p>
+<p>在MauiBoilerplate.Core项目中新建MauiBoilerplateBuilderExtensions.cs 作为程序入口</p>
+<p>添加一个静态方法InitConfig，用于读取项目的配置文件appsettings.json，若第一次运行或者该文件不存在则读取默认的配置文件</p>
+<div class="cke_widget_wrapper cke_widget_block cke_widget_codeSnippet cke_widget_selected" data-cke-display-name="代码段" data-cke-filter="off" data-cke-widget-id="8" data-cke-widget-wrapper="1">
+<pre class="cke_widget_element" data-cke-widget-data="%7B%22lang%22%3A%22cs%22%2C%22code%22%3A%22%20%20%20%20%20%20%20%20private%20static%20void%20InitConfig(string%20logCfgName%2C%20string%20documentsPath)%5Cn%20%20%20%20%20%20%20%20%7B%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20%20%20var%20assembly%20%3D%20IntrospectionExtensions.GetTypeInfo(typeof(MauiBoilerplateBuilderExtensions)).Assembly%3B%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20%20%20Stream%20stream%20%3D%20assembly.GetManifestResourceStream(%24%5C%22MauiBoilerplate.Core.%7BlogCfgName%7D%5C%22)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20string%20text%20%3D%20%5C%22%5C%22%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20using%20(var%20reader%20%3D%20new%20System.IO.StreamReader(stream))%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20text%20%3D%20reader.ReadToEnd()%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20if%20(DirFileHelper.IsExistFile(documentsPath))%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20currentFileContent%20%3D%20DirFileHelper.ReadFile(documentsPath)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20isSameContent%20%3D%20currentFileContent.ToMd5()%20%3D%3D%20text.ToMd5()%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20(isSameContent)%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20DirFileHelper.CreateFile(documentsPath%2C%20text)%3B%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%20%20%20%20else%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20DirFileHelper.CreateFile(documentsPath%2C%20text)%3B%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%20%20%20%20%7D%5Cn%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="codeSnippet"><code class="language-cs hljs">        <span class="hljs-function"><span class="hljs-keyword">private <span class="hljs-keyword">static <span class="hljs-keyword">void <span class="hljs-title">InitConfig(<span class="hljs-params"><span class="hljs-built_in">string logCfgName, <span class="hljs-built_in">string documentsPath)
+        {
+
+            <span class="hljs-keyword">var assembly = IntrospectionExtensions.GetTypeInfo(<span class="hljs-keyword">typeof(MauiBoilerplateBuilderExtensions)).Assembly;
+
+            Stream stream = assembly.GetManifestResourceStream(<span class="hljs-string">$"MauiBoilerplate.Core.<span class="hljs-subst">{logCfgName}");
+            <span class="hljs-built_in">string text = <span class="hljs-string">"";
+            <span class="hljs-keyword">using (<span class="hljs-keyword">var reader = <span class="hljs-keyword">new System.IO.StreamReader(stream))
+            {
+                text = reader.ReadToEnd();
+            }
+            <span class="hljs-keyword">if (DirFileHelper.IsExistFile(documentsPath))
+            {
+                <span class="hljs-keyword">var currentFileContent = DirFileHelper.ReadFile(documentsPath);
+                <span class="hljs-keyword">var isSameContent = currentFileContent.ToMd5() == text.ToMd5();
+                <span class="hljs-keyword">if (isSameContent)
+                {
+                    <span class="hljs-keyword">return;
+                }
+                DirFileHelper.CreateFile(documentsPath, text);
+
+            }
+            <span class="hljs-keyword">else
+            {
+                DirFileHelper.CreateFile(documentsPath, text);
+
+            }
+        }
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220525184242097-1492628253.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /></span></div>
+<p>&nbsp;</p>
+<p>添加一个静态方法InitDataBase用于初始化sqlite数据库文件"mato.db"</p>
+<div class="cke_widget_wrapper cke_widget_block cke_widget_codeSnippet cke_widget_selected" data-cke-display-name="代码段" data-cke-filter="off" data-cke-widget-id="7" data-cke-widget-wrapper="1">
+<pre class="cke_widget_element" data-cke-widget-data="%7B%22lang%22%3A%22cs%22%2C%22code%22%3A%22%20%20%20%20private%20static%20void%20InitDataBase(string%20dbName%2C%20string%20documentsPath)%5Cn%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20var%20assembly%20%3D%20IntrospectionExtensions.GetTypeInfo(typeof(MauiBoilerplateBuilderExtensions)).Assembly%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20Stream%20stream%20%3D%20assembly.GetManifestResourceStream(%24%5C%22MauiBoilerplate.Core.%7BdbName%7D%5C%22)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20StreamHelper.WriteStream(stream%2C%20documentsPath)%3B%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20%20%20var%20path%20%3D%20Path.GetDirectoryName(documentsPath)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20DirFileHelper.CreateDir(path)%3B%5Cn%20%20%20%20%7D%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="codeSnippet"><code class="language-cs hljs">    <span class="hljs-function"><span class="hljs-keyword">private <span class="hljs-keyword">static <span class="hljs-keyword">void <span class="hljs-title">InitDataBase(<span class="hljs-params"><span class="hljs-built_in">string dbName, <span class="hljs-built_in">string documentsPath)
+    {
+            <span class="hljs-keyword">var assembly = IntrospectionExtensions.GetTypeInfo(<span class="hljs-keyword">typeof(MauiBoilerplateBuilderExtensions)).Assembly;
+            Stream stream = assembly.GetManifestResourceStream(<span class="hljs-string">$"MauiBoilerplate.Core.<span class="hljs-subst">{dbName}");
+            StreamHelper.WriteStream(stream, documentsPath);
+
+            <span class="hljs-keyword">var path = Path.GetDirectoryName(documentsPath);
+            DirFileHelper.CreateDir(path);
+    }</span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220525184242097-1492628253.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /></span></div>
+<p>添加一个 静态方法UseMauiBoilerplate用于初始化配置文件，初始化db文件和向管道服务中注册AbpBootstrapper实例。</p>
+<div class="cke_widget_wrapper cke_widget_block cke_widget_codeSnippet cke_widget_selected" data-cke-display-name="代码段" data-cke-filter="off" data-cke-widget-id="6" data-cke-widget-wrapper="1">
+<pre class="cke_widget_element" data-cke-widget-data="%7B%22lang%22%3A%22cs%22%2C%22code%22%3A%22%20%20%20%20%20%20%20%20public%20static%20MauiAppBuilder%20UseMauiBoilerplate%3CTStartupModule%3E(this%20MauiAppBuilder%20builder)%20where%20TStartupModule%20%3A%20AbpModule%5Cn%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20var%20logCfgName%20%3D%20%5C%22log4net.config%5C%22%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20var%20appCfgName%20%3D%20%5C%22appsettings.json%5C%22%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20var%20dbName%20%3D%20%5C%22mato.db%5C%22%3B%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20%20%20string%20documentsPath%20%3D%20Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)%2C%20MauiBoilerplateConsts.LocalizationSourceName%2C%20logCfgName)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20string%20documentsPath2%20%3D%20Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)%2C%20MauiBoilerplateConsts.LocalizationSourceName%2C%20appCfgName)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20string%20dbPath%20%3D%20Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)%2C%20MauiBoilerplateConsts.LocalizationSourceName%2C%20dbName)%3B%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20%20%20InitConfig(logCfgName%2C%20documentsPath)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20InitConfig(appCfgName%2C%20documentsPath2)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20InitDataBase(dbName%2C%20dbPath)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20var%20_bootstrapper%20%3D%20AbpBootstrapper.Create%3CTStartupModule%3E(options%20%3D%3E%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20options.IocManager%20%3D%20new%20IocManager()%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%7D)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20_bootstrapper.IocManager.IocContainer.AddFacility%3CLoggingFacility%3E(f%20%3D%3E%20f.UseAbpLog4Net().WithConfig(documentsPath))%3B%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20%20%20builder.Services.AddSingleton(_bootstrapper)%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20WindsorRegistrationHelper.CreateServiceProvider(_bootstrapper.IocManager.IocContainer%2C%20builder.Services)%3B%5Cn%5Cn%20%20%20%20%20%20%20%20%20%20%20%20return%20builder%3B%5Cn%20%20%20%20%20%20%20%20%7D%5Cn%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="codeSnippet"><code class="language-cs hljs">        <span class="hljs-function"><span class="hljs-keyword">public <span class="hljs-keyword">static MauiAppBuilder <span class="hljs-title">UseMauiBoilerplate&lt;<span class="hljs-title">TStartupModule&gt;(<span class="hljs-params"><span class="hljs-keyword">this MauiAppBuilder builder) <span class="hljs-keyword">where TStartupModule : AbpModule
+        {
+            <span class="hljs-keyword">var logCfgName = <span class="hljs-string">"log4net.config";
+            <span class="hljs-keyword">var appCfgName = <span class="hljs-string">"appsettings.json";
+            <span class="hljs-keyword">var dbName = <span class="hljs-string">"mato.db";
+
+            <span class="hljs-built_in">string documentsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), MauiBoilerplateConsts.LocalizationSourceName, logCfgName);
+            <span class="hljs-built_in">string documentsPath2 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), MauiBoilerplateConsts.LocalizationSourceName, appCfgName);
+            <span class="hljs-built_in">string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), MauiBoilerplateConsts.LocalizationSourceName, dbName);
+
+            InitConfig(logCfgName, documentsPath);
+            InitConfig(appCfgName, documentsPath2);
+            InitDataBase(dbName, dbPath);
+            <span class="hljs-keyword">var _bootstrapper = AbpBootstrapper.Create&lt;TStartupModule&gt;(options =&gt;
+            {
+                options.IocManager = <span class="hljs-keyword">new IocManager();
+            });
+            _bootstrapper.IocManager.IocContainer.AddFacility&lt;LoggingFacility&gt;(f =&gt; f.UseAbpLog4Net().WithConfig(documentsPath));
+
+            builder.Services.AddSingleton(_bootstrapper);
+            WindsorRegistrationHelper.CreateServiceProvider(_bootstrapper.IocManager.IocContainer, builder.Services);
+
+            <span class="hljs-keyword">return builder;
+        }
+</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220525184242097-1492628253.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /></span></div>
+<p>在MauiBoilerplate项目中</p>
+<p>新建MauiBoilerplateModule.cs ，并编写代码如下，这是App起始模块</p>
+<div class="cke_widget_wrapper cke_widget_block cke_widget_codeSnippet cke_widget_selected" data-cke-display-name="代码段" data-cke-filter="off" data-cke-widget-id="5" data-cke-widget-wrapper="1">
+<pre class="cke_widget_element" data-cke-widget-data="%7B%22lang%22%3A%22cs%22%2C%22code%22%3A%22%5BDependsOn(typeof(MauiBoilerplateEntityFrameworkCoreModule))%5D%5Cn%20%20%20%20public%20class%20MauiBoilerplateModule%20%3A%20AbpModule%5Cn%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20public%20override%20void%20Initialize()%5Cn%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20IocManager.RegisterAssemblyByConvention(typeof(MauiBoilerplateModule).GetAssembly())%3B%5Cn%20%20%20%20%20%20%20%20%7D%5Cn%5Cn%20%20%20%20%7D%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="codeSnippet"><code class="language-cs hljs">[<span class="hljs-meta">DependsOn(typeof(MauiBoilerplateEntityFrameworkCoreModule))]
+    <span class="hljs-keyword">public <span class="hljs-keyword">class <span class="hljs-title">MauiBoilerplateModule : <span class="hljs-title">AbpModule
+    {
+        <span class="hljs-function"><span class="hljs-keyword">public <span class="hljs-keyword">override <span class="hljs-keyword">void <span class="hljs-title">Initialize()
+        {
+            IocManager.RegisterAssemblyByConvention(<span class="hljs-keyword">typeof(MauiBoilerplateModule).GetAssembly());
+        }
+
+    }</span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220525184242097-1492628253.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /></span></div>
+<p>打开MauiProgram.cs文件，将UseMauiBoilerplate添加到MauiAppBuilder</p>
+<p>这里提一下,&nbsp;MAUI 应用跟其他.Net6应用一样采用泛型主机启动应用，在项目中有一个静态<code>MauiProgram</code>类，这是应用的入口点。 这提供了从单个位置配置应用、服务和第三方库的功能。</p>
+<p>更多泛型主机的信息，请参阅微软文档<span class="cke_widget_wrapper cke_widget_inline cke_widget_csdnlink cke_widget_selected" data-cke-display-name="a" data-cke-filter="off" data-cke-widget-id="4" data-cke-widget-wrapper="1"><a class="cke_widget_editable cke_widget_element" title=".NET 通用主机 | Microsoft Docs" href="https://docs.microsoft.com/zh-CN/dotnet/core/extensions/generic-host" data-cke-enter-mode="2" data-cke-saved-href="https://docs.microsoft.com/zh-CN/dotnet/core/extensions/generic-host" data-cke-widget-data="%7B%22url%22%3A%22https%3A%2F%2Fdocs.microsoft.com%2Fzh-CN%2Fdotnet%2Fcore%2Fextensions%2Fgeneric-host%22%2C%22text%22%3A%22.NET%20%E9%80%9A%E7%94%A8%E4%B8%BB%E6%9C%BA%20%7C%20Microsoft%20Docs%22%2C%22desc%22%3A%22%22%2C%22icon%22%3A%22https%3A%2F%2Fcsdnimg.cn%2Frelease%2Fblog_editor_html%2Frelease2.1.3%2Fckeditor%2Fplugins%2FCsdnLink%2Ficons%2Ficon-default.png%3Ft%3DM4AD%22%2C%22isCard%22%3Afalse%2C%22hasResquest%22%3Atrue%2C%22iconDefault%22%3A%22https%3A%2F%2Fcsdnimg.cn%2Frelease%2Fblog_editor_html%2Frelease2.1.3%2Fckeditor%2Fplugins%2FCsdnLink%2Ficons%2Ficon-default.png%3Ft%3DM4AD%22%2C%22id%22%3A%22mm0zBk-1653475132379%22%2C%22classes%22%3Anull%7D" data-cke-widget-editable="text" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-link-icon="https://csdnimg.cn/release/blog_editor_html/release2.1.3/ckeditor/plugins/CsdnLink/icons/icon-default.png?t=M4AD" data-link-title=".NET 通用主机 | Microsoft Docs" data-widget="csdnlink">.NET 通用主机 | Microsoft Docs</a></span></p>
+<p><span class="cke_widget_wrapper cke_widget_inline cke_widget_image cke_image_nocaption cke_widget_selected" data-cke-display-name="图像" data-cke-filter="off" data-cke-widget-id="3" data-cke-widget-wrapper="1"><img src="https://img-blog.csdnimg.cn/44c5e71f7aee4139b7b610296f05eb8e.png" alt="" width="605" height="306" class="cke_widget_element" data-cke-saved-src="https://img-blog.csdnimg.cn/44c5e71f7aee4139b7b610296f05eb8e.png" data-cke-widget-data="%7B%22hasCaption%22%3Afalse%2C%22src%22%3A%22https%3A%2F%2Fimg-blog.csdnimg.cn%2F44c5e71f7aee4139b7b610296f05eb8e.png%22%2C%22alt%22%3A%22%22%2C%22width%22%3A%22605%22%2C%22height%22%3A%22306%22%2C%22lock%22%3Atrue%2C%22align%22%3A%22none%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="image" /><span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220525184242097-1492628253.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /><span class="cke_image_resizer" title="点击并拖拽以改变尺寸">​<span class="cke_widget_edit_container" title="编辑图片"><br /></span></span></span></span></p>
+<p>&nbsp;至此，在主机管道中已经配置了MauiBoilerplate服务</p>
+<h2>配置Abp</h2>
+<p>App.xaml是应用的声明起始点，将从这里初始化Abp</p>
+<p>打开App.xaml.cs，添加如下代码：</p>
+<div class="cke_widget_wrapper cke_widget_block cke_widget_codeSnippet cke_widget_selected" data-cke-display-name="代码段" data-cke-filter="off" data-cke-widget-id="2" data-cke-widget-wrapper="1">
+<pre class="cke_widget_element" data-cke-widget-data="%7B%22lang%22%3A%22cs%22%2C%22code%22%3A%22public%20partial%20class%20App%20%3A%20Application%5Cn%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20private%20readonly%20AbpBootstrapper%20_abpBootstrapper%3B%5Cn%5Cn%20%20%20%20%20%20%20%20public%20App(AbpBootstrapper%20abpBootstrapper)%5Cn%20%20%20%20%20%20%20%20%7B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20_abpBootstrapper%20%3D%20abpBootstrapper%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20InitializeComponent()%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20_abpBootstrapper.Initialize()%3B%5Cn%20%20%20%20%20%20%20%20%20%20%20%20this.MainPage%20%3D%20abpBootstrapper.IocManager.Resolve(typeof(MainPage))%20as%20MainPage%3B%5Cn%20%20%20%20%20%20%20%20%7D%5Cn%20%20%20%20%7D%22%2C%22classes%22%3Anull%7D" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-widget="codeSnippet"><code class="language-cs hljs"><span class="hljs-keyword">public <span class="hljs-keyword">partial <span class="hljs-keyword">class <span class="hljs-title">App : <span class="hljs-title">Application
+    {
+        <span class="hljs-keyword">private <span class="hljs-keyword">readonly AbpBootstrapper _abpBootstrapper;
+
+        <span class="hljs-function"><span class="hljs-keyword">public <span class="hljs-title">App(<span class="hljs-params">AbpBootstrapper abpBootstrapper)
+        {
+            _abpBootstrapper = abpBootstrapper;
+            InitializeComponent();
+            _abpBootstrapper.Initialize();
+            <span class="hljs-keyword">this.MainPage = abpBootstrapper.IocManager.Resolve(<span class="hljs-keyword">typeof(MainPage)) <span class="hljs-keyword">as MainPage;
+        }
+    }</span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<span class="cke_reset cke_widget_drag_handler_container"><img src="https://img2022.cnblogs.com/blog/644861/202205/644861-20220525184242097-1492628253.gif" width="15" height="15" class="cke_reset cke_widget_drag_handler" title="点击并拖拽以移动" data-cke-widget-drag-handler="1" /></span></div>
+<p>注意，我们还没有创建初始页面MainPage，你可以先创建这个文件，将在第三章讲UI层时介绍</p>
+<p>至此，就完成了MAUI项目的搭建与Abp脚手架的集成，现在你可以在这个项目中使用Abp的IocManager，ConfigurationManager，工作单元特性，模组化特性，等等任何的Abp提供的功能了。</p>
+<p>但是距离目标：制作一个具有数据访问层的App，还需要两段路要走：配置数据库，以及编写界面。</p>
+<p>请看下一章<a href="https://www.cnblogs.com/jevonsflash/p/16310391.html">将Abp移植进.NET MAUI项目（二）：配置与基类编写 - 林晓lx - 博客园 (cnblogs.com)</a></p>
+<h2>&nbsp;项目地址</h2>
+<p><span class="cke_widget_wrapper cke_widget_inline cke_widget_csdnlink cke_widget_selected" data-cke-display-name="a" data-cke-filter="off" data-cke-widget-id="0" data-cke-widget-wrapper="1"><a class="cke_widget_editable cke_widget_element" title="jevonsflash/maui-abp-sample (github.com)" href="https://github.com/jevonsflash/maui-abp-sample" data-cke-enter-mode="2" data-cke-saved-href="https://github.com/jevonsflash/maui-abp-sample" data-cke-widget-data="%7B%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fjevonsflash%2Fmaui-abp-sample%22%2C%22text%22%3A%22jevonsflash%2Fmaui-abp-sample%20(github.com)%22%2C%22desc%22%3A%22%22%2C%22icon%22%3A%22%22%2C%22isCard%22%3Afalse%2C%22hasResquest%22%3Atrue%2C%22iconDefault%22%3A%22https%3A%2F%2Fcsdnimg.cn%2Frelease%2Fblog_editor_html%2Frelease2.1.3%2Fckeditor%2Fplugins%2FCsdnLink%2Ficons%2Ficon-default.png%3Ft%3DM4AD%22%2C%22id%22%3A%22BKS5R7-1653475132367%22%2C%22classes%22%3Anull%7D" data-cke-widget-editable="text" data-cke-widget-keep-attr="0" data-cke-widget-upcasted="1" data-link-icon="https://csdnimg.cn/release/blog_editor_html/release2.1.3/ckeditor/plugins/CsdnLink/icons/icon-default.png?t=M4AD" data-link-title="jevonsflash/maui-abp-sample (github.com)" data-widget="csdnlink">jevonsflash/maui-abp-sample (github.com)</a></span></p>
+<p><br />
+</p>
+
+
+
+
+
+
+
+
+<span data-cke-copybin-start="1">
+<span data-cke-copybin-end="1">​</span></span>

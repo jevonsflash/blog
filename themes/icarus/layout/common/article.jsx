@@ -29,6 +29,7 @@ module.exports = class extends Component {
         const indexLanguage = toMomentLocale(defaultLanguage || 'en');
         const language = toMomentLocale(page.lang || page.language || defaultLanguage || 'en');
         const cover = page.cover ? url_for(page.cover) : null;
+        const thumbnail = page.thumbnail ? url_for(page.thumbnail) : null;
         const updateTime = article && article.update_time !== undefined ? article.update_time : true;
         const isUpdated = page.updated && !moment(page.date).isSame(moment(page.updated));
         const shouldShowUpdated = page.updated && ((updateTime === 'auto' && isUpdated) || updateTime === true);
@@ -37,13 +38,12 @@ module.exports = class extends Component {
             {/* Main content */}
             <div class="card">
                 {/* Thumbnail */}
-                {cover ? <div class="card-image">
-                    {index ? <a href={url_for(page.link || page.path)} class="image is-7by3">
+                {!index && cover ? <div class="card-image">
+                    <span class="image is-7by3">
                         <img class="fill" src={cover} alt={page.title || cover} />
-                    </a> : <span class="image is-7by3">
-                        <img class="fill" src={cover} alt={page.title || cover} />
-                    </span>}
+                    </span>
                 </div> : null}
+                {/* Article */}
                 <article class={`card-content article${'direction' in page ? ' ' + page.direction : ''}`} role="article">
                     {/* Metadata */}
                     {page.layout !== 'page' ? <div class="article-meta is-size-7 is-uppercase level is-mobile">
@@ -86,10 +86,20 @@ module.exports = class extends Component {
                         </div>
                     </div> : null}
                     {/* Title */}
-                    {page.title !== '' && index ? <p class="title is-3 is-size-4-mobile"><a class="link-muted" href={url_for(page.link || page.path)}>{page.title}</a></p> : null}
-                    {page.title !== '' && !index ? <h1 class="title is-3 is-size-4-mobile">{page.title}</h1> : null}
+                    {page.title !== '' && index ? <p class="title is-5 is-size-6-mobile"><a class="link-muted" href={url_for(page.link || page.path)}>{page.title}</a></p> : null}
+                    {page.title !== '' && !index ? <h1 class="title is-5 is-size-6-mobile">{page.title}</h1> : null}
+
+
+
                     {/* Content/Excerpt */}
-                    <div class="content" dangerouslySetInnerHTML={{ __html: index && page.excerpt ? page.excerpt : page.content }}></div>
+                    <div class="content" >
+                        {index && thumbnail ? <div class="card-image thumbnail">
+                            <a href={url_for(page.link || page.path)} class="image">
+                                <img class="fill" src={thumbnail} alt={page.title || thumbnail} />
+                            </a>
+                        </div> : null}
+                        <div dangerouslySetInnerHTML={{ __html: index && page.excerpt ? page.excerpt : page.content }}></div>
+                    </div>
                     {/* Licensing block */}
                     {!index && article && article.licenses && Object.keys(article.licenses)
                         ? <ArticleLicensing.Cacheable page={page} config={config} helper={helper} /> : null}
@@ -101,7 +111,25 @@ module.exports = class extends Component {
                         })}
                     </div> : null}
                     {/* "Read more" button */}
-                    {index && page.excerpt ? <a class="article-more button is-small is-size-7" href={`${url_for(page.link || page.path)}#more`}>{__('article.more')}</a> : null}
+                    <div class="level is-mobile is-flex">
+                        {index && page.tags && page.tags.length ?
+                            <div class="level-start">
+                                <div class="is-uppercase article-more button is-small size-small">
+                                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                                    {page.tags.map(tag => {
+                                        return <a class="link-muted mr-2" rel="tag"
+                                            href={url_for(tag.path)}>{tag.name}</a>;
+                                    })}
+                                </div>
+                            </div> : null}
+
+                        {index && page.excerpt ?
+                            <div class="level-start">
+                                <a class="article-more button is-small is-size-7" href={`${url_for(page.link || page.path)}#more`}>{__('article.more')}</a>
+                            </div>
+
+                            : null}
+                    </div>
                     {/* Share button */}
                     {!index ? <Share config={config} page={page} helper={helper} /> : null}
                 </article>

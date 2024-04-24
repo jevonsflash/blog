@@ -1,6 +1,9 @@
 ---
 thumbnail:
+cover:
 title: '{{ title }}'
+excerpt:
+description:
 date: {{ date }}
 tags:
 categories: 

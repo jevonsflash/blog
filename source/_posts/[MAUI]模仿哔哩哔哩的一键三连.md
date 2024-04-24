@@ -1,25 +1,28 @@
----
+﻿---
+thumbnail:
+cover:
 title: '[MAUI]模仿哔哩哔哩的一键三连'
+excerpt:
+description:
+date: 2024-03-25 19:43:00
 tags:
   - Xamarin
   - .net
   - MAUI
   - XAML
+
 categories:
-  - [.NET MAUI]
+  - .NET MAUI
+ 
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: '2024-03-25 19:43:00/[MAUI]模仿哔哩哔哩的一键三连.html'
-abbrlink: a6dfa37
-date: 2024-03-25 19:43:00
-thumbnail:
+uniqueId: 2024-03-25 19:43:00/[MAUI]模仿哔哩哔哩的一键三连.html
 ---
 <!-- toc -->
 [哔哩哔哩(Bilibili)](https://www.bilibili.com/)中用户可以通过长按点赞键同时完成点赞、投币、收藏对UP主表示支持，后UP主多用“一键三连”向视频浏览者请求对其作品同时进行点赞、投币、收藏。
 
 
-<!-- more -->
 ![在这里插入图片描述](644861-20240324232316058-1755743616.gif)
 
 
@@ -223,7 +226,7 @@ private void UpdateProgress()
 
 我们只需前往哔哩哔哩主站，要打开浏览器的开发者工具，用元素检查器，在找到按钮位置后查看其样式，拷贝path中的svg代码，即可得到这些矢量图片。
 
-![](644861-20240324233409728-684929414.png)
+![](https://img2024.cnblogs.com/blog/644861/202403/644861-20240324233409728-684929414.png)
 
 
 拷贝右侧红色区域选中的部分，我们只需要这些svg代码。
