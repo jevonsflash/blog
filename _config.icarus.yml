@@ -176,7 +176,7 @@ comment:
     required_meta: []                             # 可选填
     login: enable                                 # 可选填
     word_limit: 0                                 # 可选填
-    page_size: 10                                 # 可选填
+    page_size: 20                                 # 可选填
     image_uploader: false                         # 可选填
     highlighter: true                             # 可选填
     tex_renderer: false                           # 可选填

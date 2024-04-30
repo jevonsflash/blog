@@ -59,9 +59,9 @@ module.exports = function (hexo) {
               src = srcArray.join('/');
 
               $(this).attr('src', config.root + link + src);
-              console.info && console.info("config.root:" + config.root);
-              console.info && console.info("link:" + link);
-              console.info && console.info("src:" + src);
+              // console.info && console.info("config.root:" + config.root);
+              // console.info && console.info("link:" + link);
+              // console.info && console.info("src:" + src);
             }
           } else {
             console.info && console.info("no src attr, skipped...");
