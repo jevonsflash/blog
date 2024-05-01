@@ -4,10 +4,10 @@ title: 使用RoslynSyntaxTool工具互相转换C#代码与语法树代码
 excerpt: 此工具能将C#代码，转换成使用语法工厂构造器（SyntaxFactory）生成等效语法树代码
 tags:
   - 小工具
-  - .net
+  - [.NET]
   - Roslyn
 categories:
-  - .NET
+  - [.NET]
 toc: true
 recommend: 1
 keywords: categories-java

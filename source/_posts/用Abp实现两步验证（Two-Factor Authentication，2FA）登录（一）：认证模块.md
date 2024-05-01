@@ -12,7 +12,7 @@ tags:
   - 腾讯云
   - 网络安全
 categories:
-  - .NET
+  - [.NET]
 toc: true
 recommend: 1
 keywords: categories-java

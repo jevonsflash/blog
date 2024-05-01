@@ -10,7 +10,7 @@ tags:
   - 产品设计
   - App
 categories:
-  - .NET MAUI
+  - [.NET MAUI]
   - 产品设计
 toc: true
 recommend: 1
@@ -21,7 +21,7 @@ date: 2023-05-14 17:47:00
 cover:
 description:
 ---
-[toc]
+<!-- toc -->
 .NET MAUI 实现界面多态有很多种方式，今天主要来说说在日常开发中常见的需求该如何应对。
 ## 需求一：在不同设备上使用不同 UI 外观
 

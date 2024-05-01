@@ -9,7 +9,7 @@ tags:
   - Xamarin
   - MAUI
 categories:
-  - .NET MAUI
+  - [.NET MAUI]
   - 产品设计
 toc: true
 recommend: 1

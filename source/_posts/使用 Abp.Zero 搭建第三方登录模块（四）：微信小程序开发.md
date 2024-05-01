@@ -9,7 +9,7 @@ tags:
   - 微信公众号
 categories:
   - JavaScript
-  - 小程序/公众号
+  - [小程序/公众号]
 toc: true
 recommend: 1
 keywords: categories-java

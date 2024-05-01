@@ -4,11 +4,11 @@ title: '[学习笔记]Linux + Nginx环境下部署 Web 站点'
 excerpt: >-
   首先更改server区域内容，root为你的站点根目录，注意不要指定任何index入口，因为这是目录。出现“blockedbyCORSpolicy”，未将网站域名添加至允许跨域访问设置。拷贝dist.zip到目标服务器的文件夹下，这里以~/下载为目标。若出现无法访问，网站报403或者404，请查看nginx日志。等待打包结束，成功后将在根目录下生成dist文件夹。部分错误可参照Troubleshooting解决。将站点文件移动至/var/www/{站点名称}/.........
 tags:
-  - Linux
+  - [Linux]
   - Nginx
 categories:
-  - Linux
-  - Web
+  - [Linux]
+  - [Web]
 toc: true
 recommend: 1
 keywords: categories-java

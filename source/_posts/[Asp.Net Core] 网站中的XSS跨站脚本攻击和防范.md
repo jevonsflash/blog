@@ -9,8 +9,8 @@ tags:
   - 网络安全
   - xss
 categories:
-  - .NET
-  - Web
+  - [.NET]
+  - [Web]
 toc: true
 recommend: 1
 keywords: categories-java

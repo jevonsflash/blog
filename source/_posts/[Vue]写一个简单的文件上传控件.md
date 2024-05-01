@@ -9,7 +9,7 @@ tags:
   - Vue
   - ElementUI
 categories:
-  - Web
+  - [Web]
 toc: true
 recommend: 1
 keywords: categories-java

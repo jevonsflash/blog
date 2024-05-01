@@ -12,7 +12,7 @@ tags:
   - 产品设计
 
 categories:
-  - .NET MAUI
+  - [.NET MAUI]
   - 产品设计
  
 toc: true

@@ -8,12 +8,12 @@ excerpt: >-
   是高德开放平台基于WebGL的地图组件，可以将高德地图模块集成到.NET MAUI Blazor中的BlazorWebView控件。
 tags:
   - Xamarin
-  - .net
+  - [.NET]
   - MAUI
   - C#
 categories:
-  - .NET MAUI
-  - 移动开发
+  - [.NET MAUI]
+  - [移动开发]
 toc: true
 recommend: 1
 keywords: categories-java

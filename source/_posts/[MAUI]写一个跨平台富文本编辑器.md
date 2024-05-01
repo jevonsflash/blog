@@ -11,7 +11,7 @@ tags:
   - XAML
   - 跨平台
 categories:
-  - .NET MAUI
+  - [.NET MAUI]
 toc: true
 recommend: 1
 keywords: categories-java

@@ -7,11 +7,11 @@ excerpt: >-
   秒钟后，转为三连模式，可以控制并显示进度，并在进度完成时弹出一些泡泡。在本项目中，需要监听长按动作，当“三连按钮”长按2秒后，转为三连模式，此时需要监听手指释放情况，当时长不足时取消三连。当按钮被点击时此Timer会开。这些按钮用svg格式在html中。
 tags:
   - Xamarin
-  - .net
+  - [.NET]
   - MAUI
   - XAML
 categories:
-  - .NET MAUI
+  - [.NET MAUI]
 toc: true
 recommend: 1
 keywords: categories-java

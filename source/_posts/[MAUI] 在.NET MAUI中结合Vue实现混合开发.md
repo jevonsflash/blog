@@ -8,11 +8,11 @@ excerpt: >-
   MAUI框架可以将Vue应用嵌入到Web容器中。可以实现跨平台的混合开发。例如我在某医疗行业项目中，已经用这个混合开发的方式生成应用，Vue代码不需要做什么改动，就能跨平台运行：如果你
 tags:
   - Xamarin
-  - .net
+  - [.NET]
   - MAUI
   - XAML
 categories:
-  - .NET MAUI
+  - [.NET MAUI]
 toc: true
 recommend: 1
 keywords: categories-java

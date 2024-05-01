@@ -3,11 +3,11 @@ thumbnail: images/5e64d80c074d4b48a39322fe27ba5107.png
 title: '[学习笔记]Linux环境下部署 .Net5 程序'
 excerpt: 公司的项目需要部署到一台公网的linux服务器，以便同事们测试小程序。记录了步骤和一些坑
 tags:
-  - Linux
-  - .net
+  - [Linux]
+  - [.NET]
   - Nginx
 categories:
-  - .NET
+  - [.NET]
 toc: true
 recommend: 1
 keywords: categories-java

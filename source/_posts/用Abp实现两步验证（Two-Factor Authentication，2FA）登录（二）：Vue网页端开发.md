@@ -12,7 +12,7 @@ tags:
   - 网络安全
 categories:
   - JavaScript
-  - Web
+  - [Web]
 toc: true
 recommend: 1
 keywords: categories-java

@@ -3,11 +3,11 @@ thumbnail: images/0e261f65cb0c4f9bbd4199f3a7553337.png
 title: 探究C# dynamic动态类型本质
 excerpt: 本周在做接口动态传参的时候思考了个问题：如何把一个json字符串，转成C#动态类?比如由生成解决这个问题前，我们先来了解一下dynamic动态类型。
 tags:
-  - .net
+  - [.NET]
   - asp.net core
   - C#
 categories:
-  - .NET
+  - [.NET]
 toc: true
 recommend: 1
 keywords: categories-java

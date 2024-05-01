@@ -4,15 +4,15 @@ title: Vue + Volo.Abp 实现OAuth2.0客户端授权模式认证
 excerpt: >-
   只需要清除vuex或Cookies中的token即可，可以调用vue-oidc-client的signOut，但只是跳转到配置的登出地址，不会清除token（前提是redirectAfterSignout为true，并设置了post_logout_redirect_uri）创建continue/index.vue，简单的显示登录成功的提示，常用的提示有“登录成功，正在为您继续”，“登录成功，正在为您跳转”等友好提示。（D）客户端收到授权码，附上早先的"重定向URI"，向认证服务器申请令牌。
 tags:
-  - .net
+  - [.NET]
   - TypeScript
   - Vue
   - asp.net core
   - 网络安全
 categories:
-  - .NET
+  - [.NET]
   - JavaScript
-  - Web
+  - [Web]
 toc: true
 recommend: 1
 keywords: categories-java

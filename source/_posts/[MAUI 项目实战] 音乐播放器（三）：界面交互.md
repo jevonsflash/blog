@@ -9,8 +9,8 @@ tags:
   - MAUI
   - XAML
 categories:
-  - .NET
-  - .NET MAUI
+  - [.NET]
+  - [.NET MAUI]
 toc: true
 recommend: 1
 keywords: categories-java

@@ -10,7 +10,7 @@ tags:
   - Android
   - 跨平台
 categories:
-  - .NET MAUI
+  - [.NET MAUI]
   - 产品设计
 toc: true
 recommend: 1

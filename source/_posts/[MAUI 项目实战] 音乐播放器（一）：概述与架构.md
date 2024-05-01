@@ -6,11 +6,11 @@ excerpt: >-
   8的老项目，2014年用作为兴趣写了个叫“番茄播放器”的App，顺便提高编程技能。这个项目的架构历经多次迁移，从WP8到UWP再到Xamarin.Forms。去年底随着MAUI的正式发布，又尝试把它迁移到MAUI上来。
 tags:
   - Xamarin
-  - .net
+  - [.NET]
   - MAUI
 categories:
-  - .NET
-  - .NET MAUI
+  - [.NET]
+  - [.NET MAUI]
 toc: true
 recommend: 1
 keywords: categories-java

@@ -30,3 +30,7 @@ require('../include/config')(hexo);
  */
 require('../include/register')(hexo);
 require('../include/filter/asset-image')(hexo);
+
+require('../include/generator/original-index')(hexo);
+require('../include/generator/repost-index')(hexo);
+

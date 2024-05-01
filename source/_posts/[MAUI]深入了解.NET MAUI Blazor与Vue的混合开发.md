@@ -5,13 +5,13 @@ excerpt: >-
   每个BlazorWebView控件包含根组件（RootComponent）定义，ComponentType是在应用程序启动时加载页面时的类型，该类型需要继承自Microsoft.AspNetCore.Components.IComponent，由于我们的导航是由MAUI处理的，因此我们不需要使用Blazor路由，直接使用Razor组件。开发应用需要一个独立的host项目。中引入，还有一种是使用并置的js文件，这种方式是所谓的"CodeBehind"，因为更利于组织代码，这里我们使用并置的js文件。
 tags:
   - Xamarin
-  - .net
+  - [.NET]
   - MAUI
   - Vue
 categories:
-  - .NET
-  - .NET MAUI
-  - 移动开发
+  - [.NET]
+  - [.NET MAUI]
+  - [移动开发]
 toc: true
 recommend: 1
 keywords: categories-java

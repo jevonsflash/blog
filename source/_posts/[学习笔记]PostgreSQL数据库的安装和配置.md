@@ -3,11 +3,11 @@ thumbnail: images/a9b44db8d4c546fd91ae6d9437beca51.png
 title: '[学习笔记]PostgreSQL数据库的安装和配置'
 excerpt: 本文简单介绍了Postgres数据库在Linux系统下的安装和配置
 tags:
-  - Linux
+  - [Linux]
   - 数据库
 categories:
   - Database
-  - Linux
+  - [Linux]
 toc: true
 recommend: 1
 keywords: categories-java

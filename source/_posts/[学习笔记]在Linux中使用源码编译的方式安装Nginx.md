@@ -6,10 +6,10 @@ excerpt: >-
   使用源码的方式安装nginx，可以加深对linux目录的理解，今天就来放弃yum.. rpm.. dnf..
   这些在linux下较为“傻瓜”的操作方式，实战源码编译的方式安装nginx！
 tags:
-  - Linux
+  - [Linux]
   - Nginx
 categories:
-  - .NET
+  - [.NET]
   - DevOps
 toc: true
 recommend: 1

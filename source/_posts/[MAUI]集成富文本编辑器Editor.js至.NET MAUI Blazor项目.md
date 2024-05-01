@@ -6,12 +6,12 @@ excerpt: >-
   UI。在script代码段中，创建LoadContent函数，用于加载EditorJs的初始内容。
 tags:
   - Xamarin
-  - .net
+  - [.NET]
   - MAUI
-  - .net blazor
+  - [.NET blazor]
 categories:
-  - .NET
-  - .NET MAUI
+  - [.NET MAUI]
+  - [.NET]
 toc: true
 recommend: 1
 keywords: categories-java

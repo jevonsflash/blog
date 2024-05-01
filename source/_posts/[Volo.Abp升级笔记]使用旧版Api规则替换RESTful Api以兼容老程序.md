@@ -10,7 +10,7 @@ tags:
   - 微服务
   - RESTful API
 categories:
-  - .NET
+  - [.NET]
 toc: true
 recommend: 1
 keywords: categories-java

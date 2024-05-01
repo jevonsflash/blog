@@ -5,9 +5,9 @@ excerpt: >-
   最近在做一个生成文档的需求。通过先制作一个包含各字段占位符的文档模板，导入这个模板并填写内容替换掉占位符，再输出成最终文件。由于版式固定，安全性更好，业务上常用Pdf作为最终标准化的格式，
   在.Net平台下，可以使用PdfSharp导入，编辑，导出Pdf文档。
 tags:
-  - .net
+  - [.NET]
 categories:
-  - .NET
+  - [.NET]
 toc: true
 recommend: 1
 keywords: categories-java

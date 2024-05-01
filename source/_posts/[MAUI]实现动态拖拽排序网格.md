@@ -5,11 +5,11 @@ excerpt: >-
   拖拽控件悬停在当前控件上方时，将IsBeingDraggedOver设置为true，通知当前控件正在有拖拽控件悬停在其上方，同时在服务列表中寻找当前正在被拖拽的服务，将DropPlaceHolderItem设置为当前控件。当以比较快的速度，拖拽Tile经过较多的位置时，后面的Tile会短暂地替代原先的位置，导致拖拽中的Tile不在期望的Tile上方，而拖拽中的Tile与错误的Tile产生了交叠从而触发DraggedOver事件，导致错乱。其是在松开手指之后才向列表提交条目位置变更的命令。
 tags:
   - Xamarin
-  - .net
+  - [.NET]
   - MAUI
 categories:
-  - .NET
-  - .NET MAUI
+  - [.NET]
+  - [.NET MAUI]
 toc: true
 recommend: 1
 keywords: categories-java

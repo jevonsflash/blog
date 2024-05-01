@@ -9,7 +9,7 @@ tags:
   - asp.net core
   - sqlserver
 categories:
-  - .NET
+  - [.NET]
   - Database
 toc: true
 recommend: 1

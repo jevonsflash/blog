@@ -10,8 +10,8 @@ tags:
   - 微信公众号
 categories:
   - JavaScript
-  - Web
-  - 小程序/公众号
+  - [Web]
+  - [小程序/公众号]
 toc: true
 recommend: 1
 keywords: categories-java
@@ -163,7 +163,6 @@ description:
       <span class="hljs-keyword">let authProvider = userInfo.<span class="hljs-property">authProvider;
       <span class="hljs-keyword">let providerKey = userInfo.<span class="hljs-property">providerKey;
       <span class="hljs-keyword">let providerAccessCode = userInfo.<span class="hljs-property">providerAccessCode;
-
       <span class="hljs-keyword">await <span class="hljs-title function_">request(
         <span class="hljs-string">`https://localhost:44311/api/TokenAuth/ExternalAuthenticate`,
         <span class="hljs-string">"post",
@@ -193,7 +192,6 @@ description:
       <span class="hljs-comment">// (this.$refs.baseForm as any).validate(async (valid) =&gt; {
       <span class="hljs-comment">//   if (valid == null) {
       <span class="hljs-keyword">var currentForms = <span class="hljs-variable language_">this.<span class="hljs-property">loginExternalForms[authProvider];
-
       <span class="hljs-variable language_">this.<span class="hljs-property">loading = <span class="hljs-literal">true;
       <span class="hljs-keyword">return <span class="hljs-keyword">await <span class="hljs-variable language_">this.<span class="hljs-title class_">ExternalLogin(currentForms).<span class="hljs-title function_">then(<span class="hljs-keyword">async (re) =&gt; {
         <span class="hljs-keyword">return <span class="hljs-keyword">await <span class="hljs-title function_">request(
@@ -206,7 +204,6 @@ description:
         });
       });
     },
-
     <span class="hljs-keyword">async <span class="hljs-title function_">handleWxLogin(<span class="hljs-params">providerAccessCode) {
       <span class="hljs-variable language_">this.<span class="hljs-property">loginExternalForms.<span class="hljs-property">WeChat.<span class="hljs-property">providerAccessCode = providerAccessCode;
       <span class="hljs-keyword">return <span class="hljs-keyword">await <span class="hljs-variable language_">this.<span class="hljs-title function_">handleExternalLogin(<span class="hljs-string">"WeChat");
@@ -221,7 +218,6 @@ description:
         <span class="hljs-attr">type: <span class="hljs-string">"success",
       });
     },    
-
     <span class="hljs-keyword">async <span class="hljs-title function_">afterLoginSuccess(<span class="hljs-params">userinfo) {
       <span class="hljs-built_in">clearInterval(<span class="hljs-variable language_">this.<span class="hljs-property">timerId);
       <span class="hljs-variable language_">this.<span class="hljs-title function_">successMessage(<span class="hljs-string">"登录成功");
@@ -267,7 +263,6 @@ description:
         &gt;
         <span class="hljs-tag">&lt;/<span class="hljs-name">el-result&gt;
       <span class="hljs-tag">&lt;/<span class="hljs-name">div&gt;
-
       <span class="hljs-tag">&lt;<span class="hljs-name">div <span class="hljs-attr">v-else-if=<span class="hljs-string">"wechatMiniappLoginStatus == 'AUTHORIZED'"&gt;
         <span class="hljs-tag">&lt;<span class="hljs-name">el-result
           <span class="hljs-attr">icon=<span class="hljs-string">"success"

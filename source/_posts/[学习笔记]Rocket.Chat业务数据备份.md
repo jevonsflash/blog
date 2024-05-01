@@ -11,7 +11,7 @@ tags:
   - mongodb
 categories:
   - DevOps
-  - Linux
+  - [Linux]
 toc: true
 recommend: 1
 keywords: categories-java

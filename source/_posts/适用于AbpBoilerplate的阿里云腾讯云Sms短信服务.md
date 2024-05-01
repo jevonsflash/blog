@@ -3,10 +3,10 @@ thumbnail: images/6fbfa933a7d44551ae49386aa6019dea.jpeg
 title: 适用于AbpBoilerplate的阿里云腾讯云Sms短信服务
 excerpt: '适用于AbpBoilerplate的阿里云短信服务(https://www.aliyun.com/product/sms)'
 tags:
-  - .net
+  - [.NET]
   - sms
 categories:
-  - .NET
+  - [.NET]
 toc: true
 recommend: 1
 keywords: categories-java

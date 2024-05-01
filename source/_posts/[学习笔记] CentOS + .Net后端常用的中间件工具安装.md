@@ -7,7 +7,7 @@ tags:
   - centos
   - 中间件
 categories:
-  - Linux
+  - [Linux]
 toc: true
 recommend: 1
 keywords: categories-java

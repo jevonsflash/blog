@@ -13,8 +13,8 @@ tags:
   - 腾讯云
 
 categories:
-  - .NET
-  - Web
+  - [.NET]
+  - [Web]
  
 toc: true
 recommend: 1

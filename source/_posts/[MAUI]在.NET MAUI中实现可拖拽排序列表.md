@@ -7,11 +7,11 @@ excerpt: >-
   MAU实现跨平台支持，本项目可运行于Android、iOS平台。
 tags:
   - Xamarin
-  - .net
+  - [.NET]
   - MAUI
   - XAML
 categories:
-  - .NET MAUI
+  - [.NET MAUI]
   - 产品设计
 toc: true
 recommend: 1
@@ -22,7 +22,7 @@ date: 2023-08-15 14:33:00
 cover:
 description:
 ---
-[toc]
+<!-- toc -->
 
 .NET MAUI 中提供了拖放(drag-drop)手势识别器，允许用户通过拖动手势来移动控件。在这篇文章中，我们将学习如何使用拖放手势识别器来实现可拖拽排序列表。在本例中，列表中显示不同大小的磁贴（Tile）并且可以拖拽排序。
 

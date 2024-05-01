@@ -33,6 +33,9 @@ module.exports = class extends Component {
         const updateTime = article && article.update_time !== undefined ? article.update_time : true;
         const isUpdated = page.updated && !moment(page.date).isSame(moment(page.updated));
         const shouldShowUpdated = page.updated && ((updateTime === 'auto' && isUpdated) || updateTime === true);
+        function getIsRepost(page) {
+            return page.categories.some(obj => obj.name === '转载')
+        }
 
         return <Fragment>
             {/* Main content */}
@@ -86,7 +89,11 @@ module.exports = class extends Component {
                         </div>
                     </div> : null}
                     {/* Title */}
-                    {page.title !== '' && index ? <p class="title is-5 is-size-6-mobile"><a class="link-muted" href={url_for(page.link || page.path)}>{page.title}</a></p> : null}
+
+                    {page.title !== '' && index ? <p class="title is-5 is-size-6-mobile">
+                        <span class={getIsRepost(page) ? `article-type type-2` : `article-type type-1`}>{getIsRepost(page) ? `转载` : `原创`}</span>
+                        <a class="link-muted" href={url_for(page.link || page.path)}>{page.title}</a>
+                    </p> : null}
                     {page.title !== '' && !index ? <h1 class="title is-3 is-size-4-mobile">{page.title}</h1> : null}
 
 

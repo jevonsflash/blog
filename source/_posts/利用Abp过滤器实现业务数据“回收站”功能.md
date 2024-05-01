@@ -8,7 +8,7 @@ tags:
   - asp.net core
   - Abp
 categories:
-  - .NET
+  - [.NET]
 toc: true
 recommend: 1
 keywords: categories-java

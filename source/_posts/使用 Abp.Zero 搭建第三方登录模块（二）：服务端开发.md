@@ -10,9 +10,9 @@ tags:
   - 小程序
   - 微信公众号
 categories:
-  - .NET
-  - Web
-  - 小程序/公众号
+  - [.NET]
+  - [Web]
+  - [小程序/公众号]
 toc: true
 recommend: 1
 keywords: categories-java

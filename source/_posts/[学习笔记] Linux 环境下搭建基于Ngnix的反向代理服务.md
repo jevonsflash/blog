@@ -8,12 +8,12 @@ excerpt: >-
   https，wss通信协议，因此需要配置预发布环境的域名解析，Ngnix，以及证书。首先公司的域名已经备案（例如:
   www.matoapp.net），目标是通过这个备案的域名用https方式访问后台
 tags:
-  - Linux
-  - .net
+  - [Linux]
+  - [.NET]
   - Nginx
 categories:
   - DevOps
-  - Linux
+  - [Linux]
 toc: true
 recommend: 1
 keywords: categories-java

@@ -7,13 +7,13 @@ excerpt: >-
   Developer配置Service在/etc/systemd/system/目录下新建名称为rocketchat.service的文件，填写如下内容[Unit]Description=The
   .
 tags:
-  - Linux
+  - [Linux]
   - ubuntu
   - centos
   - rocket.chat
 categories:
   - DevOps
-  - Linux
+  - [Linux]
 toc: true
 recommend: 1
 keywords: categories-java

@@ -6,13 +6,13 @@ excerpt: >-
   中，同时将这个字符串保存在用户的数据库中。当用户再次访问时，如果 cookie
   中的字符串和数据库中的字符串相同，则免登录验证通过。rememberClientToken是存储于cookie中的，当用户登出时不需要清空cookie中的rememberClientToken，以便下次登录跳过两步验证。为了安全，Token采用对称加密传输存储，同时参与校验的还有用户Id，以进一步验证数据一致性。
 tags:
-  - .net
+  - [.NET]
   - Vue
   - asp.net core
   - 网络安全
 categories:
-  - .NET
-  - Web
+  - [.NET]
+  - [Web]
 toc: true
 recommend: 1
 keywords: categories-java

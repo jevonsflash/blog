@@ -5,11 +5,11 @@ excerpt: >-
   首先指定一个option，在官方示例 https://echarts.apache.org/examples/zh/index.html
   中，随意找一个柱状图的sample，复制option对象内容到新创建的option.json文件中。echarts-convert在github上有众多版本，echarts-convert的代码来源于这里：https://github.com/wadezhan/billfeller.github.io/issues/85。将下载好的可执行文件解压放置在项目根目录下的。
 tags:
-  - .net
+  - [.NET]
   - npoi
   - JavaScript
 categories:
-  - .NET
+  - [.NET]
 toc: true
 recommend: 1
 keywords: categories-java

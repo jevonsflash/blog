@@ -8,10 +8,10 @@ excerpt: >-
   Visual Studio Code 的资源管理器中，打开项目sln文件，
 tags:
   - Xamarin
-  - .net
+  - [.NET]
   - MAUI
 categories:
-  - .NET MAUI
+  - [.NET MAUI]
 toc: true
 recommend: 1
 keywords: categories-java

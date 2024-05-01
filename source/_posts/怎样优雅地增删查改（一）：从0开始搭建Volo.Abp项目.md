@@ -12,7 +12,7 @@ tags:
   - Abp
   - Volo.Abp
 categories:
-  - .NET
+  - [.NET]
   - 架构
 toc: true
 recommend: 1

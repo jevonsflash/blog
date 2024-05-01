@@ -8,13 +8,13 @@ excerpt: >-
   应用的发布。以Soa项目为例MatoApps/Soa: 一个轻量级的微服务库，基于.Net 6 + Abp框架
   可快速地将现有项目改造成为面向服务体系结构，实现模块间
 tags:
-  - .net
+  - [.NET]
   - docker
   - jenkins
   - devops
 categories:
   - DevOps
-  - Linux
+  - [Linux]
 toc: true
 recommend: 1
 keywords: categories-java

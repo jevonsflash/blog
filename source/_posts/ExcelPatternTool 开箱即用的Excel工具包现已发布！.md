@@ -5,10 +5,10 @@ excerpt: >-
   应用系统开发中少不了跟Excel打交道，基于NPOI开发了ExcelPatternTool，与目前主流框架对比ExcelPatternTool着重单元格样式的控制，对于初始数据导入、报表导出等简单的Excel功能提升易用性。
 tags:
   - 小工具
-  - .net
+  - [.NET]
   - 中间件
 categories:
-  - .NET
+  - [.NET]
   - 产品设计
 toc: true
 recommend: 1
@@ -19,7 +19,7 @@ date: 2023-10-25 18:31:00
 cover:
 description:
 ---
-[toc]
+<!-- toc -->
 应用系统开发中少不了跟Excel打交道，基于NPOI开发了ExcelPatternTool，与目前主流框架对比ExcelPatternTool着重单元格样式的控制，对于初始数据导入、报表导出等简单的Excel功能提升易用性。
 # ExcelPatternTool
 

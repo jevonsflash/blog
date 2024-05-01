@@ -6,12 +6,12 @@ excerpt: >-
   public class Song : FullAuditedEntity<long>    {  .
 tags:
   - Xamarin
-  - .net
+  - [.NET]
   - MAUI
   - Abp
 categories:
-  - .NET
-  - .NET MAUI
+  - [.NET]
+  - [.NET MAUI]
 toc: true
 recommend: 1
 keywords: categories-java
