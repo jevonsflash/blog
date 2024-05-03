@@ -114,7 +114,7 @@ navbar:
 # Page footer configurations
 footer:
     # Copyright text
-    copyright: © 2019
+    copyright: 粤ICP备19056721号
     # Links to be shown on the right of the footer section
     links:
         Creative Commons:
@@ -253,8 +253,6 @@ widgets:
         avatar_rounded: true
         # Email address for the Gravatar
         gravatar:
-        # URL or path for the follow button
-        follow_link: 'https://weibo.com/u/3050419984'
         # Links to be shown on the bottom of the profile widget
         social_links:
             Github:
@@ -262,7 +260,7 @@ widgets:
                 url: 'https://github.com/jevonsflash'   
             Email:
                 icon: fa fa-envelope
-                url: 'mailto:jevonsflash@163.com'         
+                url: 'mailto:jevonsflash@qq.com'         
             RSS:
                 icon: fas fa-rss
                 url: /atom.xml
@@ -286,6 +284,7 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
+            本站源码: https://github.com/jevonsflash/blog
             CSDN: https://blog.csdn.net/jevonsflash
             博客园: https://www.cnblogs.com/jevonsflash
             知乎: https://www.zhihu.com/people/lin_xiao
