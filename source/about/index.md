@@ -18,9 +18,44 @@ comments: false
 # 工作经历 
 
 ...
+<script type="text/javascript" src="/js/captcha-mini.min.js"></script>
+<script type="text/javascript">
+    function showCaptcha() {  
+        if(this.captcha){
+            return;
+        }
+        document.querySelector('.captcha-input').style.display = 'block';  
+        this.captcha = new Captcha();
+        var correctCaptcha = '';  
+        captcha.draw(document.querySelector('#captcha1'), r => {
+            correctCaptcha=r;
+        });
+        document.getElementById('confirmBtn').addEventListener('click', function() {  
+            var captchaInput = document.getElementById('captchaInput').value;  
+            if (captchaInput.toUpperCase() === correctCaptcha.toUpperCase()) {  
+                window.location.href = '/aboutme.pdf'; 
+            } else {  
+                alert('验证码错误，请重新输入！');  
+            }  
+        });
+    }
 
-<a class="level-item button is-primary is-rounded" href="/aboutme.pdf" target="_blank" rel="noopener">获取完整简历</a>
-
+</script>
+<a class="level-item button is-primary is-rounded" onclick="showCaptcha()" target="_blank" rel="noopener">获取完整简历</a>
+<div class="captcha-input">  
+<canvas width="240" height="90" id="captcha1"></canvas>
+<div class="level-left" style="
+    width: 240px;
+">
+<input type="text" class="level-item input" id="captchaInput" placeholder="请输入验证码">  
+<a class="level-item button is-primary" id="confirmBtn">确定</a>  
+</div>  
+<style>  
+    .captcha-input {  
+        display: none;  
+        margin-top: 10px;  
+    }  
+</style>  
 
 # 联系我
 
