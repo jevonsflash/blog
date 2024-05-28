@@ -10,6 +10,7 @@ keywords: java,elasticsearch,设计模式,sql
 author: 林晓lx
 language: zh-CN
 timezone:
+charset: utf-8
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
