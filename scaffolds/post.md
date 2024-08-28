@@ -3,7 +3,7 @@ thumbnail:
 cover:
 title: '{{ title }}'
 excerpt:
-description:
+description: {{ description }}
 date: {{ date }}
 tags:
 categories: 
