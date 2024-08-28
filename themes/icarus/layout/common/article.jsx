@@ -103,7 +103,7 @@ module.exports = class extends Component {
                         <div>
                             {thumbnail ? <div class="card-image thumbnail">
                                 <a href={url_for(page.link || page.path)} class="image">
-                                    <img class="fill" src={thumbnail} alt={page.title || thumbnail} />
+                                    <img src={thumbnail} alt={page.title || thumbnail} />
                                 </a>
                             </div> : null}
                             <div class="excerpt" dangerouslySetInnerHTML={{ __html: page.excerpt ? page.excerpt : "" }}></div>

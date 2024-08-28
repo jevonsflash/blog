@@ -1,23 +1,21 @@
-﻿---
-thumbnail:
-cover:
-title: 'Abp.Zero 手机号免密登录验证与号码绑定功能的实现（二）：改造Abp默认实现'
-excerpt:
-description:
-date: 2022-11-01 18:13:00
+---
+thumbnail: images/e64f2fa72a144da99f923759faad13c8.png
+title: Abp.Zero 手机号免密登录验证与号码绑定功能的实现（二）：改造Abp默认实现
+excerpt: 接下来我们重写原Abp的部分实现，来驳接手机号相关业务。
 tags:
   - sms
   - 阿里云
   - 腾讯云
-
 categories:
-  - [.NET]
-  - [Web]
- 
+  - - .NET
+  - - Web
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-11-01 18:13:00/Abp.Zero 手机号免密登录验证与号码绑定功能的实现（二）：改造Abp默认实现.html
+uniqueId: '2022-11-01 18:13:00/Abp.Zero 手机号免密登录验证与号码绑定功能的实现（二）：改造Abp默认实现.html'
+abbrlink: 933697b2
+date: 2022-11-01 18:13:00
+description:
 ---
 接下来我们重写原Abp的部分实现，来驳接手机号相关业务。
 

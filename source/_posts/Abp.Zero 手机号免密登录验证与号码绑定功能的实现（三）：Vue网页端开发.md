@@ -1,25 +1,25 @@
-﻿---
-thumbnail:
-cover:
-title: ' Abp.Zero 手机号免密登录验证与号码绑定功能的实现（三）：Vue网页端开发'
-excerpt:
-description:
-date: 2022-11-01 18:15:00
+---
+thumbnail: images/e64f2fa72a144da99f923759faad13c8.png
+title: Abp.Zero 手机号免密登录验证与号码绑定功能的实现（三）：Vue网页端开发
+excerpt: >-
+  前端代码的框架采用vue.js + elementUI
+  这套较为简单的方式实现，以及typescript语法更方便阅读。首先来编写发送验证码函数。注意几个关键的全局变量。
 tags:
   - TypeScript
   - Vue
   - sms
   - 阿里云
   - 腾讯云
-
 categories:
-  - [.NET]
-  - [Web]
- 
+  - - .NET
+  - - Web
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-11-01 18:15:00/ Abp.Zero 手机号免密登录验证与号码绑定功能的实现（三）：Vue网页端开发.html
+uniqueId: '2022-11-01 18:15:00/ Abp.Zero 手机号免密登录验证与号码绑定功能的实现（三）：Vue网页端开发.html'
+abbrlink: 2c12c938
+date: 2022-11-01 18:15:00
+description:
 ---
 前端代码的框架采用vue.js + elementUI 这套较为简单的方式实现，以及typescript语法更方便阅读。
 

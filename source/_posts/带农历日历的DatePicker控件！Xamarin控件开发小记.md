@@ -1,22 +1,21 @@
-﻿---
-thumbnail:
-cover:
-title: '带农历日历的DatePicker控件！Xamarin控件开发小记'
-excerpt:
-description:
-date: 2018-07-23 23:50:00
+---
+title: 带农历日历的DatePicker控件！Xamarin控件开发小记
+excerpt: >-
+  闲来无事开发了个日期选择控件，感兴趣的同学前往：https://github.com/MatoApps/Mato.DatePickerMato.DatePicker说明这是一个带有农历日历的日期选择Xamarin控件
+  可以指定初始日期 多选和单选日期
 tags:
   - Xamarin
   - DatePicker
   - 日期选择
-
 categories:
-  - [.NET MAUI]
- 
+  - - .NET MAUI
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2018-07-23 23:50:00/带农历日历的DatePicker控件！Xamarin控件开发小记.html
+uniqueId: '2018-07-23 23:50:00/带农历日历的DatePicker控件！Xamarin控件开发小记.html'
+abbrlink: e24046f9
+date: 2018-07-23 23:50:00
+description:
 ---
 <p>闲来无事开发了个日期选择控件，感兴趣的同学前往：</p><p><a data-cke-saved-href="https://github.com/MatoApps/Mato.DatePicker" href="https://github.com/MatoApps/Mato.DatePicker">https://github.com/MatoApps/Mato.DatePicker</a></p><h1>Mato.DatePicker</h1><p><a href="https://github.com/MatoApps/Mato.DatePicker/blob/master/Assets/ss.gif" target="_blank"><img alt="avatar" src="https://github.com/MatoApps/Mato.DatePicker/raw/master/Assets/ss.gif"/></a></p><h2><a class="anchor" href="https://github.com/MatoApps/Mato.DatePicker#%E8%AF%B4%E6%98%8E" id="user-content-说明"></a>说明</h2><ol>
 <li>这是一个带有农历日历的日期选择Xamarin控件</li>

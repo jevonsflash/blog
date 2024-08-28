@@ -1,23 +1,22 @@
-﻿---
-thumbnail:
-cover:
-title: 'Abp.Zero 手机号免密登录验证与号码绑定功能的实现（一）：验证码模块'
-excerpt:
-description:
-date: 2022-11-01 18:12:00
+---
+thumbnail: images/e64f2fa72a144da99f923759faad13c8.png
+title: Abp.Zero 手机号免密登录验证与号码绑定功能的实现（一）：验证码模块
+excerpt: >-
+  这是一篇系列博文，我将使用Abp.Zero搭建一套集成手机号免密登录验证与号码绑定功能的用户系统：第三方身份验证在Abp中称之为, 区别于Abp的，这里Auth的全称应为Authorization，即授权。首先来厘清这两个不同的业务在Abp中的实现，我之前写的这篇系列文章中描述的业务，即使用的Abp外部身份授权(ExternalAuth)的相关扩展而实现的。还记得我们实现的WeChatAuthProvider吗？它继承于ExternalAuthProviderApi这个抽象类，实现的微信授权功能。
 tags:
   - sms
   - 阿里云
   - 腾讯云
-
 categories:
-  - [.NET]
-  - [Web]
- 
+  - - .NET
+  - - Web
 toc: true
 recommend: 1
 keywords: categories-java
-uniqueId: 2022-11-01 18:12:00/Abp.Zero 手机号免密登录验证与号码绑定功能的实现（一）：验证码模块.html
+uniqueId: '2022-11-01 18:12:00/Abp.Zero 手机号免密登录验证与号码绑定功能的实现（一）：验证码模块.html'
+abbrlink: 6490d292
+date: 2022-11-01 18:12:00
+description:
 ---
 
 这是一篇系列博文，我将使用Abp.Zero搭建一套集成手机号免密登录验证与号码绑定功能的用户系统：

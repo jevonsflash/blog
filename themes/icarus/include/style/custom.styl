@@ -4,16 +4,22 @@
 
 .thumbnail
     float: right;
-    width: 135px;
-    height: 76px;
     margin: 0 0 5px 5px;
 
+.thumbnail img
+    width: 135px;
+    height: 76px;
+    object-fit: cover;
+    object-position: center;
+
 .excerpt
+    min-height: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+
 
 
 span.article-type.type-1 {
@@ -37,5 +43,7 @@ span.article-type.type-2 {
     color: #67bb55;
     background-color: rgba(103, 187, 85, 0.1);
 }
-
+.level{
+    width: 100%;
+}
     
