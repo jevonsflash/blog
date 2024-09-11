@@ -7,8 +7,8 @@ module.exports = class extends Component {
         const { config, page, helper } = this.props;
         const { __, url_for } = helper;
         const orderBy =
-        (config.category_generator ? config.category_generator.order_by : null) || '-date';
-  
+            (config.category_generator ? config.category_generator.order_by : null) || '-date';
+
         function getClass(el) {
             let className = 'level-item button';
             if (page.type) {
@@ -25,7 +25,7 @@ module.exports = class extends Component {
         }
 
         return <Fragment>
-           <div class="card">
+            <div class="card">
                 <div class="card-content level">
                     <div class="level-left">
                         <p>文章类型</p>
@@ -37,9 +37,7 @@ module.exports = class extends Component {
                     </div>
                 </div>
             </div>
-            {page.type === 'repost' ?
-                page.posts.filter((c) => c.categories.some(obj => obj.name === '转载')).sort(orderBy).map(post => <Article config={config} page={post} helper={helper} index={true} />)
-                : page.posts.filter((c) => !c.categories.some(obj => obj.name === '转载')).sort(orderBy).map(post => <Article config={config} page={post} helper={helper} index={true} />)}
+            {page.posts.sort(orderBy).map(post => <Article config={config} page={post} helper={helper} index={true} />)}
             {page.total > 1 ? <Paginator
                 current={page.current}
                 total={page.total}

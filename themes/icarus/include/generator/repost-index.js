@@ -11,15 +11,33 @@
  *
  * @param {Hexo} hexo The Hexo instance.
  */
+
+'use strict';
+
+const pagination = require('hexo-pagination');
+
 module.exports = function (hexo) {
+  const config = hexo.config;
+
   hexo.extend.generator.register('repost-index', (locals) => {
-    return {
-      path: 'repost/',
+    const posts = locals.posts
+    .filter((c) => c.categories.some(obj => obj.name === '转载'))
+    .sort(config.index_generator.order_by);
+  
+    posts.data.sort((a, b) => (b.sticky || 0) - (a.sticky || 0));
+  
+    const paginationDir = config.pagination_dir || 'page';
+    const path = (config.index_generator.path || '')+'repost/';
+
+    return pagination(path, posts, {
+      perPage: config.index_generator.per_page,
       layout: ['filtered-index'],
-      data: Object.assign({}, locals, {
+      format: paginationDir + '/%d/',
+      data: {
+        __index: true,
         __categories: true,
         type: 'repost'
-      }),
-    };
+      }
+    });
   });
 };
