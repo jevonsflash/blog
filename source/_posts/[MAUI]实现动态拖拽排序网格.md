@@ -26,7 +26,7 @@ description:
 
 其是在松开手指之后才向列表提交条目位置变更的命令。今天我们换一个写法，将拖拽条目放置在另一个条目上方时，即可将条目位置变更。即实时拖拽排序。
 
-![在这里插入图片描述](644861-20230918175632363-992477147.gif)
+![](644861-20230918175632363-992477147.gif)
 
 
 使用.NET MAU实现跨平台支持，本项目可运行于Android、iOS平台。
@@ -106,7 +106,7 @@ CollectionView 的其他布局方式请参考官方文档 [指定 CollectionView
 ```
 呈现效果如下：
 
-![在这里插入图片描述](644861-20230918175632279-582819044.png)
+![](644861-20230918175632279-582819044.png)
 
 
 DropGestureRecognizer中设置了拖拽悬停、离开、放置时的命令， 
@@ -310,7 +310,7 @@ private void GridTileSegmentService_PropertyChanged(object sender, PropertyChang
 ```
 效果如下：
 
-![在这里插入图片描述](644861-20230918175632336-715245102.gif)
+![](644861-20230918175632336-715245102.gif)
 
 
 
@@ -515,7 +515,7 @@ public class GridTileSegmentService : ObservableObject, ITileSegmentService
 
 当以比较快的速度，拖拽Tile经过较多的位置时，后面的Tile会短暂地替代原先的位置，导致拖拽中的Tile不在期望的Tile上方，而拖拽中的Tile与错误的Tile产生了交叠从而触发DraggedOver事件，导致错乱。
 
-![在这里插入图片描述](644861-20230918175632375-1342353956.gif)
+![](644861-20230918175632375-1342353956.gif)
 
 
 在某些机型上甚至会引发错乱的持续循环
@@ -529,7 +529,7 @@ listView.On<iOS>().SetRowAnimationsEnabled(false);
 
 动效问题最终要解决。由于快速拖拽Tile经过较多的位置频繁触发Move操作，通过限制事件的触发频率，引入限流(Throttle)和防抖(Debounce)机制可以有效地解决这个问题。限流和防抖的作用如下图：
 
-![在这里插入图片描述](644861-20230918175632349-812487237.png)
+![](644861-20230918175632349-812487237.png)
 
 
 代码引用自 [ThrottleDebounce](https://github.com/Aldaviva/ThrottleDebounce)
@@ -573,12 +573,12 @@ private void GridTileSegmentService_PropertyChanged(object sender, PropertyChang
 
 此时，在500毫秒内，只会执行一次Move操作。问题解决！
 
-![在这里插入图片描述](644861-20230918175632378-1521673133.gif)
+![](644861-20230918175632378-1521673133.gif)
 
 
 因为有500毫秒的延迟，Tile响应上感觉没有那么“灵动”，这算是一种牺牲。在不同的平台上可以调整这个时间以达到一种平衡，不知道屏幕前的你有没有更好的方式解决呢？
 
-![在这里插入图片描述](644861-20230918175632598-1525401189.gif)
+![](644861-20230918175632598-1525401189.gif)
 ## 项目地址
 
 [Github:maui-samples](https://github.com/jevonsflash/maui-samples)

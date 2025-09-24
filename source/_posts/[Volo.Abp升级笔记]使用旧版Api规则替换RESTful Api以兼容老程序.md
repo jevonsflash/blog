@@ -41,7 +41,7 @@ Volo.Abp 配置应用层自动生成Controller，增删查改服务（CrudAppSer
 
 
 例子：
-![在这里插入图片描述](ec2d87487742439aa71ee9149bde6613.png)
+![](ec2d87487742439aa71ee9149bde6613.png)
 
 
 
@@ -58,7 +58,7 @@ GetEditorsAsync(Guid id)|	GET|	/api/app/book/{id}/editors
 CreateEditorAsync(Guid id, BookEditorCreateDto input)|	POST|	/api/app/book/{id}/editor
 
 例子
-![在这里插入图片描述](79d6d563af1147259e3bcca43c8ecf69.png)
+![](79d6d563af1147259e3bcca43c8ecf69.png)
 
 
 
@@ -318,7 +318,7 @@ Asp.Net MVC在微服务的网关层中无法通过仅引用应用层方法的接
 
 在官方的微服务实例中，也没有用Controller的自动生成，在这个issue中作者也给出了解答
 https://github.com/abpframework/abp/issues/1731
-![在这里插入图片描述](f68ca34748b24accafb4db9c81a8d335.png)
+![](f68ca34748b24accafb4db9c81a8d335.png)
 
 
 因此如果想达到目的，只能用重写controller基类的方式了，这个方式好处在于简单好用，可读性和可维护性高，缺陷就是每写一个应用层类，需要写一个对应的Controller类，但在项目不多用CV大法还是可以接受的。
@@ -464,7 +464,7 @@ public class ReservationController : WorkflowController<IReservationAppService, 
 }
 ```
 运行程序，我们将得到一个旧版的接口
-![在这里插入图片描述](c857144b47a2486996a4b3476ca8b2d3.png)
+![](c857144b47a2486996a4b3476ca8b2d3.png)
 
 
 每次为新的应用服务类创建Controller，只需要新建一个派生自WorkflowController类的Controller，并指定一个应用服务类对象。就完成了，不需要自己写一大堆的控制器方法。

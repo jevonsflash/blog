@@ -29,7 +29,7 @@ Rocket.Chat 的业务数据主要存储于mongodb数据库的`rocketchat`库中�
 使用docker-compose方式部署时
 * 确保mongodb暴露了端口以供宿主机访问。
 * 确保宿主机的目录映射至rocketchat服务的`/app/uploads`目录，此目录应在后台管理已正确设置
- ![在这里插入图片描述](32c61411aa704f28bc7c6e28f2a75872.png)
+ ![](32c61411aa704f28bc7c6e28f2a75872.png)
 
 
 
@@ -116,7 +116,7 @@ cd /home/xamarin
 tar -g /home/xamarin/uploads-snapshot -zcvf /home/xamarin/uploads-full.tar.gz  /home/xamarin/backups/uploads/
 ```
 
-![在这里插入图片描述](b23c3180d8854d07a752d74b34717cc3.png)
+![](b23c3180d8854d07a752d74b34717cc3.png)
 
 
 ## 还原
@@ -142,7 +142,7 @@ tar -g uploads-snapshot -zxvf uploads-full.tar.gz -C /home/xamarin
 
 
 打开Web端，观察到业务数据已悉数恢复
-![在这里插入图片描述](05667788aec6465fbe8379ee7227c161.png)
+![](05667788aec6465fbe8379ee7227c161.png)
 ## Troubleshooting
 
 在还原过程中若出现`Unrecognized field 'snapshot'`字样如下

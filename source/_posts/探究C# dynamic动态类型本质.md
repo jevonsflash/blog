@@ -74,7 +74,7 @@ Console.WriteLine(obj2.title);
 Console.WriteLine(obj2.completed);
 ```
 运行结果如下
-![在这里插入图片描述](644861-20230408184742924-746762484.png)
+![](644861-20230408184742924-746762484.png)
 
 他们输出的结果一样，但你认为他们的返回结果是一样的吗？
 `obj1`是一个类型为`AnonymousType<int,int,string,bool>`的匿名类，我们可以很轻松地通过反射的方式遍历其成员变量：
@@ -118,7 +118,7 @@ foreach (PropertyInfo p in pi)
 
 }
 ```
-![在这里插入图片描述](644861-20230408184743283-366988634.png)
+![](644861-20230408184743283-366988634.png)
 
 报错的原因是`obj2`并不包含真正的`userId`成员变量，因为其本质是个`ExpandoObject`对象，
 
@@ -135,7 +135,7 @@ number = "text";
 Console.WriteLine(number.GetType());  //输出System.String
 ```
 当我用ILspy反编译工具查看IL源码的时候，竟发现`number`变量的类型是`object`，也就是整个过程经过了装箱拆箱，经过了从内存栈创建地址引用到堆中区域的改变。`dynamic`帮我们完成了这些动作。所以本质上内存中同一个对象不会平白无故从`int`类型转换为`string`。毕竟C#不能像其他弱类型语言那样使用。
-![在这里插入图片描述](644861-20230408184743096-1259158989.png)
+![](644861-20230408184743096-1259158989.png)
 
 `obj1`匿名类的成员变量是只读的。给它赋一个其他类型的值，将会报错；
 而给`obj2`的成员变量赋其他类型的值，则不会报错。
@@ -163,7 +163,7 @@ foreach (var entry in obj1)
 首先用`Newtonsoft.Json`库转换的结果，无论是用`JObject.Parse(json)`还是`JsonConvert.DeserializeObject(json)`
 最后返回的结果是`JToken`类型的对象，
 通过反编译`Newtonsoft.Json.dll`，查看`JToken`类型，可见它还是一个继承了`IDictionary<string, object?>`和`IDynamicMetaObjectProvider`的类型，
-![在这里插入图片描述](644861-20230408184743206-194109041.png)
+![](644861-20230408184743206-194109041.png)
 
 ```
 string json = @"{
@@ -197,7 +197,7 @@ foreach (PropertyInfo p in pi)
 
 }
 ```
-![在这里插入图片描述](644861-20230408184743003-675790652.png)
+![](644861-20230408184743003-675790652.png)
 
 
 可以通过这样向`obj2`动态添加成员变量，但是始终是字典方式提供的**伪对象**。

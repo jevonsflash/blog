@@ -32,7 +32,7 @@ public class User : Entity<int>
 ```
 其中有身份证号码IdentificationNumber列，需要加密存储，该如何实现？
 
-![在这里插入图片描述](644861-20230408184702342-729182384.png)
+![](644861-20230408184702342-729182384.png)
 
 
 创建一个值转换器，继承`ValueConverter<TModel, string>`类型。其中泛型`TModel`为实体中属性的类型。
@@ -191,4 +191,4 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 再次调用Add方法插入数据时，可以看到IdentificationNumber列已被加密了
 
-![在这里插入图片描述](644861-20230408184702537-761925985.png)
+![](644861-20230408184702537-761925985.png)

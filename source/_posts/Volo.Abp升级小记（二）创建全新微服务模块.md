@@ -47,7 +47,7 @@ Common.Host项目作为微服务单独放置在服务目录中（一般为micros
 
 看起来模块的目录结构如下
 
-![在这里插入图片描述](644861-20230609144349228-2016306914.png)
+![](644861-20230609144349228-2016306914.png)
 
 
 ## 领域层
@@ -73,7 +73,7 @@ public class TagManager<T> : DomainService
 页面结构看起来像这样
 
 
-![在这里插入图片描述](644861-20230609144349116-813440267.png)
+![](644861-20230609144349116-813440267.png)
 
 
 ## 应用层
@@ -91,7 +91,7 @@ public interface ITagAppService : ICurdAppService<TagDto, TagDto, long, GetAllTa
 页面结构看起来像这样
 
 
-![在这里插入图片描述](644861-20230609144349047-634760510.png)
+![](644861-20230609144349047-634760510.png)
 
 
 
@@ -106,7 +106,7 @@ public class TagAppService : CurdAppServiceBase<Tag, TagDto, TagDto, long, GetAl
 }
 ```
 
-![在这里插入图片描述](644861-20230609144349053-1726675431.png)
+![](644861-20230609144349053-1726675431.png)
 
 
 配置AutoMapper
@@ -200,7 +200,7 @@ public class CommonEntityFrameworkCoreModule : AbpModule
 添加控制器，配置路由
 
 
-![在这里插入图片描述](644861-20230609144349094-2046984208.png)
+![](644861-20230609144349094-2046984208.png)
 
 
 ```
@@ -298,7 +298,7 @@ public class CommonServiceDataSeeder : IDataSeedContributor, ITransientDependenc
 将Common.Host设置为启动项目，打开程序包管理器控制台选择Common.Host默认项目。
 执行Add-Migration init命令和Update-Database命令
 
-![在这里插入图片描述](644861-20230609144349092-1167960350.png)
+![](644861-20230609144349092-1167960350.png)
 
 
 
@@ -307,7 +307,7 @@ public class CommonServiceDataSeeder : IDataSeedContributor, ITransientDependenc
 启动Common.Host，打开浏览器，输入http://localhost:44363/swagger/index.html
 
 
-![在这里插入图片描述](644861-20230609144349338-1610089110.png)
+![](644861-20230609144349338-1610089110.png)
 
 
 
@@ -390,7 +390,7 @@ namespace BackendAdminAppGateway.Host
 
 选择启动项目，将Common.Host微服务设置为启动
 
-![在这里插入图片描述](644861-20230609144349269-321387448.png)
+![](644861-20230609144349269-321387448.png)
 
 
 
@@ -400,4 +400,4 @@ namespace BackendAdminAppGateway.Host
 
 可以通过网关访问Tag接口了
 
-![在这里插入图片描述](644861-20230609144349314-612816414.png)
+![](644861-20230609144349314-612816414.png)

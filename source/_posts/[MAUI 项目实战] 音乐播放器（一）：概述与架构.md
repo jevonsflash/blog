@@ -42,7 +42,7 @@ description:
 
 当下在.Net平台上有不少开源的音频封装库，如[Plugin.Maui.Audio](https://www.nuget.org/packages/Plugin.Maui.Audio)，本项目没有依赖任何音频的第三方库，希望大家以学习的态度交流，如果您有更好的实现方式，欢迎在文章下留言。因为代码年代久远且近年来没有重构，C#语言版本和代码写法上会有不少繁冗，这里还要向大家说声抱歉。
 
-![在这里插入图片描述](7a778dd09a5a409b8245a3242984bd99.png)
+![](7a778dd09a5a409b8245a3242984bd99.png)
 
 
 ## 架构
@@ -73,7 +73,7 @@ MatoMusic.Core\Platforms\Windows\MusicControlService.cs
 在设计播放内核时，从用户的交互路径思考，抽象出了曲目管理器`IMusicInfoManager`和播放控制服务`IMusicControlService`，
 
 播放器行为和曲目操作行为在各自领域相互隔离，通过生产-消费模型，数据流转和消息通知冒泡协调一致。尽量规避了大规模使用线程锁，以及复杂的线程同步逻辑。在跨平台方案中，通过分部类实现了这些接口，类图如下：
-![在这里插入图片描述](7e2d0074f2cb4241be7ac2700a60d7cf.png)
+![](7e2d0074f2cb4241be7ac2700a60d7cf.png)
 
 
 音乐播放相关服务类`MusicRelatedService`是播放控制服务的一层封装，在实际播放器业务逻辑上，利用封装的代码能更方便的完成任务。
@@ -83,7 +83,7 @@ MatoMusic.Core\Platforms\Windows\MusicControlService.cs
 `ViewModelBase`是个基础类，它继承自`AbpServiceBase`，封装了Abp框架通用功能的调用。比如Setting、Localization和UnitOfWork功能。并且实现了`INotifyPropertyChanged`，它为绑定类型的每个属性提供变更事件。
 
 核心类图如下
-![在这里插入图片描述](3e36cf1c69a44ff98d330310fc26d47c.png)
+![](3e36cf1c69a44ff98d330310fc26d47c.png)
 
 
 
@@ -165,7 +165,7 @@ private void MusicInfo_PropertyChanged(object sender, PropertyChangedEventArgs e
 它继承自`ObservableObject`
 
 `AlbumInfo`，`ArtistInfo`，`PlaylistInfo`，`BillboardInfo` 都是曲目集合的子类
-![在这里插入图片描述](0e241ddc8f144075a438562f3e41d4d0.png)
+![](0e241ddc8f144075a438562f3e41d4d0.png)
 
 
 

@@ -24,7 +24,7 @@ UI设计的本质是对于产品的理解在界面中多种形式的映射，当
 
 作为播放器，界面可以是千差万别的。《番茄播放器》的iOS平台上我开发了传统版本，和基于手势播放的版本。
 
-> ![在这里插入图片描述](644861-20230409104025949-1957273938.png)
+> ![](644861-20230409104025949-1957273938.png)
 > 图片来自于App Store宣传图
 
 它们界面不同，但用的同一个播放内核。
@@ -69,7 +69,7 @@ UI设计的本质是对于产品的理解在界面中多种形式的映射，当
 
 界面设计风格设计如下：
 
-![在这里插入图片描述](644861-20230409104026548-1237965316.png)
+![](644861-20230409104026548-1237965316.png)
 ### 主页面
 .NET MAUI Shell 通过提供大多数应用所需的基本功能来降低应用开发的复杂性，应用视觉对象层次结构导航，详情见[官方文档
 ](https://learn.microsoft.com/zh-cn/dotnet/maui/fundamentals/shell/?view=net-maui-7.0)
@@ -166,10 +166,10 @@ PopupBase
 
 他们包含Abp提供的本地化，对象映射，设置等服务，类图如下
 
-![在这里插入图片描述](644861-20230409104025815-446652606.png)
+![](644861-20230409104025815-446652606.png)
 
 ContentPage和ContentViewBase包含曲目管理器`IMusicInfoManager`和播放控制服务`IMusicControlService`，类图如下
-![在这里插入图片描述](644861-20230409104025692-1310441171.png)
+![](644861-20230409104025692-1310441171.png)
 
 
 
@@ -255,7 +255,7 @@ private Page GetPageInstance(string obj, object[] args, IList<ToolbarItem> barIt
 ## 页面资源
 NET MAUI 单一项目使资源文件可以存储在统一位置上（一般是`Resources`文件夹下），为跨平台方案使用。详情见[官方文档](https://learn.microsoft.com/zh-cn/dotnet/maui/fundamentals/single-project?view=net-maui-7.0)
 将在Fonts添加FontAwesome字体文件，以及Images中添加图标`png`文件
-![在这里插入图片描述](644861-20230409104025861-935670918.png)
+![](644861-20230409104025861-935670918.png)
 MatoMusic.csproj文件中，对资源范围进行限定，此时的限定范围是`Resources\Fonts\*`和`Resources\Images\*`
 ```
 <ItemGroup>
@@ -404,8 +404,8 @@ public static MauiApp CreateMauiApp()
 ```
 
 在本地计算机中安装好FontAwesome字体后，打开“字符映射表”工具，选择字体FontAwesome，点选后可以从下面的输入框中复制内容
-![在这里插入图片描述](644861-20230409104026475-914359511.png)
-![在这里插入图片描述](644861-20230409104025887-234139976.png)
+![](644861-20230409104026475-914359511.png)
+![](644861-20230409104025887-234139976.png)
 
 
 
@@ -442,7 +442,7 @@ public static void Configure(ILocalizationConfiguration localizationConfiguratio
 ```
 
 在这些文件的编译模式应为`嵌入的资源`
-![在这里插入图片描述](644861-20230409104026314-1687802022.png)
+![](644861-20230409104026314-1687802022.png)
 基础可视化元素类中提供L方法，返回本地化字符串
 
 ```
@@ -716,9 +716,9 @@ private void Delegate_PropertyChanged(object sender, PropertyChangedEventArgs e)
  </StackLayout>
 ```
 界面效果如下：
-![在这里插入图片描述](644861-20230409104026399-1942814899.png)
+![](644861-20230409104026399-1942814899.png)
 小窗播放控件MusicMiniView也对曲目信息进行了相似的绑定
-![在这里插入图片描述](644861-20230409104025841-1186565641.png)
+![](644861-20230409104025841-1186565641.png)
 进度控制区域代码：
 ```
 <!--进度控制区域-->
@@ -862,7 +862,7 @@ private void Delegate_PropertyChanged(object sender, PropertyChangedEventArgs e)
 <ListView.ItemTemplate>
 ```
 界面效果如下
-![在这里插入图片描述](644861-20230409104025862-1695231578.png)
+![](644861-20230409104025862-1695231578.png)
 
 
 ## 项目地址

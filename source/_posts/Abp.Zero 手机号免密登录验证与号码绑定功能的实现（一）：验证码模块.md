@@ -239,7 +239,7 @@ public async Task<bool> VerifyCaptchaAsync(string token, string purpose = Captch
 ```
 
 实际业务中可能还需要Email验证，我也建立了电子邮箱验证码的领域服务类，只不过没有实现它，动手能力强的读者可以试着完善这个小案例:)
-![在这里插入图片描述](2a12fa566147463cb2bf7a1c47db8816.png)
+![](2a12fa566147463cb2bf7a1c47db8816.png)
 
 
 ## Api实现

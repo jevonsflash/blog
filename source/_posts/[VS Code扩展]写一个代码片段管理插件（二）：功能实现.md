@@ -29,7 +29,7 @@ VS Code扩展提供了数据存储，其中globalState是使用全局存储的Ke
 
 若在编辑器区域有选中的文本，点击右键菜单中点击创建Snippet，则调用`extension.snippetCraft.createSnipp`命令，执行创建代码片段。
 
-![在这里插入图片描述](644861-20240822094918152-773155974.gif)
+![](644861-20240822094918152-773155974.gif)
 
 
 创建服务类 `SnippService.ts`，代码如下
@@ -79,7 +79,7 @@ export async function InsertSnipp(context: ExtensionContext, snipp: ISnipp) {
 代码片段显示为一个树形结构，根据创建时的文件内容类型，分组显示代码片段条目
 
 
-![在这里插入图片描述](644861-20240822094918107-1250088802.png)
+![](644861-20240822094918107-1250088802.png)
 
 
 创建代码片段和分组条目的接口类型
@@ -168,7 +168,7 @@ export class SnippDataProvider
 
 鼠标移动到代码片段条目上时，显示tooltip预览
 
-![在这里插入图片描述](644861-20240822094918114-1693642503.png)
+![](644861-20240822094918114-1693642503.png)
 
 代码如下：
 
@@ -206,7 +206,7 @@ public getTreeItem(element: ISnipp | IGroup): vscode.TreeItem {
 
 编辑器是一个输入框，由于VS Code的输入框不支持多行输入，所以需要使用webview实现多行输入。同时需要提交按钮与取消按钮
 
-![在这里插入图片描述](644861-20240822094918099-849219896.gif)
+![](644861-20240822094918099-849219896.gif)
 
 
 首先创建一个多行文本框的WebView，
@@ -319,7 +319,7 @@ export async function EditSnipp(context: ExtensionContext, state: Partial<ISnipp
 
 扩展中所有的自定义映射，呈现于“映射表”树视图中。
 
-![在这里插入图片描述](644861-20240822094918114-453429249.png)
+![](644861-20240822094918114-453429249.png)
 
 
 示例：
@@ -506,7 +506,7 @@ export async function ReplacePlaceholders(text: string, context: ExtensionContex
 
 自动完成是VS Code编辑器提供的一个功能，用于在编辑器中显示自动提示和补全内容。扩展提供了基于代码片段的自动完成功能。
 
-![在这里插入图片描述](644861-20240822094918143-259248907.gif)
+![](644861-20240822094918143-259248907.gif)
 
 `CompletionItemProvider`用于注册自动完成的规则，提供者约定了在指定的文档类型下，当输入的字符匹配时，将出现自动完成上下文菜单。
 

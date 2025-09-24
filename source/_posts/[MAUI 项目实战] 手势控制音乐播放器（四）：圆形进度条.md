@@ -21,7 +21,7 @@ description:
 我们将绘制一个圆形的音乐播放控件，它包含一个圆形的进度条、专辑页面和播放按钮。
 
 
-![在这里插入图片描述](644861-20230409103143812-789727961.gif)
+![](644861-20230409103143812-789727961.gif)
 
 ## 关于图形绘制
 
@@ -187,7 +187,7 @@ private void RefreshMainRectPadding()
 ```
 在视觉上，进度条宽度从内向外扩张变细。
 
-![在这里插入图片描述](644861-20230409103143775-300026.gif)
+![](644861-20230409103143775-300026.gif)
 
 
 若设为原宽度减去计算值，从视觉上是从外向内收缩变细。
@@ -197,7 +197,7 @@ private void RefreshMainRectPadding()
     this._mainRectPadding =  15 -  this.BorderWidth / 2;
 }
 ```
-![在这里插入图片描述](644861-20230409103143808-247006247.gif)
+![](644861-20230409103143808-247006247.gif)
 
 
 接下来写订阅了CanvaseView的PaintSurface事件的方法OnCanvasViewPaintSurface。在这个方法中，我们将编写圆形进度条的绘制逻辑。
@@ -337,7 +337,7 @@ private void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs arg
 </Grid>
 ```
 
-![在这里插入图片描述](644861-20230409103143824-1620141171.gif)
+![](644861-20230409103143824-1620141171.gif)
 
 
 创建PanContainer对象，用于实现拖动效果，设置AutoAdsorption属性为True，即可实现拖动后自动吸附效果。
@@ -386,7 +386,7 @@ private void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs arg
 </controls1:PanContainer>
 
 ```
-![在这里插入图片描述](644861-20230409103144352-46797850.gif)
+![](644861-20230409103144352-46797850.gif)
 以上就是这个项目的全部内容，感谢阅读
 
 ## 项目地址

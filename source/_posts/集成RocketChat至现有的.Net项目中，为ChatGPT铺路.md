@@ -217,10 +217,10 @@ public class AuthenticateResultDto
 
 Realtime API 的前端鉴权
 
-![在这里插入图片描述](ce8045aad08442cca4745eb9e7be1b93.png)
+![](ce8045aad08442cca4745eb9e7be1b93.png)
 Realtime API 的后端鉴权
 
-![在这里插入图片描述](1d0412c94ab042cdbcbf573dde8df4b7.png)
+![](1d0412c94ab042cdbcbf573dde8df4b7.png)
 
 
 ## 登录校验模块
@@ -231,7 +231,7 @@ Realtime API 的后端鉴权
 
 整个流程如下：
 
-![在这里插入图片描述](e7b2ce2dd61f4999869c553998701040.png)
+![](e7b2ce2dd61f4999869c553998701040.png)
 
 
 创建AuthorizedFrontendWrapper.cs，新建AuthorizationVerification方法，此方法是登录校验逻辑
@@ -289,7 +289,7 @@ private static void AuthorizationVerification(IHttpContextAccessor _httpContextA
 
 整个流程如下：
 
-![在这里插入图片描述](a1adc72f11db471a98ad7d4daa82a708.png)
+![](a1adc72f11db471a98ad7d4daa82a708.png)
 
 
 创建AuthorizedBackendWrapper.cs，新建AuthorizationVerification方法，登录校验代码如下
@@ -918,6 +918,6 @@ hubConnection.on("getRoomSubscriptionChangedNotification", (n) => {
 此文目的是介绍一种思路，使用缓存生命周期管理的相关机制，规避第三方用户系统对现有项目的用户系统的影响。举一反三，可以用到其他Paas的方案集成中。最近ChatGPT很火，可惜没时间研究怎么接入，有闲工夫的同学们可以尝试着写一个ChatGPT聊天机器人，欢迎大家评论留言！
 
 最终效果如图
-![在这里插入图片描述](1d9f6a70ba6f4ae5855fbed95b3f59c4.gif#pic_center)
+![](1d9f6a70ba6f4ae5855fbed95b3f59c4.gif#pic_center)
 ## 项目地址
 [Github:matoapp-samples](https://github.com/jevonsflash/matoapp-samples)

@@ -29,7 +29,7 @@ description:
 这次我们将Editor.js集成到.NET MAUI应用中。并实现只读切换，明/暗主题切换等功能。
 
 
-![在这里插入图片描述](644861-20240413234916602-1058318088.png)
+![](644861-20240413234916602-1058318088.png)
 
 
 使用[.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui)实现跨平台支持，本项目可运行于Android、iOS平台。
@@ -62,7 +62,7 @@ npm run build
 ```
 等待nodejs构建完成，在项目根目录找到`dist/editorjs.umd.js`这个就是我们需要的js文件
 
-![在这里插入图片描述](644861-20240413234916736-614390157.png)
+![](644861-20240413234916736-614390157.png)
 
 ### 从CDN获取
 
@@ -96,7 +96,7 @@ Editor.js中的每个块都由插件提供。有简单的外部脚本，有自�
 
 将editorjs.umd.js和各插件js文件拷贝至项目根目录下`wwwroot`文件夹，文件结构如下：
 
-![在这里插入图片描述](644861-20240413234916407-1091926010.png)
+![](644861-20240413234916407-1091926010.png)
 
 在wwwroot创建editorjs_index.html文件，并在body中引入editorjs.umd.js和各插件js文件
 
@@ -290,7 +290,7 @@ public class EditNotePageViewModel : ObservableObject, IEditorViewModel
 注意这里的Init方法，用于初始化内容。这里我们读取`Editorjs.Assets.sample1.json`资源文件作为初始内容。
 
 
-![在这里插入图片描述](644861-20240413234916774-1859480474.png)
+![](644861-20240413234916774-1859480474.png)
 
 
 ### 创建Blazor组件
@@ -609,7 +609,7 @@ LoadContent中，调用函数`window.editor = new window.EditorJS(config)`创建
 
 ```
 
-![在这里插入图片描述](644861-20240413234916929-1626054557.gif)
+![](644861-20240413234916929-1626054557.gif)
 
 
 ### 保存
@@ -685,7 +685,7 @@ private async void OnInited(string content)
 }
 ```
 
-![在这里插入图片描述](644861-20240413234916557-1949357908.gif)
+![](644861-20240413234916557-1949357908.gif)
 
 
 ## 实现只读/编辑功能
@@ -805,7 +805,7 @@ private async void EditNotePageViewModel_PropertyChanged(object sender, System.C
 }
 
 ```
-![在这里插入图片描述](644861-20240413234916807-164856559.gif)
+![](644861-20240413234916807-164856559.gif)
 
 
 ## 实现明/暗主题切换
@@ -897,7 +897,7 @@ protected override async Task OnAfterRenderAsync(bool firstRender)
 
 ```
 
-![在这里插入图片描述](644861-20240413234916933-1949011365.gif)
+![](644861-20240413234916933-1949011365.gif)
 
 ## 项目地址
 

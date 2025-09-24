@@ -22,7 +22,7 @@ description:
 ## 现象
 
 默认地，Abp的语言提供程序将返回的CultureInfo为En，在一些默认实现的接口（比如`/api/TokenAuth/Authenticate`）返回的错误信息是英文
-![在这里插入图片描述](95de1bba563e47e7a7db20290af169b3.png)
+![](95de1bba563e47e7a7db20290af169b3.png)
 目标是改成简体中文显示，但是即便我们在AbpSettings表中加入了DefaultLanguage为`"zh-Hans" `     
 ```
  AddSettingIfNotExists(LocalizationSettingNames.DefaultLanguage, "zh-Hans", tenantId);
@@ -86,8 +86,8 @@ app.UseAbpRequestLocalization((options) =>
 });
 ```
 确保数据库配置了正确的语言信息
-![在这里插入图片描述](55ad687f1b1a4bd3875e6f5bb9f92166.png)
+![](55ad687f1b1a4bd3875e6f5bb9f92166.png)
 
 此时再运行程序，调用`/api/TokenAuth/Authenticate`接口时报错信息已经变为简体中文
 
-![在这里插入图片描述](2ab9d07a1d0c40b4aaead4aa6bdf62e0.png)
+![](2ab9d07a1d0c40b4aaead4aa6bdf62e0.png)

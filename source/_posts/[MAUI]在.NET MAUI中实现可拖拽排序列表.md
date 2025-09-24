@@ -26,7 +26,7 @@ description:
 
 .NET MAUI 中提供了拖放(drag-drop)手势识别器，允许用户通过拖动手势来移动控件。在这篇文章中，我们将学习如何使用拖放手势识别器来实现可拖拽排序列表。在本例中，列表中显示不同大小的磁贴（Tile）并且可以拖拽排序。
 
-![在这里插入图片描述](644861-20230815143121709-764357352.gif)
+![](644861-20230815143121709-764357352.gif)
 
 
 使用.NET MAU实现跨平台支持，本项目可运行于Android、iOS平台。
@@ -356,7 +356,7 @@ public class TileSegmentService : ObservableObject, ITileSegmentService
 
 在Controls目录下创建不同大小的磁贴控件，如下图所示。
 
-![在这里插入图片描述](644861-20230815143121593-801324409.png)
+![](644861-20230815143121593-801324409.png)
 
 
 
@@ -379,7 +379,7 @@ public class TileSegmentService : ObservableObject, ITileSegmentService
 
 不同大小的磁贴通过绑定相应的数据，使用不同的数据模板进行展示。请阅读博文 [[MAUI程序设计]界面多态与实现](https://www.cnblogs.com/jevonsflash/p/17399748.html)，了解如何实现列表Item的多态。
 
-![在这里插入图片描述](644861-20230815143121636-1788046487.png)
+![](644861-20230815143121636-1788046487.png)
 
 
 在MainPage中创建磁贴片段数据模板选择器（TileSegmentDataTemplateSelector），用于根据磁贴片段的大小选择不同的数据模板。
@@ -457,7 +457,7 @@ public class TileSegmentService : ObservableObject, ITileSegmentService
 
 ```
 
-![在这里插入图片描述](644861-20230815143121587-1854759926.png)
+![](644861-20230815143121587-1854759926.png)
 
 
 创建占位控件，用于指示松开手指时，控件将放置的位置区域，在这里绑定DropPlaceHolderItem的高度和宽度。
@@ -485,7 +485,7 @@ public class TileSegmentService : ObservableObject, ITileSegmentService
 ## 最终效果
 
 
-![在这里插入图片描述](644861-20230815143121709-764357352.gif)
+![](644861-20230815143121709-764357352.gif)
 
 ## 项目地址
 

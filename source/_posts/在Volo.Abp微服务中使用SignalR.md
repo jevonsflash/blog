@@ -98,7 +98,7 @@ public async Task SendMessageToAllAsync(SendNotificationDto sendNotificationDto)
 
 当SignalR开始连接时，首先发送协商协议请求，协商协议返回availableTransports告诉客户端支持哪些协议，以及connetcionId和connectionToken，这两个值会在后续的连接中使用。
 
-![在这里插入图片描述](644861-20230803174704358-1547486526.png)
+![](644861-20230803174704358-1547486526.png)
 
 在当前路由配置下，请求地址是：/signalr/identity/negotiate，此http请求会通过网关转发到IdentityServer。
 

@@ -236,7 +236,7 @@ public class WriteRowTestEntity : IExcelEntity
 
 
 
-![在这里插入图片描述](644861-20231025182927264-2085275039.png)
+![](644861-20231025182927264-2085275039.png)
 
 
 ### Sample2：高级类型导入和导出
@@ -258,7 +258,7 @@ public class WriteRowTestEntity : IExcelEntity
 
 StringWithFullValue将在导入时存储单元格的注解，样式，公式，以及值。导出时按照原样导出。
 
-![在这里插入图片描述](644861-20231025182927293-1665579754.png)
+![](644861-20231025182927293-1665579754.png)
 
 
 ### Sample3：员工健康体检
@@ -417,7 +417,7 @@ public class EmployeeHealthEntityStyleMapperProvider : StyleMapperProvider
 
 ```
 
-![在这里插入图片描述](644861-20231025182927297-1559111677.png)
+![](644861-20231025182927297-1559111677.png)
 
 
 

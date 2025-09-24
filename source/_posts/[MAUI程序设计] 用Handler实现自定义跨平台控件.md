@@ -59,7 +59,7 @@ public interface IViewHandler : IElementHandler
 
 Entry是实现IEntry接口的单行文本输入控件，它对应的Handler是EntryHandler。
 
-![在这里插入图片描述](644861-20230604183611502-1632268895.png)
+![](644861-20230604183611502-1632268895.png)
 
 
 
@@ -94,7 +94,7 @@ Entry是实现IEntry接口的单行文本输入控件，它对应的Handler是En
 
 Xamarin.Forms的控件，比如Entry是通过在封装于特定平台下的EntryRenderer的类中渲染的。
 
-![在这里插入图片描述](644861-20230604183611945-1244056910.png)
+![](644861-20230604183611945-1244056910.png)
 
 
 通过重写控件默认Renderer，可以完全改变控件的外观和行为方式。
@@ -621,7 +621,7 @@ xmlns:controls="clr-namespace:Lession2.TouchRecognizer;assembly=Lession2"
 在控件中将应用手势监听。
 
 
-![在这里插入图片描述](644861-20230604183612067-28782082.png)
+![](644861-20230604183612067-28782082.png)
 
 
 ## 项目地址

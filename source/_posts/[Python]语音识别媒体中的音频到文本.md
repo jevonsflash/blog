@@ -26,11 +26,11 @@ description:
 1. 安装python3环境
 2. 申请一个可用的语音转换API，此篇以[Microsoft Azure Speech](https://azure.microsoft.com/en-us/services/cognitive-services/speech/)为例
 在Microsoft Azure 市场中搜索`speech`关键字找到语音服务。并创建好服务实例
-![在这里插入图片描述](25158d8c751c482193f5222808d189a1.png)
+![](25158d8c751c482193f5222808d189a1.png)
 在资源中找到创建的服务并查看
-![在这里插入图片描述](c97c192f8af644f88477bf776f634a31.png)
+![](c97c192f8af644f88477bf776f634a31.png)
 在此处点击显示密钥，我们要记住`key`值和`location`值，作为语音识别库的请求参数
-![在这里插入图片描述](73158a9e206449b7bd505e6ffb2587bf.png)
+![](73158a9e206449b7bd505e6ffb2587bf.png)
 
 
 ## 视频转音频
@@ -90,11 +90,11 @@ with open('test.txt', 'w') as file:
 ## 音频直接转换文本
 Azure提供了快捷转换语音到文本的工具 https://speech.microsoft.com/portal
 点击实时语音转文本
-![在这里插入图片描述](34025b7a6a2e4bc6bd3e6503df461bc3.png)
+![](34025b7a6a2e4bc6bd3e6503df461bc3.png)
 这里需要注意的是，需要上传的音频格式为16kHz 或 8kHz、16 位和单声道 PCM
-![在这里插入图片描述](2523e7322e3449ec9404008b4bbac446.png)
+![](2523e7322e3449ec9404008b4bbac446.png)
 上传完成后将自动转换成文本
-![在这里插入图片描述](4698ae8410df4ce1846865624db9a07c.png)
+![](4698ae8410df4ce1846865624db9a07c.png)
 
 
 安装音频转换库[pydub](https://github.com/jiaaro/pydub)

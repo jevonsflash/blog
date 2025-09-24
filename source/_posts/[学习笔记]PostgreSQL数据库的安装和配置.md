@@ -81,7 +81,7 @@ systemctl restart postgresql-12.service
 
 再用默认用户试试，此时会要求输入密码，输入正确后进入psql命令模式
 
-![在这里插入图片描述](f0ca21df3c96432e994935591a898880.png)
+![](f0ca21df3c96432e994935591a898880.png)
 配置防火墙
 
 ```
@@ -89,7 +89,7 @@ firewall-cmd --zone=public --add-port=5432/tcp --permanent
 ```
 
 使用数据库管理工具远程连接测试
-![在这里插入图片描述](44fcbb907cd641e889c8c5964c9156d5.png)
+![](44fcbb907cd641e889c8c5964c9156d5.png)
 至此完成所有的安装和配置工作
 
 PostgreSQL的安装详细信息请参考[官网](https://www.postgresql.org/download/linux/redhat/)
